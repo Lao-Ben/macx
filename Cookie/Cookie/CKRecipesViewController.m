@@ -21,7 +21,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         NSLog(@"RecipesView loaded");
-        
     }
     [delegate changeSearchState];
     return self;

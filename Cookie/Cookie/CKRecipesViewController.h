@@ -12,6 +12,6 @@
 @protocol searchProto;
 
 @interface CKRecipesViewController : NSViewController
-@property (nonatomic) id<searchProto> delegate;
+@property (nonatomic, retain) id<searchProto> delegate;
 
 @end

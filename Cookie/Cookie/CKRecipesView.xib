@@ -37,7 +37,7 @@
 			<object class="NSCustomObject" id="1004">
 				<string key="NSClassName">NSApplication</string>
 			</object>
-			<object class="NSCustomObject" id="838328571">
+			<object class="NSCustomObject" id="896860218">
 				<string key="NSClassName">CKRecipeDataSource</string>
 			</object>
 			<object class="NSCustomView" id="1005">
@@ -67,11 +67,11 @@
 											<string key="NSFrameSize">{438, 17}</string>
 											<reference key="NSSuperview" ref="43277927"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="178441006"/>
+											<reference key="NSNextKeyView" ref="1064020592"/>
 											<string key="NSReuseIdentifierKey">_NS:16</string>
 											<reference key="NSTableView" ref="420029149"/>
 										</object>
-										<object class="_NSCornerView" key="NSCornerView" id="178441006">
+										<object class="_NSCornerView" key="NSCornerView" id="1064020592">
 											<reference key="NSNextResponder" ref="245819107"/>
 											<int key="NSvFlags">-2147483392</int>
 											<string key="NSFrame">{{224, 0}, {16, 17}}</string>
@@ -220,7 +220,7 @@
 								<reference key="NSBGColor" ref="686925377"/>
 								<int key="NScvFlags">4</int>
 							</object>
-							<reference ref="178441006"/>
+							<reference ref="1064020592"/>
 						</array>
 						<string key="NSFrame">{{80, 124}, {440, 252}}</string>
 						<reference key="NSSuperview" ref="1005"/>
@@ -232,7 +232,7 @@
 						<reference key="NSHScroller" ref="859057640"/>
 						<reference key="NSContentView" ref="368779099"/>
 						<reference key="NSHeaderClipView" ref="43277927"/>
-						<reference key="NSCornerView" ref="178441006"/>
+						<reference key="NSCornerView" ref="1064020592"/>
 						<bytes key="NSScrollAmts">QSAAAEEgAABCmAAAQpgAAA</bytes>
 					</object>
 				</array>
@@ -257,7 +257,7 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">dataSource</string>
 						<reference key="source" ref="420029149"/>
-						<reference key="destination" ref="838328571"/>
+						<reference key="destination" ref="896860218"/>
 					</object>
 					<int key="connectionID">127</int>
 				</object>
@@ -265,7 +265,7 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">delegate</string>
 						<reference key="source" ref="420029149"/>
-						<reference key="destination" ref="838328571"/>
+						<reference key="destination" ref="896860218"/>
 					</object>
 					<int key="connectionID">128</int>
 				</object>
@@ -353,7 +353,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">126</int>
-						<reference key="object" ref="838328571"/>
+						<reference key="object" ref="896860218"/>
 						<reference key="parent" ref="0"/>
 					</object>
 				</array>
@@ -370,7 +370,6 @@
 				<string key="83.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="84.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="85.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<boolean value="YES" key="85.isInViewBasedMode"/>
 				<string key="87.CustomClassName">CKRecipeCell</string>
 				<string key="87.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 			</dictionary>
