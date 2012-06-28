@@ -1,4 +1,6 @@
 macx
 ====
 
-Cookie
+Cookie Project
+
+- Don't forget to use CK prefix for class files
