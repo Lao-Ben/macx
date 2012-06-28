@@ -1,0 +1,295 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0D2DA770159CECFA009C4A46 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D2DA76F159CECFA009C4A46 /* Cocoa.framework */; };
+		0D2DA77A159CECFB009C4A46 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D2DA778159CECFB009C4A46 /* InfoPlist.strings */; };
+		0D2DA77C159CECFB009C4A46 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2DA77B159CECFB009C4A46 /* main.m */; };
+		0D2DA780159CECFB009C4A46 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 0D2DA77E159CECFB009C4A46 /* Credits.rtf */; };
+		0D2DA783159CECFB009C4A46 /* CKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2DA782159CECFB009C4A46 /* CKAppDelegate.m */; };
+		0D2DA786159CECFB009C4A46 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D2DA784159CECFB009C4A46 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0D2DA76B159CECFA009C4A46 /* Cookie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cookie.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D2DA76F159CECFA009C4A46 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		0D2DA772159CECFA009C4A46 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		0D2DA773159CECFA009C4A46 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		0D2DA774159CECFA009C4A46 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0D2DA777159CECFB009C4A46 /* Cookie-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Cookie-Info.plist"; sourceTree = "<group>"; };
+		0D2DA779159CECFB009C4A46 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0D2DA77B159CECFB009C4A46 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0D2DA77D159CECFB009C4A46 /* Cookie-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cookie-Prefix.pch"; sourceTree = "<group>"; };
+		0D2DA77F159CECFB009C4A46 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		0D2DA781159CECFB009C4A46 /* CKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKAppDelegate.h; sourceTree = "<group>"; };
+		0D2DA782159CECFB009C4A46 /* CKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CKAppDelegate.m; sourceTree = "<group>"; };
+		0D2DA785159CECFB009C4A46 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0D2DA768159CECFA009C4A46 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D2DA770159CECFA009C4A46 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0D2DA760159CECFA009C4A46 = {
+			isa = PBXGroup;
+			children = (
+				0D2DA775159CECFA009C4A46 /* Cookie */,
+				0D2DA76E159CECFA009C4A46 /* Frameworks */,
+				0D2DA76C159CECFA009C4A46 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0D2DA76C159CECFA009C4A46 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0D2DA76B159CECFA009C4A46 /* Cookie.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0D2DA76E159CECFA009C4A46 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D2DA76F159CECFA009C4A46 /* Cocoa.framework */,
+				0D2DA771159CECFA009C4A46 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0D2DA771159CECFA009C4A46 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D2DA772159CECFA009C4A46 /* AppKit.framework */,
+				0D2DA773159CECFA009C4A46 /* CoreData.framework */,
+				0D2DA774159CECFA009C4A46 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		0D2DA775159CECFA009C4A46 /* Cookie */ = {
+			isa = PBXGroup;
+			children = (
+				0D2DA781159CECFB009C4A46 /* CKAppDelegate.h */,
+				0D2DA782159CECFB009C4A46 /* CKAppDelegate.m */,
+				0D2DA784159CECFB009C4A46 /* MainMenu.xib */,
+				0D2DA776159CECFB009C4A46 /* Supporting Files */,
+			);
+			path = Cookie;
+			sourceTree = "<group>";
+		};
+		0D2DA776159CECFB009C4A46 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0D2DA777159CECFB009C4A46 /* Cookie-Info.plist */,
+				0D2DA778159CECFB009C4A46 /* InfoPlist.strings */,
+				0D2DA77B159CECFB009C4A46 /* main.m */,
+				0D2DA77D159CECFB009C4A46 /* Cookie-Prefix.pch */,
+				0D2DA77E159CECFB009C4A46 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0D2DA76A159CECFA009C4A46 /* Cookie */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D2DA789159CECFB009C4A46 /* Build configuration list for PBXNativeTarget "Cookie" */;
+			buildPhases = (
+				0D2DA767159CECFA009C4A46 /* Sources */,
+				0D2DA768159CECFA009C4A46 /* Frameworks */,
+				0D2DA769159CECFA009C4A46 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Cookie;
+			productName = Cookie;
+			productReference = 0D2DA76B159CECFA009C4A46 /* Cookie.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0D2DA762159CECFA009C4A46 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CK;
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = 3IE;
+			};
+			buildConfigurationList = 0D2DA765159CECFA009C4A46 /* Build configuration list for PBXProject "Cookie" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0D2DA760159CECFA009C4A46;
+			productRefGroup = 0D2DA76C159CECFA009C4A46 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0D2DA76A159CECFA009C4A46 /* Cookie */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0D2DA769159CECFA009C4A46 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D2DA77A159CECFB009C4A46 /* InfoPlist.strings in Resources */,
+				0D2DA780159CECFB009C4A46 /* Credits.rtf in Resources */,
+				0D2DA786159CECFB009C4A46 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0D2DA767159CECFA009C4A46 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D2DA77C159CECFB009C4A46 /* main.m in Sources */,
+				0D2DA783159CECFB009C4A46 /* CKAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0D2DA778159CECFB009C4A46 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D2DA779159CECFB009C4A46 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0D2DA77E159CECFB009C4A46 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D2DA77F159CECFB009C4A46 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		0D2DA784159CECFB009C4A46 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D2DA785159CECFB009C4A46 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0D2DA787159CECFB009C4A46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		0D2DA788159CECFB009C4A46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		0D2DA78A159CECFB009C4A46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Cookie/Cookie-Prefix.pch";
+				INFOPLIST_FILE = "Cookie/Cookie-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0D2DA78B159CECFB009C4A46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Cookie/Cookie-Prefix.pch";
+				INFOPLIST_FILE = "Cookie/Cookie-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0D2DA765159CECFA009C4A46 /* Build configuration list for PBXProject "Cookie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D2DA787159CECFB009C4A46 /* Debug */,
+				0D2DA788159CECFB009C4A46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0D2DA789159CECFB009C4A46 /* Build configuration list for PBXNativeTarget "Cookie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D2DA78A159CECFB009C4A46 /* Debug */,
+				0D2DA78B159CECFB009C4A46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0D2DA762159CECFA009C4A46 /* Project object */;
+}
