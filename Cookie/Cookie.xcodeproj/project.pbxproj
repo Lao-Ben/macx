@@ -14,6 +14,8 @@
 		0D2DA783159CECFB009C4A46 /* CKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2DA782159CECFB009C4A46 /* CKAppDelegate.m */; };
 		0D2DA786159CECFB009C4A46 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D2DA784159CECFB009C4A46 /* MainMenu.xib */; };
 		0D2FCAD2159CFC0200215551 /* CKRecipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2FCAD1159CFC0200215551 /* CKRecipe.m */; };
+		0D2FCAD5159D039100215551 /* CKRecipesSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2FCAD4159D039100215551 /* CKRecipesSerializer.m */; };
+		0D2FCAD8159D1AF800215551 /* CKRecipes.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2FCAD7159D1AF800215551 /* CKRecipes.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,10 @@
 		0D2DA785159CECFB009C4A46 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		0D2FCAD0159CFC0200215551 /* CKRecipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKRecipe.h; sourceTree = "<group>"; };
 		0D2FCAD1159CFC0200215551 /* CKRecipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKRecipe.m; sourceTree = "<group>"; };
+		0D2FCAD3159D039100215551 /* CKRecipesSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKRecipesSerializer.h; sourceTree = "<group>"; };
+		0D2FCAD4159D039100215551 /* CKRecipesSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKRecipesSerializer.m; sourceTree = "<group>"; };
+		0D2FCAD6159D1AF800215551 /* CKRecipes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKRecipes.h; sourceTree = "<group>"; };
+		0D2FCAD7159D1AF800215551 /* CKRecipes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKRecipes.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +116,8 @@
 		0D2FCAC9159CFACC00215551 /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				0D2FCAD3159D039100215551 /* CKRecipesSerializer.h */,
+				0D2FCAD4159D039100215551 /* CKRecipesSerializer.m */,
 			);
 			name = Database;
 			sourceTree = "<group>";
@@ -119,6 +127,8 @@
 			children = (
 				0D2FCAD0159CFC0200215551 /* CKRecipe.h */,
 				0D2FCAD1159CFC0200215551 /* CKRecipe.m */,
+				0D2FCAD6159D1AF800215551 /* CKRecipes.h */,
+				0D2FCAD7159D1AF800215551 /* CKRecipes.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -191,6 +201,8 @@
 				0D2DA77C159CECFB009C4A46 /* main.m in Sources */,
 				0D2DA783159CECFB009C4A46 /* CKAppDelegate.m in Sources */,
 				0D2FCAD2159CFC0200215551 /* CKRecipe.m in Sources */,
+				0D2FCAD5159D039100215551 /* CKRecipesSerializer.m in Sources */,
+				0D2FCAD8159D1AF800215551 /* CKRecipes.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
