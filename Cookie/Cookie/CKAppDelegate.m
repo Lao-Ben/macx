@@ -19,15 +19,17 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-  /*  
+   
     NSNumber *rating = [NSNumber numberWithInt:4];
     NSData *data = [[NSData alloc] init];
     CKRecipes *recipes = [[CKRecipes alloc] init];
-    CKRecipe *recipe = [[CKRecipe alloc] initWithName:@"" andCategory:rating andPictureID:@"" andRating:rating andSummary:data andIngredients:[NSArray arrayWithObject:@""]];
-    [recipes addObject:recipe];
+    CKRecipe *recipe = [[CKRecipe alloc] initWithName:@"Yop" andCategory:rating andPictureID:@"1243" andRating:rating andSummary:data andIngredients:[NSArray arrayWithObject:@"Pomme"]];
+    [recipes add:recipe];
     
-    [CKRecipesSerializer serialize:[recipes toDictionnary]];
     
+    NSDictionary* dict = [recipes toDictionnary];
+//    [CKRecipesSerializer serialize:dict];
+  /*  
     NSDictionary *dict = [CKRecipesSerializer deserialize];
     NSLog(@"count: %lu", dict.count);
    */

@@ -9,8 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "CKRecipe.h"
 
-@interface CKRecipes : NSMutableArray
+@interface CKRecipes : NSObject {
+    NSMutableArray *recipeArray;
+}
 
+- (id)init;
+- (void)add:(CKRecipe*)recipe;
 - (NSDictionary*) toDictionnary;
 
 @end
