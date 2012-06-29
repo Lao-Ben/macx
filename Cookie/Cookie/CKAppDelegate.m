@@ -23,12 +23,13 @@
     NSNumber *rating = [NSNumber numberWithInt:4];
     NSData *data = [[NSData alloc] init];
     CKRecipes *recipes = [[CKRecipes alloc] init];
-    CKRecipe *recipe = [[CKRecipe alloc] initWithName:@"Yop" andCategory:rating andPictureID:@"1243" andRating:rating andSummary:data andIngredients:[NSArray arrayWithObject:@"Pomme"]];
+    CKRecipe *recipe = [[CKRecipe alloc] initWithUniqueID:@"124332" andName:@"Yop" andCategory:rating andPictureID:@"1243" andRating:rating andSummary:data andIngredients:[NSArray arrayWithObject:@"Pomme"]];
     [recipes add:recipe];
     
     
     NSDictionary* dict = [recipes toDictionnary];
-//    [CKRecipesSerializer serialize:dict];
+    [CKRecipesSerializer serialize:dict];
+    NSLog(@"SERIALIZED");
   /*  
     NSDictionary *dict = [CKRecipesSerializer deserialize];
     NSLog(@"count: %lu", dict.count);

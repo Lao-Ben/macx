@@ -12,8 +12,9 @@
 
 @synthesize uniqueID, name, category, pictureID, rating, summary, ingredients;
 
-- (id) initWithName:(NSString*)newName andCategory:(NSNumber*)newCategory andPictureID:(NSString*)newPictureID andRating:(NSNumber*)newRating andSummary:(NSData*)newSummary andIngredients:(NSArray*)newIngredients {
+- (id) initWithUniqueID:(NSString*)newUniqueID andName:(NSString*)newName andCategory:(NSNumber*)newCategory andPictureID:(NSString*)newPictureID andRating:(NSNumber*)newRating andSummary:(NSData*)newSummary andIngredients:(NSArray*)newIngredients {
 	self = [super init];
+    uniqueID = newUniqueID;
     name = newName;
     category = newCategory;
     pictureID = newPictureID;
