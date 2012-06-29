@@ -20,6 +20,7 @@
     // check is plistData exists
     if(plistData) {
         // write plistData to our Data.plist file
+        NSLog(@"path: %@", [self getPListPath]);
         [plistData writeToFile:[self getPListPath] atomically:YES];
     } else {
         NSLog(@"Error in serialization: %@", error);
