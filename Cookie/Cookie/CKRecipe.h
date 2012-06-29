@@ -26,4 +26,6 @@
 @property (nonatomic, retain) NSData *summary;
 @property (nonatomic, retain) NSArray *ingredients;
 
+- (id) initWithName:(NSString*)newName andCategory:(NSNumber*)newCategory andPictureID:(NSString*)newPictureID andRating:(NSNumber*)newRating andSummary:(NSData*)newSummary andIngredients:(NSArray*)newIngredients;
+
 @end

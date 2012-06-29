@@ -19,7 +19,18 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+  /*  
+    NSNumber *rating = [NSNumber numberWithInt:4];
+    NSData *data = [[NSData alloc] init];
+    CKRecipes *recipes = [[CKRecipes alloc] init];
+    CKRecipe *recipe = [[CKRecipe alloc] initWithName:@"" andCategory:rating andPictureID:@"" andRating:rating andSummary:data andIngredients:[NSArray arrayWithObject:@""]];
+    [recipes addObject:recipe];
+    
+    [CKRecipesSerializer serialize:[recipes toDictionnary]];
+    
+    NSDictionary *dict = [CKRecipesSerializer deserialize];
+    NSLog(@"count: %lu", dict.count);
+   */
 }
 
 @end

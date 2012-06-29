@@ -7,6 +7,8 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "CKRecipes.h"
+#import "CKRecipesSerializer.h"
 
 @interface CKAppDelegate : NSObject <NSApplicationDelegate>
 

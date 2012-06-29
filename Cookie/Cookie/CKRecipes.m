@@ -14,7 +14,7 @@
     NSMutableArray *recipesArray = [[NSMutableArray alloc] init];
     
     for (CKRecipe *recipe in self) {
-        NSDictionary *recipeDict = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects: recipe.uniqueID, recipe.name, recipe.category, recipe.pictureID, recipe.rating, recipe.summary, recipe.ingredients nil] forKeys: [NSArray arrayWithObjects: @"UniqueID", @"Name", @"Category", @"PictureID", @"Rating", @"Summary", @"Ingredients"]]; 
+        NSDictionary *recipeDict = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects: recipe.uniqueID, recipe.name, recipe.category, recipe.pictureID, recipe.rating, recipe.summary, recipe.ingredients, nil] forKeys: [NSArray arrayWithObjects: @"UniqueID", @"Name", @"Category", @"PictureID", @"Rating", @"Summary", @"Ingredients", nil]]; 
         [recipesArray addObject:recipeDict];
     }
     
