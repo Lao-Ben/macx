@@ -56,7 +56,7 @@
     // get the Application Support path
     NSString *appSupportPath = [paths objectAtIndex:0];
     // get the path to the recipes data file
-    return [[appSupportPath stringByAppendingPathComponent:@"Recipes.plist"] autorelease];
+    return [appSupportPath stringByAppendingPathComponent:@"Recipes.plist"];
 }
 
 @end
