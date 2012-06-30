@@ -16,6 +16,16 @@
 		0D2FCAD2159CFC0200215551 /* CKRecipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2FCAD1159CFC0200215551 /* CKRecipe.m */; };
 		0D2FCAD5159D039100215551 /* CKRecipesSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2FCAD4159D039100215551 /* CKRecipesSerializer.m */; };
 		0D2FCAD8159D1AF800215551 /* CKRecipes.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2FCAD7159D1AF800215551 /* CKRecipes.m */; };
+		0D8E36AE159FA05500E541EE /* CKRecipesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8E36AC159FA05500E541EE /* CKRecipesViewController.m */; };
+		0D8E36AF159FA05500E541EE /* CKRecipesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D8E36AD159FA05500E541EE /* CKRecipesView.xib */; };
+		0D8E36B5159FA94300E541EE /* CKRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8E36B3159FA94300E541EE /* CKRecipeViewController.m */; };
+		0D8E36B6159FA94300E541EE /* CKRecipeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D8E36B4159FA94300E541EE /* CKRecipeView.xib */; };
+		0D8E36BA159FA9B000E541EE /* CKMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8E36B8159FA9B000E541EE /* CKMainViewController.m */; };
+		0D8E36BB159FA9B000E541EE /* CKMainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D8E36B9159FA9B000E541EE /* CKMainView.xib */; };
+		0D8E36C3159FBBDD00E541EE /* house.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D8E36C1159FBBDD00E541EE /* house.png */; };
+		0D8E36C4159FBBDD00E541EE /* shoebox.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D8E36C2159FBBDD00E541EE /* shoebox.png */; };
+		0D8E36C8159FBE2300E541EE /* CKRecipeEditionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8E36C6159FBE2300E541EE /* CKRecipeEditionViewController.m */; };
+		0D8E36C9159FBE2300E541EE /* CKRecipeEditionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D8E36C7159FBE2300E541EE /* CKRecipeEditionView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +48,20 @@
 		0D2FCAD4159D039100215551 /* CKRecipesSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKRecipesSerializer.m; sourceTree = "<group>"; };
 		0D2FCAD6159D1AF800215551 /* CKRecipes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKRecipes.h; sourceTree = "<group>"; };
 		0D2FCAD7159D1AF800215551 /* CKRecipes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKRecipes.m; sourceTree = "<group>"; };
+		0D8E36AB159FA05500E541EE /* CKRecipesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKRecipesViewController.h; sourceTree = "<group>"; };
+		0D8E36AC159FA05500E541EE /* CKRecipesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKRecipesViewController.m; sourceTree = "<group>"; };
+		0D8E36AD159FA05500E541EE /* CKRecipesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CKRecipesView.xib; sourceTree = "<group>"; };
+		0D8E36B2159FA94300E541EE /* CKRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKRecipeViewController.h; sourceTree = "<group>"; };
+		0D8E36B3159FA94300E541EE /* CKRecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKRecipeViewController.m; sourceTree = "<group>"; };
+		0D8E36B4159FA94300E541EE /* CKRecipeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CKRecipeView.xib; sourceTree = "<group>"; };
+		0D8E36B7159FA9B000E541EE /* CKMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKMainViewController.h; sourceTree = "<group>"; };
+		0D8E36B8159FA9B000E541EE /* CKMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKMainViewController.m; sourceTree = "<group>"; };
+		0D8E36B9159FA9B000E541EE /* CKMainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CKMainView.xib; sourceTree = "<group>"; };
+		0D8E36C1159FBBDD00E541EE /* house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house.png; sourceTree = "<group>"; };
+		0D8E36C2159FBBDD00E541EE /* shoebox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shoebox.png; sourceTree = "<group>"; };
+		0D8E36C5159FBE2300E541EE /* CKRecipeEditionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKRecipeEditionViewController.h; sourceTree = "<group>"; };
+		0D8E36C6159FBE2300E541EE /* CKRecipeEditionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKRecipeEditionViewController.m; sourceTree = "<group>"; };
+		0D8E36C7159FBE2300E541EE /* CKRecipeEditionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CKRecipeEditionView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,11 +115,13 @@
 		0D2DA775159CECFA009C4A46 /* Cookie */ = {
 			isa = PBXGroup;
 			children = (
+				0D8E36C0159FB8AC00E541EE /* Resources */,
+				0D8E36B1159FA90F00E541EE /* Controllers */,
+				0D8E36B0159FA06300E541EE /* Views */,
 				0D2FCACB159CFB2F00215551 /* Models */,
 				0D2FCAC9159CFACC00215551 /* Database */,
 				0D2DA781159CECFB009C4A46 /* CKAppDelegate.h */,
 				0D2DA782159CECFB009C4A46 /* CKAppDelegate.m */,
-				0D2DA784159CECFB009C4A46 /* MainMenu.xib */,
 				0D2DA776159CECFB009C4A46 /* Supporting Files */,
 			);
 			path = Cookie;
@@ -131,6 +157,42 @@
 				0D2FCAD7159D1AF800215551 /* CKRecipes.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		0D8E36B0159FA06300E541EE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0D8E36C7159FBE2300E541EE /* CKRecipeEditionView.xib */,
+				0D8E36B9159FA9B000E541EE /* CKMainView.xib */,
+				0D8E36B4159FA94300E541EE /* CKRecipeView.xib */,
+				0D8E36AD159FA05500E541EE /* CKRecipesView.xib */,
+				0D2DA784159CECFB009C4A46 /* MainMenu.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		0D8E36B1159FA90F00E541EE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0D8E36AB159FA05500E541EE /* CKRecipesViewController.h */,
+				0D8E36AC159FA05500E541EE /* CKRecipesViewController.m */,
+				0D8E36B2159FA94300E541EE /* CKRecipeViewController.h */,
+				0D8E36B3159FA94300E541EE /* CKRecipeViewController.m */,
+				0D8E36B7159FA9B000E541EE /* CKMainViewController.h */,
+				0D8E36B8159FA9B000E541EE /* CKMainViewController.m */,
+				0D8E36C5159FBE2300E541EE /* CKRecipeEditionViewController.h */,
+				0D8E36C6159FBE2300E541EE /* CKRecipeEditionViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		0D8E36C0159FB8AC00E541EE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0D8E36C1159FBBDD00E541EE /* house.png */,
+				0D8E36C2159FBBDD00E541EE /* shoebox.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,6 +250,12 @@
 				0D2DA77A159CECFB009C4A46 /* InfoPlist.strings in Resources */,
 				0D2DA780159CECFB009C4A46 /* Credits.rtf in Resources */,
 				0D2DA786159CECFB009C4A46 /* MainMenu.xib in Resources */,
+				0D8E36AF159FA05500E541EE /* CKRecipesView.xib in Resources */,
+				0D8E36B6159FA94300E541EE /* CKRecipeView.xib in Resources */,
+				0D8E36BB159FA9B000E541EE /* CKMainView.xib in Resources */,
+				0D8E36C3159FBBDD00E541EE /* house.png in Resources */,
+				0D8E36C4159FBBDD00E541EE /* shoebox.png in Resources */,
+				0D8E36C9159FBE2300E541EE /* CKRecipeEditionView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +271,10 @@
 				0D2FCAD2159CFC0200215551 /* CKRecipe.m in Sources */,
 				0D2FCAD5159D039100215551 /* CKRecipesSerializer.m in Sources */,
 				0D2FCAD8159D1AF800215551 /* CKRecipes.m in Sources */,
+				0D8E36AE159FA05500E541EE /* CKRecipesViewController.m in Sources */,
+				0D8E36B5159FA94300E541EE /* CKRecipeViewController.m in Sources */,
+				0D8E36BA159FA9B000E541EE /* CKMainViewController.m in Sources */,
+				0D8E36C8159FBE2300E541EE /* CKRecipeEditionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

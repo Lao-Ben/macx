@@ -30,6 +30,12 @@
     NSDictionary* dict = [recipes toDictionnary];
     [CKRecipesSerializer serialize:dict];
     NSLog(@"SERIALIZED");
+    
+    CKRecipesViewController *recipesViewController = [[CKRecipesViewController alloc] init];
+    
+    [_window setContentView:[recipesViewController view]];
+    
+    
   /*  
     NSDictionary *dict = [CKRecipesSerializer deserialize];
     NSLog(@"count: %lu", dict.count);
