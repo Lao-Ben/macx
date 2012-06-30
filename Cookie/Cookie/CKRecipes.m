@@ -30,7 +30,7 @@
 
 - (NSDictionary*)toDictionnary
 {
-    /*NSMutableArray *tempArray = [[NSMutableArray alloc] init];
+    NSMutableArray *tempArray = [[NSMutableArray alloc] init];
     
     for (CKRecipe *recipe in recipeArray) {
         NSLog(@"recipe: %@",recipe.name);
@@ -44,7 +44,7 @@
         [tempArray addObject:recipeDict];
     }
     return [[NSDictionary dictionaryWithObjects: [NSArray arrayWithObjects: tempArray, nil] forKeys:[NSArray arrayWithObjects: @"Recipes", nil]] autorelease];
-    [tempArray release];*/
+    [tempArray release];
 }
 
 @end

@@ -20,7 +20,7 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
    
-    /*NSNumber *rating = [NSNumber numberWithInt:4];
+    NSNumber *rating = [NSNumber numberWithInt:4];
     NSData *data = [[NSData alloc] init];
     CKRecipes *recipes = [[CKRecipes alloc] init];
     CKRecipe *recipe = [[CKRecipe alloc] initWithUniqueID:@"124332" andName:@"Yop" andCategory:rating andPictureID:@"1243" andRating:rating andSummary:data andIngredients:[NSArray arrayWithObject:@"Pomme"]];
@@ -29,7 +29,7 @@
     
     NSDictionary* dict = [recipes toDictionnary];
     [CKRecipesSerializer serialize:dict];
-    NSLog(@"SERIALIZED");*/
+    NSLog(@"SERIALIZED");
   /*  
     NSDictionary *dict = [CKRecipesSerializer deserialize];
     NSLog(@"count: %lu", dict.count);
