@@ -57,4 +57,10 @@
     [self showWindow:self];
 
 }
+
+- (IBAction)pushRecipeEditionView:(id)sender {
+    CKRecipeEditionViewController *recipeEditionViewController = [[CKRecipeEditionViewController alloc] initWithNibName:@"CKRecipeEditionView" bundle:nil];    
+    [self.window setContentView:[recipeEditionViewController view]];
+    [self showWindow:self];
+}
 @end

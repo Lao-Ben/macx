@@ -16,5 +16,6 @@
 @property (assign) IBOutlet NSTextView *summaryField;
 @property (assign) IBOutlet NSTableView *ingredientsTable;
 @property (assign) IBOutlet NSImageView *imageView;
+- (IBAction)choosePictureDialog:(id)sender;
 
 @end
