@@ -31,7 +31,7 @@
     [CKRecipesSerializer serialize:dict];
     NSLog(@"SERIALIZED");
     
-    CKRecipesViewController *recipesViewController = [[CKRecipesViewController alloc] init];
+    CKRecipeEditionViewController *recipesViewController = [[CKRecipeEditionViewController alloc] init];
     
     [_window setContentView:[recipesViewController view]];
     
