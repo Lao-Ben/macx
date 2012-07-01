@@ -28,6 +28,7 @@
 		0D8E36C9159FBE2300E541EE /* CKRecipeEditionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D8E36C7159FBE2300E541EE /* CKRecipeEditionView.xib */; };
 		0D8E36CB159FC41900E541EE /* food.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D8E36CA159FC41900E541EE /* food.png */; };
 		0D8E36CE159FC94700E541EE /* CKRecipeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8E36CD159FC94700E541EE /* CKRecipeCell.m */; };
+		0D8E36D515A060EF00E541EE /* CKWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8E36D415A060EF00E541EE /* CKWindowController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,8 @@
 		0D8E36CA159FC41900E541EE /* food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = food.png; sourceTree = "<group>"; };
 		0D8E36CC159FC94700E541EE /* CKRecipeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKRecipeCell.h; sourceTree = "<group>"; };
 		0D8E36CD159FC94700E541EE /* CKRecipeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKRecipeCell.m; sourceTree = "<group>"; };
+		0D8E36D315A060EF00E541EE /* CKWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKWindowController.h; sourceTree = "<group>"; };
+		0D8E36D415A060EF00E541EE /* CKWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKWindowController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +192,8 @@
 				0D8E36B8159FA9B000E541EE /* CKMainViewController.m */,
 				0D8E36C5159FBE2300E541EE /* CKRecipeEditionViewController.h */,
 				0D8E36C6159FBE2300E541EE /* CKRecipeEditionViewController.m */,
+				0D8E36D315A060EF00E541EE /* CKWindowController.h */,
+				0D8E36D415A060EF00E541EE /* CKWindowController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -285,6 +290,7 @@
 				0D8E36BA159FA9B000E541EE /* CKMainViewController.m in Sources */,
 				0D8E36C8159FBE2300E541EE /* CKRecipeEditionViewController.m in Sources */,
 				0D8E36CE159FC94700E541EE /* CKRecipeCell.m in Sources */,
+				0D8E36D515A060EF00E541EE /* CKWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,4 +24,7 @@
     return self;
 }
 
+@synthesize nameField, categoryField, ratingIndicator, summaryField, ingredientsTable, imageView;
+
+
 @end

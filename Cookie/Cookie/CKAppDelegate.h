@@ -7,12 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "CKRecipes.h"
-#import "CKRecipesSerializer.h"
-#import "CKRecipeEditionViewController.h"
 
 @interface CKAppDelegate : NSObject <NSApplicationDelegate>
-
-@property (assign) IBOutlet NSWindow *window;
 
 @end

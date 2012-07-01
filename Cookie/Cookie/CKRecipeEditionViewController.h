@@ -8,6 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface CKRecipeEditionViewController : NSViewController
+@interface CKRecipeEditionViewController : NSViewController 
+
+@property (assign) IBOutlet NSTextField *nameField;
+@property (assign) IBOutlet NSTextField *categoryField;
+@property (assign) IBOutlet NSLevelIndicator *ratingIndicator;
+@property (assign) IBOutlet NSTextView *summaryField;
+@property (assign) IBOutlet NSTableView *ingredientsTable;
+@property (assign) IBOutlet NSImageView *imageView;
 
 @end
