@@ -32,13 +32,26 @@
     [CKRecipesSerializer serialize:dict];
     NSLog(@"SERIALIZED");
     
-    CKRecipeEditionViewController *recipesViewController = [[CKRecipeEditionViewController alloc] init];
+    CKMainViewController *mainViewController = [[CKMainViewController alloc] initWithNibName:@"CKMainView" bundle:nil];
     
-    [self.window setContentView:[recipesViewController view]];
-    
+    [self.window setContentView:[mainViewController view]];
+    [self showWindow:self];
     /*  
      NSDictionary *dict = [CKRecipesSerializer deserialize];
      NSLog(@"count: %lu", dict.count);
      */
+}
+- (IBAction)pushMainView:(id)sender {
+    CKMainViewController *mainViewController = [[CKMainViewController alloc] initWithNibName:@"CKMainView" bundle:nil];    
+    [self.window setContentView:[mainViewController view]];
+    [self showWindow:self];
+
+}
+
+- (IBAction)pushRecipesView:(id)sender {
+    CKRecipesViewController *recipesViewController = [[CKRecipesViewController alloc] initWithNibName:@"CKRecipesView" bundle:nil];    
+    [self.window setContentView:[recipesViewController view]];
+    [self showWindow:self];
+
 }
 @end

@@ -9,8 +9,11 @@
 #import <Cocoa/Cocoa.h>
 #import "CKRecipes.h"
 #import "CKRecipesSerializer.h"
-#import "CKRecipeEditionViewController.h"
+#import "CKMainViewController.h"
+#import "CKRecipesViewController.h"
 
 @interface CKWindowController : NSWindowController
+- (IBAction)pushMainView:(id)sender;
+- (IBAction)pushRecipesView:(id)sender;
 
 @end
