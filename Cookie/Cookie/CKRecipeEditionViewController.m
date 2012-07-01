@@ -8,11 +8,13 @@
 
 #import "CKRecipeEditionViewController.h"
 
+
 @interface CKRecipeEditionViewController ()
 
 @end
 
 @implementation CKRecipeEditionViewController
+@synthesize addButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -22,6 +24,25 @@
     }
     
     return self;
+}
+
+- (void) awakeFromNib
+{
+    NSNotificationCenter *notif = [NSNotificationCenter defaultCenter];
+    [notif addObserver:self selector:@selector(textDidChange:) 
+                  name:NSControlTextDidChangeNotification
+                object:nameField];
+}
+
+- (void) textDidChange:(NSNotification *)notification
+{
+    if (nameField.stringValue.length > 0)
+    {
+        [addButton setEnabled:YES];
+    }
+    else {
+        [addButton setEnabled:NO];
+    }
 }
 
 @synthesize nameField, categoryField, ratingIndicator, summaryField, ingredientsTable, imageView;
@@ -67,6 +88,11 @@
     NSString *appSupportPath = [paths objectAtIndex:0];
     NSString *appName = [[NSRunningApplication currentApplication] localizedName];
     return [[appSupportPath stringByAppendingPathComponent:appName]stringByAppendingPathComponent:@"Miniatures"];
+}
+
+- (IBAction)addIngredient:(id)sender {
+    CKRecipeDialogWindowController *dialog = [[CKRecipeDialogWindowController alloc] initWithWindowNibName:@"CKRecipeDialog" owner: self];
+    [dialog showWindow:dialog];
 }
 
 + (NSString*)getPicturesPath {
