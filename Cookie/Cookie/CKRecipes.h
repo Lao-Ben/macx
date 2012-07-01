@@ -14,6 +14,7 @@
 }
 
 - (id)init;
+- (id)initWithDictionnary:(NSDictionary*)recipes;
 - (void)add:(CKRecipe*)recipe;
 - (NSDictionary*) toDictionnary;
 
