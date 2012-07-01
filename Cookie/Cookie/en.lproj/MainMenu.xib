@@ -261,7 +261,7 @@
 			<object class="NSWindowTemplate" id="972006081">
 				<int key="NSWindowStyleMask">15</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{405, 227}, {512, 358}}</string>
+				<string key="NSWindowRect">{{405, 227}, {600, 500}}</string>
 				<int key="NSWTFlags">1954021376</int>
 				<string key="NSWindowTitle">Cookie</string>
 				<string key="NSWindowClass">NSWindow</string>
@@ -311,7 +311,6 @@
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{0, 14}, {96, 22}}</string>
 								<reference key="NSSuperview"/>
-								<reference key="NSWindow"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSSearchFieldCell" key="NSCell" id="614770364">
@@ -547,16 +546,16 @@
 					<array key="NSToolbarIBSelectableItems" id="0"/>
 				</object>
 				<nil key="NSUserInterfaceItemIdentifier"/>
-				<string key="NSWindowContentMinSize">{512, 358}</string>
+				<string key="NSWindowContentMinSize">{600, 500}</string>
 				<object class="NSView" key="NSWindowView" id="439893737">
 					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
-					<string key="NSFrameSize">{512, 358}</string>
+					<string key="NSFrameSize">{600, 500}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {2560, 1418}}</string>
-				<string key="NSMinSize">{512, 436}</string>
+				<string key="NSMinSize">{600, 578}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
@@ -566,7 +565,7 @@
 			<object class="NSCustomObject" id="755631768">
 				<string key="NSClassName">NSFontManager</string>
 			</object>
-			<object class="NSCustomObject" id="760552357">
+			<object class="NSCustomObject" id="360625591">
 				<string key="NSClassName">CKWindowController</string>
 			</object>
 		</array>
@@ -663,7 +662,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">window</string>
-						<reference key="source" ref="760552357"/>
+						<reference key="source" ref="360625591"/>
 						<reference key="destination" ref="972006081"/>
 					</object>
 					<int key="connectionID">1186</int>
@@ -671,7 +670,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
 						<string key="label">pushMainView:</string>
-						<reference key="source" ref="760552357"/>
+						<reference key="source" ref="360625591"/>
 						<reference key="destination" ref="1033323653"/>
 					</object>
 					<int key="connectionID">1187</int>
@@ -679,7 +678,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
 						<string key="label">pushRecipesView:</string>
-						<reference key="source" ref="760552357"/>
+						<reference key="source" ref="360625591"/>
 						<reference key="destination" ref="199601049"/>
 					</object>
 					<int key="connectionID">1188</int>
@@ -968,7 +967,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1185</int>
-						<reference key="object" ref="760552357"/>
+						<reference key="object" ref="360625591"/>
 						<reference key="parent" ref="0"/>
 					</object>
 				</array>
