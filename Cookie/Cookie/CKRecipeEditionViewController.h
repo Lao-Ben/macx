@@ -17,5 +17,6 @@
 @property (assign) IBOutlet NSTableView *ingredientsTable;
 @property (assign) IBOutlet NSImageView *imageView;
 - (IBAction)choosePictureDialog:(id)sender;
-
++ (NSString*)getMiniaturePath;
++ (NSString*)getPicturesPath;
 @end

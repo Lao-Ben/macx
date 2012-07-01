@@ -17,6 +17,7 @@
 - (void)windowDidLoad
 {
     [super windowDidLoad];
+    NSLog(@"TARTATATA");
 }
 
 - (void) awakeFromNib {    
@@ -60,4 +61,5 @@
     [self.window setContentView:[recipeEditionViewController view]];
     [self showWindow:self];
 }
+
 @end

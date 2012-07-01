@@ -7,7 +7,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "CKRecipeEditionViewController.h"
 
 @interface CKAppDelegate : NSObject <NSApplicationDelegate>
-
++ (void) checkFoldersExistance;
++ (NSString*) getApplicationPath;
 @end
