@@ -11,6 +11,7 @@
 #import "CKRecipesSerializer.h"
 #import "CKMainViewController.h"
 #import "CKRecipesViewController.h"
+#import "CKRecipeEditionViewController.h"
 
 @interface CKWindowController : NSWindowController
 - (IBAction)pushMainView:(id)sender;
