@@ -37,10 +37,13 @@
     
     [self.window setContentView:[mainViewController view]];
     [self showWindow:self];
-    /*  
-     NSDictionary *dict = [CKRecipesSerializer deserialize];
-     NSLog(@"count: %lu", dict.count);
-     */
+     
+    NSDictionary *dict2 = [CKRecipesSerializer deserialize];
+    
+    CKRecipes *recipes2 = [[CKRecipes alloc] initWithDictionnary:dict2];
+    
+    NSLog(@"count: %lu", dict2.count);
+     
 }
 - (IBAction)pushMainView:(id)sender {
     CKMainViewController *mainViewController = [[CKMainViewController alloc] initWithNibName:@"CKMainView" bundle:nil];    
