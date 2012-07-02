@@ -8,12 +8,14 @@
 
 #import <Cocoa/Cocoa.h>
 
+#import "CKRecipe.h"
+
 @interface CKRecipeCell : NSTextFieldCell {
     NSImage *image;
-    NSLevelIndicator *indicator;
+    NSString *rating;
 }
 
 @property (assign) IBOutlet NSImage *image;
-@property (assign) IBOutlet NSLevelIndicator *indicator;
+@property (assign) IBOutlet NSString *rating;
 
 @end

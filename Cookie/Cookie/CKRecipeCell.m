@@ -10,12 +10,12 @@
 
 @implementation CKRecipeCell
 
-@synthesize image, indicator;
+@synthesize image, rating;
 
 - (id)init {
     self = [super init];
     if (self) {
-        // Initialization code here.
+           
     }
     return self;
 }
@@ -26,12 +26,12 @@
     if (cell == nil) {
         return nil;
     }
-    
-    // Clear the image and subtitle as they won't be retained
+
+    // Clear the image and rating as they won't be retained
     cell->image = nil;
-    cell->indicator = nil;
+    cell->rating = nil;
     [cell setImage:[self image]];
-    [cell setIndicator:[self indicator]];
+    [cell setRating:[self rating]];
     
     return cell;
 }
@@ -58,13 +58,11 @@
         [aTitle drawInRect:titleRect];
     }
     
- //   NSRect indicatorRect = [self indicatorRectForBounds:cellFrame forTitleBounds:titleRect];
-//    NSAttributedString *aSubtitle = [self attributedSubtitleValue];
-    /* 
-    if ([aSubtitle length] > 0) {
-        [aSubtitle drawInRect:indicatorRect];
+    NSRect ratingRect = [self ratingRectForBounds:cellFrame forTitleBounds:titleRect];
+    NSAttributedString *arating = [self attributedRatingValue];
+    if ([arating length] > 0) {
+        [arating drawInRect:ratingRect];
     }
-    */
 }
 
 #define BORDER_SIZE 5
@@ -95,37 +93,49 @@
     } else {
         titleRect.size = NSZeroSize;
     }
-    
+
     CGFloat maxX = NSMaxX(bounds);
     CGFloat maxWidth = maxX - NSMinX(titleRect);
     if (maxWidth < 0) {
         maxWidth = 0;
     }
-    
+
     titleRect.size.width = MIN(NSWidth(titleRect), maxWidth);
     
     return titleRect;
 }
 
-- (NSRect)indicatorRectForBounds:(NSRect)bounds forTitleBounds:(NSRect)titleBounds
+- (NSRect)ratingRectForBounds:(NSRect)bounds forTitleBounds:(NSRect)titleBounds
 {
-    NSRect indicatorRect = bounds;
+    NSRect ratingRect = bounds;
     
-    if (!indicator) {
+    if (!rating) {
         return NSZeroRect;
     }
     
-    indicatorRect.origin.x = NSMinX(titleBounds);
-    indicatorRect.origin.y = NSMaxY(titleBounds) + BORDER_SIZE;
+    ratingRect.origin.x = NSMinX(titleBounds);
+    ratingRect.origin.y = NSMaxY(titleBounds) + BORDER_SIZE;
     
-    CGFloat amountPast = NSMaxX(indicatorRect) - NSMaxX(bounds);
+    CGFloat amountPast = NSMaxX(ratingRect) - NSMaxX(bounds);
     if (amountPast > 0) {
-        indicatorRect.size.width -= amountPast;
+        ratingRect.size.width -= amountPast;
     }
     
-    return indicatorRect;
+    return ratingRect;
 }
 
-
+- (NSAttributedString *)attributedRatingValue
+{
+    NSAttributedString *astr = nil;
+    
+    if (rating) {
+        NSColor *textColour = [self isHighlighted] ? [NSColor lightGrayColor] : [NSColor grayColor];
+        NSDictionary *attrs = [NSDictionary dictionaryWithObjectsAndKeys:textColour,
+                               NSForegroundColorAttributeName, nil];
+        astr = [[[NSAttributedString alloc] initWithString:rating attributes:attrs] autorelease];
+    }
+    
+    return astr;
+}
 
 @end
