@@ -14,8 +14,9 @@
 @end
 
 @implementation CKRecipeEditionViewController
+@synthesize ingredientsTable;
 @synthesize addButton;
-@synthesize nameField, categoryField, ratingIndicator, summaryField, ingredientsTable, imageView;
+@synthesize nameField, categoryField, ratingIndicator, summaryField, imageView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

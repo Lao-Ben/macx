@@ -58,13 +58,13 @@
         [aTitle drawInRect:titleRect];
     }
     
-    NSRect ratingRect = [self ratingRectForBounds:cellFrame forTitleBounds:titleRect];
-    NSAttributedString *arating = [self attributedRatingValue];
-    if ([arating length] > 0) {
-        [arating drawInRect:ratingRect];
-        //NSImage *star = [NSImage imageNamed:@""];
-        
-    }
+//    NSRect ratingRect = [self ratingRectForBounds:cellFrame forTitleBounds:titleRect];
+//    NSAttributedString *arating = [self attributedRatingValue];
+//    if ([arating length] > 0) {
+//        [arating drawInRect:ratingRect];
+//        //NSImage *star = [NSImage imageNamed:@""];
+//        
+//    }
 }
 
 #define BORDER_SIZE 5

@@ -15,9 +15,9 @@
 @property (assign) IBOutlet NSComboBoxCell *categoryField;
 @property (assign) IBOutlet NSLevelIndicator *ratingIndicator;
 @property (assign) IBOutlet NSTextView *summaryField;
-@property (assign) IBOutlet NSTableView *ingredientsTable;
 @property (assign) IBOutlet NSImageView *imageView;
 @property (assign) IBOutlet NSButton *addButton;
+@property (assign) IBOutlet NSTableView *ingredientsTable;
 - (IBAction)choosePictureDialog:(id)sender;
 - (IBAction)addIngredient:(id)sender;
 + (NSString*)getMiniaturePath;

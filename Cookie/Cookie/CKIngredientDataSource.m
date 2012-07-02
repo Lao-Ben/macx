@@ -19,6 +19,14 @@
         NSMutableArray* quantities = [[NSMutableArray alloc] init];
         NSMutableArray* measures = [[NSMutableArray alloc] init];
         self.ingredients = [[NSMutableArray alloc] initWithObjects:measures, quantities, nil ];
+        [[ingredients objectAtIndex:0] addObject:@"q"];
+        [[ingredients objectAtIndex:1] addObject:[NSNumber numberWithInteger:1]];
+        
+        [[ingredients objectAtIndex:0] addObject:@"f"];
+        [[ingredients objectAtIndex:1] addObject:[NSNumber numberWithInteger:2]];
+        
+        [[ingredients objectAtIndex:0] addObject:@"w"];
+        [[ingredients objectAtIndex:1] addObject:[NSNumber numberWithInteger:3]];
     }
     return self;
 }
@@ -27,13 +35,17 @@
     return [[self.ingredients objectAtIndex:0] count];
 }
 
-- (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex
+- (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn
+            row:(NSInteger)rowIndex
 {
-//    NSString* measure = [[ingredients objectAtIndex:0] objectAtIndex:row];
-//    NSString* quantity = [[ingredients objectAtIndex:1] objectAtIndex:row];
-//    [cell setTitle:quantity ofColumn:0];
-//    [cell setTitle:measure ofColumn:1];
-//    return self;
+    NSString *columnIdentifer = [aTableColumn identifier];
+    if ([columnIdentifer isEqualToString:@"measure"]) {
+        return [[ingredients objectAtIndex:0] objectAtIndex:rowIndex];
+    }
+    else
+    {
+        return [[ingredients objectAtIndex:1] objectAtIndex:rowIndex];
+    }
 }
 
 - (void) addIngredientWithMeasure:(NSString*)measure andQuantity:(NSInteger)quantity

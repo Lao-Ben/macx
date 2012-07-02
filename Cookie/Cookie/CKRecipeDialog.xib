@@ -46,7 +46,7 @@
 				<string key="NSWindowRect">{{760, 394}, {372, 103}}</string>
 				<int key="NSWTFlags">544735232</int>
 				<string key="NSWindowTitle">Ajout d'un ingredient</string>
-				<string key="NSWindowClass">NSWindow</string>
+				<string key="NSWindowClass">NSPanel</string>
 				<nil key="NSViewClass"/>
 				<object class="NSView" key="NSWindowView" id="1006">
 					<reference key="NSNextResponder"/>
@@ -211,6 +211,7 @@
 							<string key="NSFrame">{{196, 13}, {162, 32}}</string>
 							<reference key="NSSuperview" ref="1006"/>
 							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="921663184">
 								<int key="NSCellFlags">604110336</int>

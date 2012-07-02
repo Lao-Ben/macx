@@ -38,14 +38,20 @@
     return self;
 }
 
-- (IBAction)didAddIngredient:(id)sender {
-    CKIngredientDataSource *dataSource = ingredients.dataSource;
-    [dataSource addIngredientWithMeasure:measure.stringValue andQuantity:quantity.integerValue];
-}
-
 - (void)windowDidLoad
 {
     [super windowDidLoad];
+}
+
+
+- (IBAction)didAddIngredient:(id)sender {
+    NSLog(@"Added ingredient");
+    CKIngredientDataSource *dataSource = ingredients.dataSource;
+    if (!dataSource)
+    {
+        NSLog(@"Mais prk ce dataSource est Nuull !");
+    }
+    [dataSource addIngredientWithMeasure:measure.stringValue andQuantity:quantity.integerValue];
 }
 
 
