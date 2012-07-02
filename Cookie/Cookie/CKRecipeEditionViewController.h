@@ -7,15 +7,19 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "CKRecipeDialogWindowController.h"
 
 @interface CKRecipeEditionViewController : NSViewController 
 
 @property (assign) IBOutlet NSTextField *nameField;
-@property (assign) IBOutlet NSTextField *categoryField;
+@property (assign) IBOutlet NSComboBoxCell *categoryField;
 @property (assign) IBOutlet NSLevelIndicator *ratingIndicator;
 @property (assign) IBOutlet NSTextView *summaryField;
 @property (assign) IBOutlet NSTableView *ingredientsTable;
 @property (assign) IBOutlet NSImageView *imageView;
+@property (assign) IBOutlet NSButton *addButton;
 - (IBAction)choosePictureDialog:(id)sender;
-
+- (IBAction)addIngredient:(id)sender;
++ (NSString*)getMiniaturePath;
++ (NSString*)getPicturesPath;
 @end

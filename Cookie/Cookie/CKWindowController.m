@@ -52,9 +52,7 @@
 }
 
 - (IBAction)pushRecipesView:(id)sender {
-    CKRecipesViewController *recipesViewController = [[CKRecipesViewController alloc] initWithNibName:@"CKRecipesView" bundle:nil];    
-    [self.window setContentView:[recipesViewController view]];
-    [self showWindow:self];
+
 
 }
 
@@ -63,4 +61,5 @@
     [self.window setContentView:[recipeEditionViewController view]];
     [self showWindow:self];
 }
+
 @end
