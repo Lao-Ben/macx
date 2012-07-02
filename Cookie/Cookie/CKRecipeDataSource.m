@@ -48,11 +48,12 @@
 }
 
 - (void)tableView:(NSTableView *)tableView willDisplayCell:(id)cell forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
-    
+
     CKRecipe *recipe = [self.items objectAtIndex:row];
     CKRecipeCell *recipeCell = (CKRecipeCell *)cell;
-    
+
     [recipeCell setTitle:recipe.name];
+    [recipeCell setRating:recipe.rating.stringValue];
     NSString *imgPath = [CKRecipeEditionViewController getPicturesPath];
     imgPath = [imgPath stringByAppendingString:recipe.pictureID];
     [recipeCell setImage:[[NSImage alloc] initWithContentsOfFile:imgPath]];
