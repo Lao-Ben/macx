@@ -7,7 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "CKWindowController.h"
+
+@protocol searchProto;
 
 @interface CKRecipesViewController : NSViewController
+@property (nonatomic) id<searchProto> delegate;
 
 @end

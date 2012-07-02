@@ -15,6 +15,7 @@
 
 @implementation CKRecipeEditionViewController
 @synthesize addButton;
+@synthesize nameField, categoryField, ratingIndicator, summaryField, ingredientsTable, imageView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -44,8 +45,6 @@
         [addButton setEnabled:NO];
     }
 }
-
-@synthesize nameField, categoryField, ratingIndicator, summaryField, ingredientsTable, imageView;
 
 - (IBAction)choosePictureDialog:(id)sender {
     NSOpenPanel *op = [NSOpenPanel openPanel];
