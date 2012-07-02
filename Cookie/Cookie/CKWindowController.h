@@ -13,8 +13,13 @@
 #import "CKRecipesViewController.h"
 #import "CKRecipeEditionViewController.h"
 
-@interface CKWindowController : NSWindowController
+@protocol searchProto <NSObject>    
+-(void) changeSearchState;
+@end
+
+@interface CKWindowController : NSWindowController <searchProto>
 - (IBAction)pushMainView:(id)sender;
 - (IBAction)pushRecipesView:(id)sender;
+@property (assign) IBOutlet NSSearchField *searchBar;
 
 @end

@@ -13,10 +13,16 @@
 @end
 
 @implementation CKWindowController
+@synthesize searchBar;
 
 - (void)windowDidLoad
-{
+{   
     [super windowDidLoad];
+}
+
+- (void)changeSearchState
+{
+    [searchBar setEnabled:YES];
 }
 
 - (void) awakeFromNib {    
@@ -52,8 +58,9 @@
 }
 
 - (IBAction)pushRecipesView:(id)sender {
-
-
+    CKMainViewController *recipesViewController = [[CKMainViewController alloc] initWithNibName:@"CKRecipes" bundle:nil];    
+    [self.window setContentView:[recipesViewController view]];
+    [self showWindow:self];
 }
 
 - (IBAction)pushRecipeEditionView:(id)sender {

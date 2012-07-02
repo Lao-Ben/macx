@@ -14,6 +14,8 @@
 
 @implementation CKRecipesViewController
 
+@synthesize delegate;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -21,7 +23,7 @@
         NSLog(@"RecipesView loaded");
         
     }
-    
+    [delegate changeSearchState];
     return self;
 }
 
