@@ -7,10 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "CKRecipeEditionViewController.h"
+#import "CKIngredientDataSource.h"
 
 @interface CKRecipeDialogWindowController : NSWindowController
 {
-     NSTableView *ingredientsTable;
+    NSTableView* ingredients;
 }
 @property (assign) IBOutlet NSTextField *measure;
 @property (assign) IBOutlet NSTextField *quantity;
@@ -18,5 +20,5 @@
 - (IBAction)didAddIngredient:(id)sender;
 - (id)initWithWindowNibName:(NSString *)windowNibPath
                       owner:(id)owner
-               andTableView:(NSTableView*)ingredients;
+        andIngredientsTable:(NSTableView*)ingredientsTable;
 @end

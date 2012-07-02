@@ -46,6 +46,19 @@
     }
 }
 
+- (NSImage*) getResizedImage:(NSImage*) image
+{
+    [image setScalesWhenResized:YES];
+    [image setSize:NSMakeSize(120., 120.)];
+    return image;
+}
+
+- (void) setImageToRecipeWithFile:(NSURL *) fileEmplacement
+{
+    NSImage *image = [[NSImage alloc] initWithContentsOfURL:fileEmplacement];
+    [imageView setImage:[self getResizedImage:image]];
+}
+
 - (IBAction)choosePictureDialog:(id)sender {
     NSOpenPanel *op = [NSOpenPanel openPanel];
     [op setTitle:@"Merci de choisir une image pour la recette"];
@@ -57,19 +70,6 @@
         [self setImageToRecipeWithFile:filename];
         NSLog(@"%@",filename);
     }
-}
-
-- (void) setImageToRecipeWithFile:(NSURL *) fileEmplacement
-{
-    NSImage *image = [[NSImage alloc] initWithContentsOfURL:fileEmplacement];
-    [imageView setImage:[self getResizedImage:image]];
-}
-
-- (NSImage*) getResizedImage:(NSImage*) image
-{
-    [image setScalesWhenResized:YES];
-    [image setSize:NSMakeSize(120., 120.)];
-    return image;
 }
 
 - (void) saveOriginalImage:(NSImage*) image
@@ -90,7 +90,7 @@
 }
 
 - (IBAction)addIngredient:(id)sender {
-    CKRecipeDialogWindowController *dialog = [[CKRecipeDialogWindowController alloc] initWithWindowNibName:@"CKRecipeDialog" owner: self andTableView:ingredientsTable];
+    CKRecipeDialogWindowController *dialog = [[CKRecipeDialogWindowController alloc] initWithWindowNibName:@"CKRecipeDialog" owner: self andIngredientsTable:ingredientsTable];
     [dialog showWindow:dialog];
 }
 
@@ -100,7 +100,5 @@
     NSString *appName = [[NSRunningApplication currentApplication] localizedName];
     return [[appSupportPath stringByAppendingPathComponent:appName]stringByAppendingPathComponent:@"Pictures"];
 }
-
-
 
 @end

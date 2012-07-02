@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "CKRecipeDialogWindowController.h"
 
-@interface CKRecipeEditionViewController : NSViewController 
+@interface CKRecipeEditionViewController : NSViewController <NSTableViewDataSource>
 
 @property (assign) IBOutlet NSTextField *nameField;
 @property (assign) IBOutlet NSComboBoxCell *categoryField;

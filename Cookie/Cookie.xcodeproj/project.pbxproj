@@ -30,6 +30,7 @@
 		0D8E36CE159FC94700E541EE /* CKRecipeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8E36CD159FC94700E541EE /* CKRecipeCell.m */; };
 		0D8E36D515A060EF00E541EE /* CKWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8E36D415A060EF00E541EE /* CKWindowController.m */; };
 		24C1A8E315A1AC7E00B3B80B /* CKRecipeDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C1A8E215A1AC7E00B3B80B /* CKRecipeDataSource.m */; };
+		AD98747315A23ADA00336A88 /* CKIngredientDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AD98747215A23ADA00336A88 /* CKIngredientDataSource.m */; };
 		ADCA60F715A083AD009BE6F0 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = ADCA60F515A083AD009BE6F0 /* add.png */; };
 		ADCA60F815A083AD009BE6F0 /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = ADCA60F615A083AD009BE6F0 /* delete.png */; };
 		ADD320C615A0F3A100B7CD8A /* cookie.icns in Resources */ = {isa = PBXBuildFile; fileRef = ADD320C515A0F3A100B7CD8A /* cookie.icns */; };
@@ -78,6 +79,8 @@
 		0D8E36D415A060EF00E541EE /* CKWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKWindowController.m; sourceTree = "<group>"; };
 		24C1A8E115A1AC7E00B3B80B /* CKRecipeDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKRecipeDataSource.h; sourceTree = "<group>"; };
 		24C1A8E215A1AC7E00B3B80B /* CKRecipeDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKRecipeDataSource.m; sourceTree = "<group>"; };
+		AD98747115A23ADA00336A88 /* CKIngredientDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKIngredientDataSource.h; sourceTree = "<group>"; };
+		AD98747215A23ADA00336A88 /* CKIngredientDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKIngredientDataSource.m; sourceTree = "<group>"; };
 		ADCA60F515A083AD009BE6F0 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
 		ADCA60F615A083AD009BE6F0 /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
 		ADD320C515A0F3A100B7CD8A /* cookie.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = cookie.icns; sourceTree = "<group>"; };
@@ -137,6 +140,7 @@
 		0D2DA775159CECFA009C4A46 /* Cookie */ = {
 			isa = PBXGroup;
 			children = (
+				AD98747415A23BB100336A88 /* DataSource */,
 				0D8E36C0159FB8AC00E541EE /* Resources */,
 				0D8E36B1159FA90F00E541EE /* Controllers */,
 				0D8E36B0159FA06300E541EE /* Views */,
@@ -147,8 +151,6 @@
 				0D2DA776159CECFB009C4A46 /* Supporting Files */,
 				0D8E36CC159FC94700E541EE /* CKRecipeCell.h */,
 				0D8E36CD159FC94700E541EE /* CKRecipeCell.m */,
-				24C1A8E115A1AC7E00B3B80B /* CKRecipeDataSource.h */,
-				24C1A8E215A1AC7E00B3B80B /* CKRecipeDataSource.m */,
 			);
 			path = Cookie;
 			sourceTree = "<group>";
@@ -228,6 +230,17 @@
 				0D8E36CA159FC41900E541EE /* food.png */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		AD98747415A23BB100336A88 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				24C1A8E115A1AC7E00B3B80B /* CKRecipeDataSource.h */,
+				24C1A8E215A1AC7E00B3B80B /* CKRecipeDataSource.m */,
+				AD98747115A23ADA00336A88 /* CKIngredientDataSource.h */,
+				AD98747215A23ADA00336A88 /* CKIngredientDataSource.m */,
+			);
+			name = DataSource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,6 +332,7 @@
 				0D8E36D515A060EF00E541EE /* CKWindowController.m in Sources */,
 				ADD320CB15A0F7AC00B7CD8A /* CKRecipeDialogWindowController.m in Sources */,
 				24C1A8E315A1AC7E00B3B80B /* CKRecipeDataSource.m in Sources */,
+				AD98747315A23ADA00336A88 /* CKIngredientDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
