@@ -62,6 +62,8 @@
     NSAttributedString *arating = [self attributedRatingValue];
     if ([arating length] > 0) {
         [arating drawInRect:ratingRect];
+        //NSImage *star = [NSImage imageNamed:@""];
+        
     }
 }
 
@@ -120,7 +122,7 @@
     if (amountPast > 0) {
         ratingRect.size.width -= amountPast;
     }
-    
+    NSButton *button;
     return ratingRect;
 }
 
