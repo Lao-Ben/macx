@@ -90,7 +90,7 @@
 }
 
 - (IBAction)addIngredient:(id)sender {
-    CKRecipeDialogWindowController *dialog = [[CKRecipeDialogWindowController alloc] initWithWindowNibName:@"CKRecipeDialog" owner: self];
+    CKRecipeDialogWindowController *dialog = [[CKRecipeDialogWindowController alloc] initWithWindowNibName:@"CKRecipeDialog" owner: self andTableView:ingredientsTable];
     [dialog showWindow:dialog];
 }
 

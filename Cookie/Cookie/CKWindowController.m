@@ -13,16 +13,10 @@
 @end
 
 @implementation CKWindowController
-@synthesize searchBar;
 
 - (void)windowDidLoad
 {   
     [super windowDidLoad];
-}
-
-- (void)changeSearchState
-{
-    [searchBar setEnabled:YES];
 }
 
 - (void) awakeFromNib {    
