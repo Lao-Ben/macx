@@ -13,6 +13,11 @@
 @end
 
 @implementation CKRecipesViewController
+@synthesize tabView;
+@synthesize platsTable;
+@synthesize entreesTable;
+@synthesize dessertsTable;
+@synthesize searchField;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -21,6 +26,19 @@
         NSLog(@"RecipesView loaded");
     }
     return self;
+}
+
+-(IBAction)updateFilter:(id)sender
+{
+    NSString *filter = [searchField stringValue];
+    NSString *tabSelected = [[tabView selectedTabViewItem] label];
+    
+    if ([tabSelected isEqualToString:@"Entrées"])
+        NSLog(@"Entrées");
+    else if ([tabSelected isEqualToString:@"Plats"])
+        NSLog(@"Plats");
+    else
+        NSLog(@"Desserts");
 }
 
 @end
