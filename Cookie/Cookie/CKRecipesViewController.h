@@ -10,5 +10,11 @@
 #import "CKWindowController.h"
 
 @interface CKRecipesViewController : NSViewController
+@property (assign) IBOutlet NSTabView *tabView;
+@property (assign) IBOutlet NSTableView *platsTable;
+@property (assign) IBOutlet NSTableView *entreesTable;
+@property (assign) IBOutlet NSTableView *dessertsTable;
+@property (assign) IBOutlet NSSearchField *searchField;
 
+-(IBAction)updateFilter:sender;
 @end
