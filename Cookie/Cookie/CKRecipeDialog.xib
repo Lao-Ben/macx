@@ -41,15 +41,13 @@
 				<string key="NSClassName">CKRecipeDialogWindowController</string>
 			</object>
 			<object class="NSWindowTemplate" id="1005">
-				<int key="NSWindowStyleMask">11</int>
+				<int key="NSWindowStyleMask">3</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{196, 240}, {372, 103}}</string>
+				<string key="NSWindowRect">{{760, 394}, {372, 103}}</string>
 				<int key="NSWTFlags">544735232</int>
 				<string key="NSWindowTitle">Ajout d'un ingredient</string>
 				<string key="NSWindowClass">NSWindow</string>
 				<nil key="NSViewClass"/>
-				<string key="NSWindowContentMaxSize">{372, 103}</string>
-				<string key="NSWindowContentMinSize">{372, 103}</string>
 				<object class="NSView" key="NSWindowView" id="1006">
 					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
@@ -213,7 +211,6 @@
 							<string key="NSFrame">{{196, 13}, {162, 32}}</string>
 							<reference key="NSSuperview" ref="1006"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="921663184">
 								<int key="NSCellFlags">604110336</int>
@@ -236,8 +233,7 @@
 					<reference key="NSNextKeyView" ref="629333416"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1920, 1058}}</string>
-				<string key="NSMinSize">{372, 125}</string>
-				<string key="NSMaxSize">{372, 125}</string>
+				<string key="NSMaxSize">{1e+13, 1e+13}</string>
 			</object>
 		</array>
 		<object class="IBObjectContainer" key="IBDocument.Objects">

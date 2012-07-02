@@ -26,21 +26,22 @@
     return self;
 }
 
-- (IBAction)didAddIngredient:(id)sender {
-}
-
 - (id)initWithWindowNibName:(NSString *)windowNibPath
                       owner:(id)owner
-               andTableView:(NSTableView*)ingredients
+               andIngredientsTable:(NSTableView*)ingredientsTable
 {
     self = [super initWithWindowNibName:windowNibPath owner:owner];
     if (self) {
-        ingredientsTable = ingredients;
+        ingredients = ingredientsTable;
     }
     
     return self;
 }
 
+- (IBAction)didAddIngredient:(id)sender {
+    CKIngredientDataSource *dataSource = ingredients.dataSource;
+    [dataSource addIngredientWithMeasure:measure.stringValue andQuantity:quantity.integerValue];
+}
 
 - (void)windowDidLoad
 {
