@@ -45,7 +45,7 @@
      
     NSDictionary *dict2 = [CKRecipesSerializer deserialize];
     
-    CKRecipes *recipes2 = [[CKRecipes alloc] initWithDictionnary:dict2];
+  //  CKRecipes *recipes2 = [[CKRecipes alloc] initWithDictionnary:dict2];
     
     NSLog(@"count: %lu", dict2.count);
      
