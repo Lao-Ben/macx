@@ -36,6 +36,42 @@
     return cell;
 }
 
+#define BORDER_SIZE 5
+#define IMAGE_SIZE 64
+
+- (NSAttributedString *)attributedRatingValue
+{
+    NSAttributedString *astr = nil;
+    
+    if (rating) {
+        NSColor *textColour = [self isHighlighted] ? [NSColor lightGrayColor] : [NSColor grayColor];
+        NSDictionary *attrs = [NSDictionary dictionaryWithObjectsAndKeys:textColour,
+                               NSForegroundColorAttributeName, nil];
+        astr = [[[NSAttributedString alloc] initWithString:rating attributes:attrs] autorelease];
+    }
+    
+    return astr;
+}
+
+-(NSRect) ratingRectForBounds:(NSRect)bounds forTitleBounds:(NSRect)titleBounds
+{
+    NSRect ratingRect = bounds;
+    
+    if (!rating) {
+        return NSZeroRect;
+    }
+    
+    ratingRect.origin.x = NSMinX(titleBounds);
+    ratingRect.origin.y = NSMaxY(titleBounds) + BORDER_SIZE;
+    
+    CGFloat amountPast = NSMaxX(ratingRect) - NSMaxX(bounds);
+    if (amountPast > 0) {
+        ratingRect.size.width -= amountPast;
+    }
+    NSButton *button;
+    return ratingRect;
+}
+
 - (void)drawInteriorWithFrame:(NSRect)cellFrame inView:(NSView *)controlView
 {
     NSRect imageRect = [self imageRectForBounds:cellFrame];
@@ -58,17 +94,14 @@
         [aTitle drawInRect:titleRect];
     }
     
-    NSRect ratingRect = [self ratingRectForBounds:cellFrame forTitleBounds:titleRect];
-    NSAttributedString *arating = [self attributedRatingValue];
-    if ([arating length] > 0) {
-        [arating drawInRect:ratingRect];
-        //NSImage *star = [NSImage imageNamed:@""];
-        
-    }
+//    NSRect ratingRect = [self ratingRectForBounds:cellFrame forTitleBounds:titleRect];
+//    NSAttributedString *arating = [self attributedRatingValue];
+//    if ([arating length] > 0) {
+//        [arating drawInRect:ratingRect];
+//        //NSImage *star = [NSImage imageNamed:@""];
+//        
+//    }
 }
-
-#define BORDER_SIZE 5
-#define IMAGE_SIZE 64
 
 - (NSRect)imageRectForBounds:(NSRect)bounds
 {
