@@ -7,10 +7,14 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "CKRecipe.h"
+#import "CKAppDelegate.h"
+#import "CKRecipes.h"
 
 @interface CKRecipeEditionViewController : NSViewController <NSTableViewDataSource>
 {
     NSMutableArray *ingredients;
+    NSUInteger imageHash;
 }
 
 //Properties
@@ -23,7 +27,7 @@
 @property (assign) IBOutlet NSLevelIndicator *ratingIndicator;
 @property (assign) IBOutlet NSTextView *summaryField;
 @property (assign) IBOutlet NSImageView *imageView;
-@property (assign) IBOutlet NSButton *addButton;
+@property (assign) IBOutlet NSButton *addRecipeButton;
 @property (assign) IBOutlet NSTableView *ingredientsTable;
 @property (assign) IBOutlet NSButton *addIngredientButton;
 @property (assign) IBOutlet NSButton *removeIngredientButton;
@@ -31,6 +35,7 @@
 //Actions
 - (IBAction)addIngredientAction:(id)sender;
 - (IBAction)removeIngredientAction:(id)sender;
+- (IBAction)addRecipeAction:(id)sender;
 
 
 //Methods

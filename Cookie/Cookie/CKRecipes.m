@@ -9,6 +9,7 @@
 #import "CKRecipes.h"
 
 @implementation CKRecipes
+@synthesize recipeArray;
 
 - (id)init
 {

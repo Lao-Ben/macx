@@ -9,6 +9,7 @@
 #import "CKAppDelegate.h"
 
 @implementation CKAppDelegate
+@synthesize recipes;
 
 - (void)dealloc
 {
@@ -19,6 +20,7 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     [CKAppDelegate checkFoldersExistance];
+    recipes = [[CKRecipes alloc] initWithDictionnary:[CKRecipesSerializer deserialize]];
 }
 
 + (NSString*) getApplicationPath

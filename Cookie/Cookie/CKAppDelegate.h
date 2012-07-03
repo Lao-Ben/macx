@@ -8,8 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 #import "CKRecipeEditionViewController.h"
+#import "CKRecipes.h"
+#import "CKRecipesSerializer.h"
 
 @interface CKAppDelegate : NSObject <NSApplicationDelegate>
+@property (retain) CKRecipes *recipes;
 + (void) checkFoldersExistance;
 + (NSString*) getApplicationPath;
 @end
