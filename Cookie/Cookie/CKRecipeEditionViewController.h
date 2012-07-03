@@ -7,10 +7,17 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "CKRecipeDialogWindowController.h"
 
 @interface CKRecipeEditionViewController : NSViewController <NSTableViewDataSource>
+{
+    NSMutableArray *ingredients;
+}
 
+//Properties
+
+@property (retain) NSMutableArray *ingredients;
+@property (assign) IBOutlet NSTextField *quantity;
+@property (assign) IBOutlet NSTextField *measure;
 @property (assign) IBOutlet NSTextField *nameField;
 @property (assign) IBOutlet NSComboBoxCell *categoryField;
 @property (assign) IBOutlet NSLevelIndicator *ratingIndicator;
@@ -18,8 +25,17 @@
 @property (assign) IBOutlet NSImageView *imageView;
 @property (assign) IBOutlet NSButton *addButton;
 @property (assign) IBOutlet NSTableView *ingredientsTable;
+@property (assign) IBOutlet NSButton *addIngredientButton;
+
+//Actions
+- (IBAction)addIngredientAction:(id)sender;
+
+
+//Methods
+
+- (void) addIngredientWithMeasure:(NSString*)measureString andQuantity:(NSInteger)quantityInteger;
+- (void) deleteIngredientAtIndex:(NSInteger)row;
 - (IBAction)choosePictureDialog:(id)sender;
-- (IBAction)addIngredient:(id)sender;
 + (NSString*)getMiniaturePath;
 + (NSString*)getPicturesPath;
 @end

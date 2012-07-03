@@ -30,12 +30,9 @@
 		0D8E36CE159FC94700E541EE /* CKRecipeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8E36CD159FC94700E541EE /* CKRecipeCell.m */; };
 		0D8E36D515A060EF00E541EE /* CKWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8E36D415A060EF00E541EE /* CKWindowController.m */; };
 		24C1A8E315A1AC7E00B3B80B /* CKRecipeDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C1A8E215A1AC7E00B3B80B /* CKRecipeDataSource.m */; };
-		AD98747315A23ADA00336A88 /* CKIngredientDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AD98747215A23ADA00336A88 /* CKIngredientDataSource.m */; };
 		ADCA60F715A083AD009BE6F0 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = ADCA60F515A083AD009BE6F0 /* add.png */; };
 		ADCA60F815A083AD009BE6F0 /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = ADCA60F615A083AD009BE6F0 /* delete.png */; };
 		ADD320C615A0F3A100B7CD8A /* cookie.icns in Resources */ = {isa = PBXBuildFile; fileRef = ADD320C515A0F3A100B7CD8A /* cookie.icns */; };
-		ADD320C815A0F4B600B7CD8A /* CKRecipeDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADD320C715A0F4B600B7CD8A /* CKRecipeDialog.xib */; };
-		ADD320CB15A0F7AC00B7CD8A /* CKRecipeDialogWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD320CA15A0F7AC00B7CD8A /* CKRecipeDialogWindowController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,14 +76,9 @@
 		0D8E36D415A060EF00E541EE /* CKWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKWindowController.m; sourceTree = "<group>"; };
 		24C1A8E115A1AC7E00B3B80B /* CKRecipeDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKRecipeDataSource.h; sourceTree = "<group>"; };
 		24C1A8E215A1AC7E00B3B80B /* CKRecipeDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKRecipeDataSource.m; sourceTree = "<group>"; };
-		AD98747115A23ADA00336A88 /* CKIngredientDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKIngredientDataSource.h; sourceTree = "<group>"; };
-		AD98747215A23ADA00336A88 /* CKIngredientDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKIngredientDataSource.m; sourceTree = "<group>"; };
 		ADCA60F515A083AD009BE6F0 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
 		ADCA60F615A083AD009BE6F0 /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
 		ADD320C515A0F3A100B7CD8A /* cookie.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = cookie.icns; sourceTree = "<group>"; };
-		ADD320C715A0F4B600B7CD8A /* CKRecipeDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CKRecipeDialog.xib; sourceTree = "<group>"; };
-		ADD320C915A0F7AC00B7CD8A /* CKRecipeDialogWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKRecipeDialogWindowController.h; sourceTree = "<group>"; };
-		ADD320CA15A0F7AC00B7CD8A /* CKRecipeDialogWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKRecipeDialogWindowController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,7 +182,6 @@
 		0D8E36B0159FA06300E541EE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				ADD320C715A0F4B600B7CD8A /* CKRecipeDialog.xib */,
 				0D8E36C7159FBE2300E541EE /* CKRecipeEditionView.xib */,
 				0D8E36B9159FA9B000E541EE /* CKMainView.xib */,
 				0D8E36B4159FA94300E541EE /* CKRecipeView.xib */,
@@ -213,8 +204,6 @@
 				0D8E36C6159FBE2300E541EE /* CKRecipeEditionViewController.m */,
 				0D8E36D315A060EF00E541EE /* CKWindowController.h */,
 				0D8E36D415A060EF00E541EE /* CKWindowController.m */,
-				ADD320C915A0F7AC00B7CD8A /* CKRecipeDialogWindowController.h */,
-				ADD320CA15A0F7AC00B7CD8A /* CKRecipeDialogWindowController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -237,8 +226,6 @@
 			children = (
 				24C1A8E115A1AC7E00B3B80B /* CKRecipeDataSource.h */,
 				24C1A8E215A1AC7E00B3B80B /* CKRecipeDataSource.m */,
-				AD98747115A23ADA00336A88 /* CKIngredientDataSource.h */,
-				AD98747215A23ADA00336A88 /* CKIngredientDataSource.m */,
 			);
 			name = DataSource;
 			sourceTree = "<group>";
@@ -308,7 +295,6 @@
 				ADCA60F715A083AD009BE6F0 /* add.png in Resources */,
 				ADCA60F815A083AD009BE6F0 /* delete.png in Resources */,
 				ADD320C615A0F3A100B7CD8A /* cookie.icns in Resources */,
-				ADD320C815A0F4B600B7CD8A /* CKRecipeDialog.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,9 +316,7 @@
 				0D8E36C8159FBE2300E541EE /* CKRecipeEditionViewController.m in Sources */,
 				0D8E36CE159FC94700E541EE /* CKRecipeCell.m in Sources */,
 				0D8E36D515A060EF00E541EE /* CKWindowController.m in Sources */,
-				ADD320CB15A0F7AC00B7CD8A /* CKRecipeDialogWindowController.m in Sources */,
 				24C1A8E315A1AC7E00B3B80B /* CKRecipeDataSource.m in Sources */,
-				AD98747315A23ADA00336A88 /* CKIngredientDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
