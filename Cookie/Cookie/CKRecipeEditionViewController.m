@@ -32,9 +32,9 @@
         NSMutableArray* measures = [[NSMutableArray alloc] init];
         self.ingredients = [[NSMutableArray alloc] initWithObjects:measures, quantities, nil ];
         imageHash = 0;
-        [self addIngredientWithMeasure:@"g de miel" andQuantity:100];
-        [self addIngredientWithMeasure:@"g de nutella" andQuantity:800];
-        [self addIngredientWithMeasure:@"kg de chocapic" andQuantity:50];
+        nameIsValid = NO;
+        descIsValid = NO;
+        hasIngredient = NO;
     }
     
     return self;
@@ -52,6 +52,9 @@
     [notif addObserver:self selector:@selector(textDidChange:) 
                   name:NSControlTextDidChangeNotification
                 object:quantity];
+    [notif addObserver:self selector:@selector(controlTextDidChange:) 
+                  name:NSTextDidChangeNotification
+                object:summaryField];
 }
 
 - (void) textDidChange:(NSNotification *)notification
@@ -66,10 +69,31 @@
     
     if (nameField.stringValue.length > 0)
     {
-        [addRecipeButton setEnabled:YES];
+        if (descIsValid && hasIngredient)
+        {
+            [addRecipeButton setEnabled:YES];   
+        }
+        nameIsValid = YES;
     }
     else {
         [addRecipeButton setEnabled:NO];
+        nameIsValid = NO;
+    }
+}
+
+- (void) controlTextDidChange: (NSNotification *) notification
+{
+    if (summaryField.string.length > 0)
+    {
+        if (nameIsValid && hasIngredient)
+        {
+            [addRecipeButton setEnabled:YES];   
+        }
+        descIsValid = YES;
+    }
+    else {
+        [addRecipeButton setEnabled:NO];
+        descIsValid = NO;
     }
 }
 
@@ -181,6 +205,11 @@
 
 - (IBAction)addIngredientAction:(id)sender {
     [self addIngredientWithMeasure:[measure stringValue] andQuantity:[quantity integerValue]];
+    hasIngredient = YES;
+    if (nameIsValid && descIsValid)
+    {
+        [addRecipeButton setEnabled:YES];
+    }
 }
 
 - (IBAction)removeIngredientAction:(id)sender {
@@ -188,6 +217,11 @@
     if (row != -1)
     {
         [self deleteIngredientAtIndex:row];
+        if ([ingredientsTable numberOfRows] <= 1)
+        {
+            hasIngredient = NO;
+            [addRecipeButton setEnabled:NO];
+        }
     }
     [ingredientsTable reloadData];
 }

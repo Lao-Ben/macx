@@ -11,10 +11,13 @@
 #import "CKAppDelegate.h"
 #import "CKRecipes.h"
 
-@interface CKRecipeEditionViewController : NSViewController <NSTableViewDataSource>
+@interface CKRecipeEditionViewController : NSViewController <NSTableViewDataSource, NSTextViewDelegate>
 {
     NSMutableArray *ingredients;
     NSUInteger imageHash;
+    BOOL nameIsValid;
+    BOOL descIsValid;
+    BOOL hasIngredient;
 }
 
 //Properties
