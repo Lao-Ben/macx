@@ -25,7 +25,9 @@
         
         CKRecipe *recipe2 = [[CKRecipe alloc] initWithUniqueID:@"124332" andName:@"Bonjour" andCategory:rating andPictureID:@"1243" andRating:rating andSummary:data andIngredients:[[NSArray arrayWithObject:@"Pomme"] retain]];
         
-        CKRecipe *recipe3 = [[CKRecipe alloc] initWithUniqueID:@"124332" andName:@"Yop" andCategory:rating andPictureID:@"1243" andRating:rating andSummary:data andIngredients:[[NSArray arrayWithObject:@"Pomme"] retain]];
+        CKRecipe *recipe3 = [[CKRecipe alloc] initWithUniqueID:@"124332" andName:@"CreveBitch" andCategory:rating andPictureID:@"1243" andRating:rating andSummary:data andIngredients:[[NSArray arrayWithObject:@"Pomme"] retain]];
+        
+        CKRecipe *recipe4 = [[CKRecipe alloc] initWithUniqueID:@"124332" andName:@"CrevePute" andCategory:rating andPictureID:@"1243" andRating:rating andSummary:data andIngredients:[[NSArray arrayWithObject:@"Pomme"] retain]];
         [items addObject:recipe];
         [items addObject:recipe2];
         [items addObject:recipe3];
