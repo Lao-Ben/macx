@@ -195,9 +195,9 @@
 			isa = PBXGroup;
 			children = (
 				0D8E36AB159FA05500E541EE /* CKRecipesViewController.h */,
+				0D8E36B3159FA94300E541EE /* CKRecipeViewController.m */,
 				0D8E36AC159FA05500E541EE /* CKRecipesViewController.m */,
 				0D8E36B2159FA94300E541EE /* CKRecipeViewController.h */,
-				0D8E36B3159FA94300E541EE /* CKRecipeViewController.m */,
 				0D8E36B7159FA9B000E541EE /* CKMainViewController.h */,
 				0D8E36B8159FA9B000E541EE /* CKMainViewController.m */,
 				0D8E36C5159FBE2300E541EE /* CKRecipeEditionViewController.h */,

@@ -13,7 +13,8 @@
     NSMutableArray *recipeArray;
 }
 
-- (id)init;
+@property (retain) NSMutableArray *recipeArray;
+
 - (id)initWithDictionnary:(NSDictionary*)recipes;
 - (void)add:(CKRecipe*)recipe;
 - (NSDictionary*) toDictionnary;

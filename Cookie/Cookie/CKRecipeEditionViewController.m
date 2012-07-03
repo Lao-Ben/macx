@@ -17,7 +17,7 @@
 @synthesize removeIngredientButton;
 
 //View
-@synthesize addButton, ingredientsTable, nameField, categoryField, ratingIndicator, summaryField, imageView;
+@synthesize addRecipeButton, ingredientsTable, nameField, categoryField, ratingIndicator, summaryField, imageView;
 @synthesize quantity,measure, addIngredientButton;
 //Data
 @synthesize ingredients;
@@ -31,6 +31,7 @@
         NSMutableArray* quantities = [[NSMutableArray alloc] init];
         NSMutableArray* measures = [[NSMutableArray alloc] init];
         self.ingredients = [[NSMutableArray alloc] initWithObjects:measures, quantities, nil ];
+        imageHash = 0;
         [self addIngredientWithMeasure:@"g de miel" andQuantity:100];
         [self addIngredientWithMeasure:@"g de nutella" andQuantity:800];
         [self addIngredientWithMeasure:@"kg de chocapic" andQuantity:50];
@@ -65,10 +66,10 @@
     
     if (nameField.stringValue.length > 0)
     {
-        [addButton setEnabled:YES];
+        [addRecipeButton setEnabled:YES];
     }
     else {
-        [addButton setEnabled:NO];
+        [addRecipeButton setEnabled:NO];
     }
 }
 
@@ -191,6 +192,24 @@
     [ingredientsTable reloadData];
 }
 
+- (IBAction)addRecipeAction:(id)sender {
+    CKAppDelegate *appDelegate = [NSApp delegate];
+    CKRecipes *recipes = [appDelegate recipes];
+    NSInteger intId = [[recipes recipeArray] count];
+    NSString *uniqueId = [NSString stringWithFormat:@"%i",intId]; 
+    NSNumber* mealCategory = [NSNumber numberWithInteger:[categoryField indexOfItemWithObjectValue:[categoryField stringValue]]];
+    NSNumber *rating = [NSNumber numberWithInt:[ratingIndicator intValue]];
+    NSString *uniqueImageId = [NSString stringWithFormat:@"%i",imageHash];
+    CKRecipe* recipe = [[CKRecipe alloc] initWithUniqueID:uniqueId
+                                                  andName:nameField.stringValue
+                                              andCategory:mealCategory
+                                             andPictureID:uniqueImageId
+                                                andRating:rating
+                                               andSummary:nil
+                                           andIngredients:nil];
+    [recipes add:recipe];
+}
+
 
 
 - (IBAction)choosePictureDialog:(id)sender {
@@ -202,6 +221,8 @@
     {
         NSURL *filename = [op URL];
         [self setImageToRecipeWithFile:filename];
+        NSData* imgData = [NSData dataWithContentsOfURL:filename];
+        imageHash = [imgData hash];
         NSLog(@"%@",filename);
     }
 }
