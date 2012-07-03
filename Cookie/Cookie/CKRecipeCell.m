@@ -68,7 +68,6 @@
     if (amountPast > 0) {
         ratingRect.size.width -= amountPast;
     }
-    NSButton *button;
     return ratingRect;
 }
 
@@ -138,38 +137,6 @@
     titleRect.size.width = MIN(NSWidth(titleRect), maxWidth);
     
     return titleRect;
-}
-
-- (NSRect)ratingRectForBounds:(NSRect)bounds forTitleBounds:(NSRect)titleBounds
-{
-    NSRect ratingRect = bounds;
-    
-    if (!rating) {
-        return NSZeroRect;
-    }
-    
-    ratingRect.origin.x = NSMinX(titleBounds);
-    ratingRect.origin.y = NSMaxY(titleBounds) + BORDER_SIZE;
-    
-    CGFloat amountPast = NSMaxX(ratingRect) - NSMaxX(bounds);
-    if (amountPast > 0) {
-        ratingRect.size.width -= amountPast;
-    }
-    return ratingRect;
-}
-
-- (NSAttributedString *)attributedRatingValue
-{
-    NSAttributedString *astr = nil;
-    
-    if (rating) {
-        NSColor *textColour = [self isHighlighted] ? [NSColor lightGrayColor] : [NSColor grayColor];
-        NSDictionary *attrs = [NSDictionary dictionaryWithObjectsAndKeys:textColour,
-                               NSForegroundColorAttributeName, nil];
-        astr = [[[NSAttributedString alloc] initWithString:rating attributes:attrs] autorelease];
-    }
-    
-    return astr;
 }
 
 @end
