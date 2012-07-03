@@ -18,6 +18,7 @@
 @synthesize entreesTable;
 @synthesize dessertsTable;
 @synthesize searchField;
+@synthesize numberOfCharacters;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -25,6 +26,7 @@
     if (self) {
         NSLog(@"RecipesView loaded");
     }
+    self.numberOfCharacters = 0;
     return self;
 }
 
@@ -32,13 +34,69 @@
 {
     NSString *filter = [searchField stringValue];
     NSString *tabSelected = [[tabView selectedTabViewItem] label];
+    NSCharacterSet *myCharSet = [NSCharacterSet characterSetWithCharactersInString: filter];
+    NSInteger *numberOfCharactersInFilter = [myCharSet count];
     
-    if ([tabSelected isEqualToString:@"Entrées"])
-        NSLog(@"Entrées");
-    else if ([tabSelected isEqualToString:@"Plats"])
-        NSLog(@"Plats");
+    if (numberOfCharactersInFilter >= numberOfCharacters)
+    {
+        if ([tabSelected isEqualToString:@"Entrées"])
+        {
+            NSLog(@"Entrées");
+            CKRecipeDataSource *dataSource = [entreesTable dataSource];
+            NSInteger numberOfItems = [dataSource.items count];
+        
+            for (int i = numberOfItems - 1; i >= 0; i--)
+            {
+                //NSLog([NSString stringWithFormat:@"%d", i]);
+                CKRecipe *recipe = [dataSource.items objectAtIndex:i];
+                NSRange range = [recipe.name rangeOfString:filter];
+            
+                if (range.location == NSNotFound)
+                    [dataSource deleteRecipeAtIndex:i];
+            }
+            entreesTable.dataSource = (id<NSTableViewDataSource>)dataSource;
+            [entreesTable reloadData];
+        }
+        else if ([tabSelected isEqualToString:@"Plats"])
+        {
+            NSLog(@"Plats");
+            CKRecipeDataSource *dataSource = [platsTable dataSource];
+        
+            for (int i = 0; i < [dataSource.items count]; i++)
+            {
+                //NSLog([NSString stringWithFormat:@"%d", i]);
+                CKRecipe *recipe = [dataSource.items objectAtIndex:i];
+                NSRange range = [recipe.name rangeOfString:filter];
+            
+                if (range.location == NSNotFound)
+                    [dataSource deleteRecipeAtIndex:i];
+            }
+            platsTable.dataSource = (id<NSTableViewDataSource>)dataSource;
+            [platsTable reloadData];
+        }
+        else
+        {
+            NSLog(@"Desserts");
+            CKRecipeDataSource *dataSource = [dessertsTable dataSource];
+        
+            for (int i = 0; i < [dataSource.items count]; i++)
+            {
+                //NSLog([NSString stringWithFormat:@"%d", i]);
+                CKRecipe *recipe = [dataSource.items objectAtIndex:i];
+                NSRange range = [recipe.name rangeOfString:filter];
+            
+                if (range.location == NSNotFound)
+                    [dataSource deleteRecipeAtIndex:i];
+            }
+            dessertsTable.dataSource = (id<NSTableViewDataSource>)dataSource;
+            [dessertsTable reloadData];
+        }
+        numberOfCharacters = numberOfCharactersInFilter;
+    }
     else
-        NSLog(@"Desserts");
+    {
+        NSLog(@"Filtre moins restrictif. Remettre les anciennes valeurs!");
+    }
 }
 
 @end
