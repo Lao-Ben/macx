@@ -14,6 +14,7 @@
 @end
 
 @implementation CKRecipeEditionViewController
+@synthesize removeIngredientButton;
 
 //View
 @synthesize addButton, ingredientsTable, nameField, categoryField, ratingIndicator, summaryField, imageView;
@@ -108,6 +109,22 @@
     return [[appSupportPath stringByAppendingPathComponent:appName]stringByAppendingPathComponent:@"Pictures"];
 }
 
+//Delegate Protocol
+- (void)tableViewSelectionIsChanging:(NSNotification *)aNotification
+{
+    [removeIngredientButton setEnabled:YES];
+}
+
+- (void)tableViewSelectionDidChange:(NSNotification *)aNotification
+{
+    NSInteger row = [ingredientsTable selectedRow];
+    if (row == -1)
+    {
+        [removeIngredientButton setEnabled:NO];
+    }
+}
+
+//DataSource Protocol
 
 - (NSInteger) numberOfRowsInTableView:(NSTableView *) tableView {
     return [[self.ingredients objectAtIndex:0] count];
@@ -124,6 +141,11 @@
     {
         return [[ingredients objectAtIndex:1] objectAtIndex:rowIndex];
     }
+}
+
+- (void) tableView:(NSTableView *)tableView setObjectValue:(id)object forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
+{
+    
 }
 
 - (void) addIngredientWithMeasure:(NSString*)measureString andQuantity:(NSInteger)quantityInteger
@@ -150,6 +172,15 @@
 
 - (IBAction)addIngredientAction:(id)sender {
     [self addIngredientWithMeasure:[measure stringValue] andQuantity:[quantity integerValue]];
+}
+
+- (IBAction)removeIngredientAction:(id)sender {
+    NSInteger row = [ingredientsTable selectedRow];
+    if (row != -1)
+    {
+        [self deleteIngredientAtIndex:row];
+    }
+    [ingredientsTable reloadData];
 }
 
 

@@ -26,9 +26,11 @@
 @property (assign) IBOutlet NSButton *addButton;
 @property (assign) IBOutlet NSTableView *ingredientsTable;
 @property (assign) IBOutlet NSButton *addIngredientButton;
+@property (assign) IBOutlet NSButton *removeIngredientButton;
 
 //Actions
 - (IBAction)addIngredientAction:(id)sender;
+- (IBAction)removeIngredientAction:(id)sender;
 
 
 //Methods
