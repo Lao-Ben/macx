@@ -33,6 +33,7 @@
 -(IBAction)updateFilter:(id)sender
 {
     NSString *filter = [searchField stringValue];
+    NSArray *tab = [filter componentsSeparatedByString:@" "];
     NSString *tabSelected = [[tabView selectedTabViewItem] label];
     NSCharacterSet *myCharSet = [NSCharacterSet characterSetWithCharactersInString: filter];
     NSInteger *numberOfCharactersInFilter = [myCharSet count];
@@ -49,10 +50,25 @@
             {
                 //NSLog([NSString stringWithFormat:@"%d", i]);
                 CKRecipe *recipe = [dataSource.items objectAtIndex:i];
-                NSRange range = [recipe.name rangeOfString:filter];
-            
-                if (range.location == NSNotFound)
-                    [dataSource deleteRecipeAtIndex:i];
+                NSArray *ingredients = recipe.ingredients;
+                NSUInteger count = [ingredients count];
+                
+                for (int j = 0; j < [tab count]; j++)
+                {
+                    BOOL present = NO;
+                    for(int k = 0; k < count; k++)
+                    {
+                        NSRange range = [[[ingredients objectAtIndex:k] lowercaseString] rangeOfString:[[tab objectAtIndex:j] lowercaseString]];
+                        
+                        if (range.location != NSNotFound)
+                            present = YES;
+                    }
+                    if (!present)
+                    {
+                        [dataSource deleteRecipeAtIndex:i];
+                        break;
+                    }
+                }
             }
             entreesTable.dataSource = (id<NSTableViewDataSource>)dataSource;
             [entreesTable reloadData];
@@ -66,10 +82,25 @@
             {
                 //NSLog([NSString stringWithFormat:@"%d", i]);
                 CKRecipe *recipe = [dataSource.items objectAtIndex:i];
-                NSRange range = [recipe.name rangeOfString:filter];
-            
-                if (range.location == NSNotFound)
-                    [dataSource deleteRecipeAtIndex:i];
+                NSArray *ingredients = recipe.ingredients;
+                NSUInteger count = [ingredients count];
+                
+                for (int j = 0; j < [tab count]; j++)
+                {
+                    BOOL present = NO;
+                    for(int k = 0; k < count; k++)
+                    {
+                        NSRange range = [[[ingredients objectAtIndex:k] lowercaseString] rangeOfString:[[tab objectAtIndex:j] lowercaseString]];
+                        
+                        if (range.location != NSNotFound)
+                            present = YES;
+                    }
+                    if (!present)
+                    {
+                        [dataSource deleteRecipeAtIndex:i];
+                        break;
+                    }
+                }
             }
             platsTable.dataSource = (id<NSTableViewDataSource>)dataSource;
             [platsTable reloadData];
@@ -83,10 +114,25 @@
             {
                 //NSLog([NSString stringWithFormat:@"%d", i]);
                 CKRecipe *recipe = [dataSource.items objectAtIndex:i];
-                NSRange range = [recipe.name rangeOfString:filter];
-            
-                if (range.location == NSNotFound)
-                    [dataSource deleteRecipeAtIndex:i];
+                NSArray *ingredients = recipe.ingredients;
+                NSUInteger count = [ingredients count];
+                
+                for (int j = 0; j < [tab count]; j++)
+                {
+                    BOOL present = NO;
+                    for(int k = 0; k < count; k++)
+                    {
+                        NSRange range = [[[ingredients objectAtIndex:k] lowercaseString] rangeOfString:[[tab objectAtIndex:j] lowercaseString]];
+                        
+                        if (range.location != NSNotFound)
+                            present = YES;
+                    }
+                    if (!present)
+                    {
+                        [dataSource deleteRecipeAtIndex:i];
+                        break;
+                    }
+                }
             }
             dessertsTable.dataSource = (id<NSTableViewDataSource>)dataSource;
             [dessertsTable reloadData];
