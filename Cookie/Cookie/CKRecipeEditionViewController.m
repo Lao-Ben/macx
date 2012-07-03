@@ -145,7 +145,15 @@
 
 - (void) tableView:(NSTableView *)tableView setObjectValue:(id)object forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
-    
+    NSString *columnIdentifer = [tableColumn identifier];
+    if ([columnIdentifer isEqualToString:@"measure"]) {
+        [[ingredients objectAtIndex:0] replaceObjectAtIndex:row withObject:object];
+    }
+    else
+    {
+        [[ingredients objectAtIndex:1] replaceObjectAtIndex:row withObject:object];
+    }
+    [ingredientsTable reloadData];
 }
 
 - (void) addIngredientWithMeasure:(NSString*)measureString andQuantity:(NSInteger)quantityInteger
