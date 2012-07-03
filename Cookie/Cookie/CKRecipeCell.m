@@ -68,7 +68,6 @@
     if (amountPast > 0) {
         ratingRect.size.width -= amountPast;
     }
-    NSButton *button;
     return ratingRect;
 }
 
@@ -139,6 +138,5 @@
     
     return titleRect;
 }
-
 
 @end
