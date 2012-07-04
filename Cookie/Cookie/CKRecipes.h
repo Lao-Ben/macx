@@ -20,7 +20,6 @@
 - (NSUInteger) count;
 - (NSMutableArray*) recipesInCategory:(NSUInteger)category;
 - (CKRecipe*) recipeOfTheDay;
-- (NSMutableArray*) recipesWithIngredients:(NSArray*)ingredients;
 - (NSMutableArray*) recipesInCategory:(NSUInteger)category withIngredients:(NSArray*)ingredients;
 - (NSDictionary*) toDictionnary;
 

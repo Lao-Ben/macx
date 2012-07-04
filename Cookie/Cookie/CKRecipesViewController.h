@@ -16,7 +16,6 @@
 @property (assign) IBOutlet NSTableView *entreesTable;
 @property (assign) IBOutlet NSTableView *dessertsTable;
 @property (assign) IBOutlet NSSearchField *searchField;
-@property (nonatomic) NSInteger *numberOfCharacters;
 
 -(IBAction)updateFilter:sender;
 
