@@ -18,7 +18,6 @@
 
 @property (retain) NSMutableArray *items;
 
-- (id)initWithRecipes:(NSMutableArray*)recipes;
 - (void) addRecipeWithUniqueID:(NSString*)newUniqueID andName:(NSString*)newName andCategory:(NSNumber*)newCategory andPictureID:(NSString*)newPictureID andRating:(NSNumber*)newRating andSummary:(NSData*)newSummary andIngredients:(NSArray*)newIngredients;
 - (void) deleteRecipeAtIndex:(NSInteger)row;
 

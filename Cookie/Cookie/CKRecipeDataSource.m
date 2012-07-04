@@ -17,15 +17,11 @@
     self = [super init];
     if (self) {
         self.items = [NSMutableArray array];
-    }
-    return self;
-}
 
-- (id)initWithRecipes:(NSMutableArray*)recipes
-{
-    self = [super init];
-    if (self) {
-        self.items = recipes;
+        NSData *data = [[NSData alloc] init];
+        NSNumber *rating = [NSNumber numberWithInt:4];
+        CKRecipe *recipe = [[CKRecipe alloc] initWithUniqueID:@"124332" andName:@"DataSource error" andCategory:[NSNumber numberWithInt:0] andPictureID:@"1243" andRating:rating andSummary:data andIngredients:[[NSArray arrayWithObject:@"Pomme"] retain]];
+        [items addObject:recipe];
     }
     return self;
 }
@@ -33,6 +29,7 @@
 - (void) addRecipeWithUniqueID:(NSString*)newUniqueID andName:(NSString*)newName andCategory:(NSNumber*)newCategory andPictureID:(NSString*)newPictureID andRating:(NSNumber*)newRating andSummary:(NSData*)newSummary andIngredients:(NSArray*)newIngredients {
     [self.items addObject:[[CKRecipe alloc] initWithUniqueID:newUniqueID andName:newName andCategory:newCategory andPictureID:newPictureID andRating:newRating andSummary:newSummary andIngredients:newIngredients]];
     [[NSNotificationCenter defaultCenter] postNotificationName:CKDidChange object:self];
+    NSLog(@"datasource size : %li", items.count);
 }
 
 - (void) deleteRecipeAtIndex:(NSInteger)row {

@@ -24,26 +24,44 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        [self fillTables];
         self.numberOfCharacters = 0;
     }
     return self;
 }
 
+- (void)viewWillLoad {
+    NSLog(@"WILL LOAD");
+    // Here for subclasses to override.
+}
+
+- (void)viewDidLoad {
+    NSLog(@"DID LOAD");
+    [self fillTables];
+    // Here for subclasses to override.
+}
+
+- (void)loadView {
+    [self viewWillLoad];
+    [super loadView];
+    [self viewDidLoad];
+}
+
 - (void)fillTables {
     CKAppDelegate *appDelegate = [NSApp delegate];
-    CKRecipeDataSource *dataSource = [entreesTable dataSource];
-    dataSource.items = [appDelegate.recipes recipesInCategory:0];
-    [entreesTable reloadData];
+  //  CKRecipeDataSource *dataSource = [[CKRecipeDataSource alloc] init];
+   // dataSource.items = [appDelegate.recipes recipesInCategory:0];
+   // [entreesTable setDataSource:dataSource];
+    
+ //   CKRecipeDataSource *dataSource2 = [[CKRecipeDataSource alloc] init];
+  //  dataSource2.items = [appDelegate.recipes recipesInCategory:1];
+   // [platsTable setDataSource:dataSource2];
 
-    NSLog(@"plats : %li", dataSource.items.count);
+    CKRecipeDataSource *dataSource3 = [[CKRecipeDataSource alloc] init];
+    dataSource3.items = [appDelegate.recipes recipesInCategory:2];
+    [dessertsTable setDataSource:dataSource3];
 
-    dataSource = [platsTable dataSource];
-    dataSource.items = [appDelegate.recipes recipesInCategory:1];
+    [entreesTable reloadData];    
     [platsTable reloadData];
-
-    dataSource = [dessertsTable dataSource];
-    dataSource.items = [appDelegate.recipes recipesInCategory:2];
     [dessertsTable reloadData];
 }
 
