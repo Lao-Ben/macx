@@ -35,6 +35,7 @@
         nameIsValid = NO;
         descIsValid = NO;
         hasIngredient = NO;
+        fileEmplacement = nil;
     }
     
     return self;
@@ -95,43 +96,6 @@
         [addRecipeButton setEnabled:NO];
         descIsValid = NO;
     }
-}
-
-- (NSImage*) getResizedImage:(NSImage*) image
-{
-    [image setScalesWhenResized:YES];
-    [image setSize:NSMakeSize(120., 120.)];
-    return image;
-}
-
-- (void) setImageToRecipeWithFile:(NSURL *) fileEmplacement
-{
-    NSImage *image = [[NSImage alloc] initWithContentsOfURL:fileEmplacement];
-    [imageView setImage:[self getResizedImage:image]];
-}
-
-- (void) saveOriginalImage:(NSImage*) image
-{
-
-}
-
-- (void) saveMiniatureImage:(NSImage*) image
-{
-    
-}
-
-+ (NSString*)getMiniaturePath { 
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
-    NSString *appSupportPath = [paths objectAtIndex:0];
-    NSString *appName = [[NSRunningApplication currentApplication] localizedName];
-    return [[appSupportPath stringByAppendingPathComponent:appName]stringByAppendingPathComponent:@"Miniatures"];
-}
-
-+ (NSString*)getPicturesPath {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
-    NSString *appSupportPath = [paths objectAtIndex:0];
-    NSString *appName = [[NSRunningApplication currentApplication] localizedName];
-    return [[appSupportPath stringByAppendingPathComponent:appName]stringByAppendingPathComponent:@"Pictures"];
 }
 
 //Delegate Protocol
@@ -195,6 +159,64 @@
     
 }
 
+- (NSImage*) getResizedImage:(NSImage*) image
+{
+    //FIXME: DownScale doesn't work !
+    NSSize size = NSZeroSize;      
+    size.width = image.size.width*0.5;
+    size.height = image.size.height*0.5; 
+    
+    NSImage *ret = [[NSImage alloc] initWithSize:size];
+    [ret lockFocus];
+    NSAffineTransform *transform = [NSAffineTransform transform];
+    [transform scaleBy:0.5];  
+    [transform concat]; 
+    [image drawAtPoint:NSZeroPoint fromRect:NSZeroRect operation:NSCompositeCopy fraction:1.0];    
+    [ret unlockFocus];        
+    
+    return [ret autorelease];
+}
+
+- (void) setImageToRecipeWithFile:(NSURL *) newFileEmplacement
+{
+    NSImage *image = [[NSImage alloc] initWithContentsOfURL:newFileEmplacement];
+    [self saveOriginalImage:image];
+    NSImage *reducedImage = [self getResizedImage:image];
+    [imageView setImage:reducedImage];
+    [self saveMiniatureImage:reducedImage];
+}
+
+
+
+- (void) saveOriginalImage:(NSImage*) image
+{
+    NSString *imageName = [NSString stringWithFormat:@"%u.jpeg",imageHash];
+    NSString *fullPath =  [[CKAppDelegate getPicturesPath] stringByAppendingPathComponent:imageName];
+    NSArray *representations = [image representations];
+    NSData* imageData = [NSBitmapImageRep representationOfImageRepsInArray:representations usingType:NSJPEGFileType properties:nil];
+    NSError *writeError = nil;
+    [imageData writeToFile:fullPath options:NSDataWritingAtomic error:&writeError];
+    
+    if (writeError!=nil) {
+        NSLog(@"%@: Error saving Full Picture: %@", [self class], [writeError localizedDescription]);
+    }
+}
+
+- (void) saveMiniatureImage:(NSImage*) image
+{
+    NSString *imageName = [NSString stringWithFormat:@"%u.jpeg",imageHash];
+    NSString *fullPath =  [[CKAppDelegate getMiniaturePath] stringByAppendingPathComponent:imageName];
+    NSArray *representations = [image representations];
+    NSData* imageData = [NSBitmapImageRep representationOfImageRepsInArray:representations usingType:NSJPEGFileType properties:nil];
+    NSError *writeError = nil;
+    [imageData writeToFile:fullPath options:NSDataWritingAtomic error:&writeError];
+    
+    if (writeError!=nil) {
+        NSLog(@"%@: Error saving Miniature: %@", [self class], [writeError localizedDescription]);
+    }
+}
+
+
 - (void)dealloc
 {
     ingredients = nil;
@@ -245,6 +267,10 @@
                                                andSummary:data
                                            andIngredients:ingredients];
     [recipes add:recipe];
+    if (fileEmplacement != nil)
+    {
+        
+    }
 }
 
 
@@ -256,11 +282,10 @@
     [op setAllowedFileTypes:types];
     if ([op runModal] == NSOKButton)
     {
-        NSURL *filename = [op URL];
-        [self setImageToRecipeWithFile:filename];
-        NSData* imgData = [NSData dataWithContentsOfURL:filename];
+        fileEmplacement = [op URL];
+        NSData* imgData = [NSData dataWithContentsOfURL:fileEmplacement];
         imageHash = [imgData hash];
-        NSLog(@"%@",filename);
+        [self setImageToRecipeWithFile:fileEmplacement];
     }
 }
 

@@ -15,4 +15,6 @@
 @property (retain) CKRecipes *recipes;
 + (void) checkFoldersExistance;
 + (NSString*) getApplicationPath;
++ (NSString*)getMiniaturePath;
++ (NSString*)getPicturesPath;
 @end

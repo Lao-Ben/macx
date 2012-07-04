@@ -71,20 +71,37 @@
     return [recipeArray objectAtIndex:rand];
 }
 
-- (NSMutableArray*) recipesWithIngredients:(NSArray*)ingredients {
-    NSMutableArray *recipes = [[NSMutableArray alloc] init];
-
-    // FIXME: ..............
-    
-    return recipes;
-}
-
-- (NSMutableArray*) recipesInCategory:(NSUInteger)category withIngredients:(NSArray*)ingredients {
+- (NSMutableArray*) recipesInCategory:(NSUInteger)category withIngredients:(NSArray*)ingredients
+{
     NSMutableArray *recipes = [self recipesInCategory:category];
     
-    // FIXME: ..............
-    
-    return recipes;
+    for (NSInteger i = [recipes count] - 1; i >= 0; i--)
+    {
+        CKRecipe *recipe = [recipes objectAtIndex:i];
+        NSArray *ingredientsInRecipe = [recipe ingredients];
+        NSInteger countIngredients = [ingredientsInRecipe count];
+        
+        for (int j = 0; j < [ingredients count]; j++)
+        {
+            BOOL present = NO;
+            for(int k = 0; k < countIngredients; k++)
+            {
+                NSRange range = [[[ingredients objectAtIndex:k] lowercaseString] rangeOfString:[[ingredients objectAtIndex:j] lowercaseString]];
+            
+                if (range.location != NSNotFound)
+                {
+                    present = YES;
+                    break;
+                }
+            }
+            if (!present)
+            {
+                [recipes removeObjectAtIndex:i];
+                break;
+            }
+        }
+    }
+    return [CKRecipes orderByRating:recipes];
 }
 
 - (NSDictionary*)toDictionnary
@@ -108,7 +125,7 @@
 
 
 + (NSMutableArray*) orderByRating:(NSMutableArray *)recipes {
-    NSMutableArray *sortedArray = [NSMutableArray alloc];
+    NSMutableArray *sortedArray = [[NSMutableArray alloc] initWithCapacity:[recipes count]];
 
     [sortedArray arrayByAddingObjectsFromArray: [recipes sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
         NSNumber *first = [(CKRecipe*)a rating];

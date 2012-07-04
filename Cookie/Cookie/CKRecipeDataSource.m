@@ -48,7 +48,7 @@
 
     [recipeCell setTitle:recipe.name];
     [recipeCell setRating:recipe.rating.stringValue];
-    NSString *imgPath = [CKRecipeEditionViewController getPicturesPath];
+    NSString *imgPath = [CKAppDelegate getPicturesPath];
     imgPath = [imgPath stringByAppendingString:recipe.pictureID];
     [recipeCell setImage:[[NSImage alloc] initWithContentsOfFile:imgPath]];
 }
