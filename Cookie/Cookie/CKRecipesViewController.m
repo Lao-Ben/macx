@@ -23,7 +23,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.numberOfCharacters = 0;
     }
     return self;
 }
