@@ -51,8 +51,8 @@
 
 + (void) checkFoldersExistance
 {
-    NSString* miniaturePath = [CKRecipeEditionViewController getMiniaturePath];
-    NSString* picturesPath = [CKRecipeEditionViewController getPicturesPath];
+    NSString* miniaturePath = [CKAppDelegate getMiniaturePath];
+    NSString* picturesPath = [CKAppDelegate getPicturesPath];
     NSString* applicationPath = [self getApplicationPath];
     
     NSFileManager* fileMgr = [NSFileManager defaultManager];
@@ -75,6 +75,20 @@
         [fileMgr createDirectoryAtPath:picturesPath withIntermediateDirectories:NO attributes:nil error:nil];
     }
     
+}
+
++ (NSString*)getMiniaturePath { 
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
+    NSString *appSupportPath = [paths objectAtIndex:0];
+    NSString *appName = [[NSRunningApplication currentApplication] localizedName];
+    return [[appSupportPath stringByAppendingPathComponent:appName]stringByAppendingPathComponent:@"Miniatures"];
+}
+
++ (NSString*)getPicturesPath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
+    NSString *appSupportPath = [paths objectAtIndex:0];
+    NSString *appName = [[NSRunningApplication currentApplication] localizedName];
+    return [[appSupportPath stringByAppendingPathComponent:appName]stringByAppendingPathComponent:@"Pictures"];
 }
 
 @end

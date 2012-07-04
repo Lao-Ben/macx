@@ -18,6 +18,8 @@
     BOOL nameIsValid;
     BOOL descIsValid;
     BOOL hasIngredient;
+    NSURL *fileEmplacement;
+
 }
 
 //Properties
@@ -39,13 +41,12 @@
 - (IBAction)addIngredientAction:(id)sender;
 - (IBAction)removeIngredientAction:(id)sender;
 - (IBAction)addRecipeAction:(id)sender;
-
+- (IBAction)choosePictureDialog:(id)sender;
 
 //Methods
 
 - (void) addIngredientWithMeasure:(NSString*)measureString andQuantity:(NSInteger)quantityInteger;
 - (void) deleteIngredientAtIndex:(NSInteger)row;
-- (IBAction)choosePictureDialog:(id)sender;
-+ (NSString*)getMiniaturePath;
-+ (NSString*)getPicturesPath;
+- (void) saveOriginalImage:(NSImage*) image;
+- (void) saveMiniatureImage:(NSImage*) image;
 @end
