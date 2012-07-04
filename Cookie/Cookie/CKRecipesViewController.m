@@ -24,10 +24,27 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        NSLog(@"RecipesView loaded");
+        [self fillTables];
+        self.numberOfCharacters = 0;
     }
-    self.numberOfCharacters = 0;
     return self;
+}
+
+- (void)fillTables {
+    CKAppDelegate *appDelegate = [NSApp delegate];
+    CKRecipeDataSource *dataSource = [entreesTable dataSource];
+    dataSource.items = [appDelegate.recipes recipesInCategory:0];
+    [entreesTable reloadData];
+
+    NSLog(@"plats : %li", dataSource.items.count);
+
+    dataSource = [platsTable dataSource];
+    dataSource.items = [appDelegate.recipes recipesInCategory:1];
+    [platsTable reloadData];
+
+    dataSource = [dessertsTable dataSource];
+    dataSource.items = [appDelegate.recipes recipesInCategory:2];
+    [dessertsTable reloadData];
 }
 
 -(IBAction)updateFilter:(id)sender

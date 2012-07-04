@@ -55,6 +55,8 @@
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
     // get the Application Support path
     NSString *appSupportPath = [paths objectAtIndex:0];
+    NSString *appName = [[NSRunningApplication currentApplication] localizedName];
+    appSupportPath = [appSupportPath stringByAppendingPathComponent:appName];
     // get the path to the recipes data file
     return [appSupportPath stringByAppendingPathComponent:@"Recipes.plist"];
 }

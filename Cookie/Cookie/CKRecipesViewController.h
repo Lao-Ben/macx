@@ -19,4 +19,5 @@
 @property (nonatomic) NSInteger *numberOfCharacters;
 
 -(IBAction)updateFilter:sender;
+
 @end

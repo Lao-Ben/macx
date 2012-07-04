@@ -20,7 +20,7 @@
 }
 
 - (void) awakeFromNib {    
-    
+ /*   
     NSNumber *rating = [NSNumber numberWithInt:4];
     NSData *data = [[NSData alloc] init];
     CKRecipes *recipes = [[CKRecipes alloc] init];
@@ -32,17 +32,18 @@
     [CKRecipesSerializer serialize:dict];
     NSLog(@"SERIALIZED");
     
-    CKMainViewController *mainViewController = [[CKMainViewController alloc] initWithNibName:@"CKMainView" bundle:nil];
-    
-    [self.window setContentView:[mainViewController view]];
-    [self showWindow:self];
-     
     NSDictionary *dict2 = [CKRecipesSerializer deserialize];
     
   //  CKRecipes *recipes2 = [[CKRecipes alloc] initWithDictionnary:dict2];
     
     NSLog(@"count: %lu", dict2.count);
-     
+   */
+    
+    CKMainViewController *mainViewController = [[CKMainViewController alloc] initWithNibName:@"CKMainView" bundle:nil];
+    
+    [self.window setContentView:[mainViewController view]];
+    [self showWindow:self];
+    
 }
 - (IBAction)pushMainView:(id)sender {
     CKMainViewController *mainViewController = [[CKMainViewController alloc] initWithNibName:@"CKMainView" bundle:nil];    

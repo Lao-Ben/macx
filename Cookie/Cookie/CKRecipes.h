@@ -17,6 +17,14 @@
 
 - (id)initWithDictionnary:(NSDictionary*)recipes;
 - (void)add:(CKRecipe*)recipe;
+- (NSUInteger) count;
+- (NSMutableArray*) recipesInCategory:(NSUInteger)category;
+- (CKRecipe*) recipeOfTheDay;
+- (NSMutableArray*) recipesWithIngredients:(NSArray*)ingredients;
+- (NSMutableArray*) recipesInCategory:(NSUInteger)category withIngredients:(NSArray*)ingredients;
 - (NSDictionary*) toDictionnary;
+
++ (NSMutableArray*) orderByRating:(NSMutableArray*)recipes;
++ (NSMutableArray*) orderById:(NSMutableArray*)recipes;
 
 @end

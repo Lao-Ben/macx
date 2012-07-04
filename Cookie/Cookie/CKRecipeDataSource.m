@@ -17,21 +17,15 @@
     self = [super init];
     if (self) {
         self.items = [NSMutableArray array];
-        
-        NSData *data = [[NSData alloc] init];
-        NSNumber *rating = [NSNumber numberWithInt:4];
-        
-        CKRecipe *recipe = [[CKRecipe alloc] initWithUniqueID:@"124332" andName:@"Yop" andCategory:rating andPictureID:@"1243" andRating:rating andSummary:data andIngredients:[[NSArray arrayWithObject:@"Pomme"] retain]];
-        
-        CKRecipe *recipe2 = [[CKRecipe alloc] initWithUniqueID:@"124332" andName:@"Bonjour" andCategory:rating andPictureID:@"1243" andRating:rating andSummary:data andIngredients:[[NSArray arrayWithObject:@"Pomme"] retain]];
-        
-        CKRecipe *recipe3 = [[CKRecipe alloc] initWithUniqueID:@"124332" andName:@"CreveBitch" andCategory:rating andPictureID:@"1243" andRating:rating andSummary:data andIngredients:[[NSArray arrayWithObject:@"Pomme"] retain]];
-        
-        CKRecipe *recipe4 = [[CKRecipe alloc] initWithUniqueID:@"124332" andName:@"CrevePute" andCategory:rating andPictureID:@"1243" andRating:rating andSummary:data andIngredients:[[NSArray arrayWithObject:@"Pomme"] retain]];
-        [items addObject:recipe];
-        [items addObject:recipe2];
-        [items addObject:recipe3];
-        [items addObject:recipe4];
+    }
+    return self;
+}
+
+- (id)initWithRecipes:(NSMutableArray*)recipes
+{
+    self = [super init];
+    if (self) {
+        self.items = recipes;
     }
     return self;
 }
@@ -41,7 +35,7 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:CKDidChange object:self];
 }
 
-- (void)deleteRecipeAtIndex:(NSInteger)row {
+- (void) deleteRecipeAtIndex:(NSInteger)row {
 	[self.items removeObjectAtIndex:row];
     [[NSNotificationCenter defaultCenter] postNotificationName:CKDidChange object:self];
 }
