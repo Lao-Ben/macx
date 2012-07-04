@@ -257,8 +257,6 @@
     NSNumber *rating = [NSNumber numberWithInt:[ratingIndicator intValue]];
     NSString *uniqueImageId = [NSString stringWithFormat:@"%i",imageHash];
     NSData* data = [[summaryField string] dataUsingEncoding:NSUTF8StringEncoding];
-//    To decode a NSData -> NSString :
-//    NSString* decode = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     CKRecipe* recipe = [[CKRecipe alloc] initWithUniqueID:uniqueId
                                                   andName:nameField.stringValue
                                               andCategory:mealCategory

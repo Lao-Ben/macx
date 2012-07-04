@@ -13,15 +13,114 @@
 @end
 
 @implementation CKRecipeViewController
+@synthesize recipeTitle;
+@synthesize recipeCategory;
+@synthesize guestSelector;
+@synthesize instructionsSummary;
+@synthesize ingredientsTable;
+@synthesize recipeImage;
+@synthesize recipeRate;
+@synthesize editButton;
+@synthesize ingredientsArray;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Initialization code here.
+        numberOfGuest = 2;
+        prevNumberOfGuest = 2;
     }
     
     return self;
+}
+
+- (void) setUpRecipeWithName:(NSString*)name
+                 andCategory:(NSNumber*) categoryNumber
+                     andRate:(NSNumber*) rating
+                  andSummary:(NSData*) summary
+              andIngredients:(NSArray*) ingredients
+                  andPicture:(NSString*) pictureID
+{
+    [self initItemGuests];
+    
+    NSString* summurayData = [[NSString alloc] initWithData:summary encoding:NSUTF8StringEncoding];
+    [recipeTitle setStringValue:name];
+    switch ([categoryNumber intValue]) {
+        case 0:
+            [recipeCategory setStringValue:@"Entrée"];
+            break;
+        case 1:
+            [recipeCategory setStringValue:@"Plat"];
+            break;
+        default:
+            [recipeCategory setStringValue:@"Dessert"];  
+            break;
+    }
+    [recipeRate setIntValue:[rating intValue]];
+    [instructionsSummary setString:summurayData];
+    [self setIngredientsArray:ingredients];
+    [ingredientsTable reloadData];
+    
+    NSFileManager* fileMgr = [NSFileManager defaultManager];
+    NSString* pathForPicture = [[CKAppDelegate getMiniaturePath] 
+                                stringByAppendingPathComponent:
+                                [NSString stringWithFormat:@"%@.jpeg",pictureID]
+                                ];
+    BOOL pictureExists = [fileMgr fileExistsAtPath:pathForPicture];
+    if (pictureExists) {
+        NSImage *image = [[NSImage alloc] initWithContentsOfFile:pathForPicture];
+        [recipeImage setImage:image];
+    }
+    NSLog(@"%@",pathForPicture);
+    
+}
+
+- (void) initItemGuests
+{
+    for (int i = 0; i < 200; ++i)
+    {
+        NSString *key = [NSString stringWithFormat:@"%i",i + 1];
+        NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:key action:nil keyEquivalent:key];
+        [[guestSelector menu] addItem:item];
+    }
+}
+
+//DataSource (tableview)
+
+- (NSInteger) numberOfRowsInTableView:(NSTableView *) tableView {
+    return [[self.ingredientsArray objectAtIndex:0] count];
+}
+
+- (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn
+            row:(NSInteger)rowIndex
+{
+    NSString *columnIdentifer = [aTableColumn identifier];
+    if ([columnIdentifer isEqualToString:@"measure"]) {
+        return [[ingredientsArray objectAtIndex:0] objectAtIndex:rowIndex];
+    }
+    else
+    {
+        return [[ingredientsArray objectAtIndex:1] objectAtIndex:rowIndex];
+    }
+}
+
+//delegate (NSMenu)
+- (void)menu:(NSMenu *)menu willHighlightItem:(NSMenuItem *)item
+{
+    prevNumberOfGuest = numberOfGuest;
+    numberOfGuest = [[item title] integerValue];
+}
+
+- (void)menuDidClose:(NSMenu *)menu
+{
+    NSMutableArray *quantities = [ingredientsArray objectAtIndex:1];
+    for (int i = 0; i < [quantities count]; i++) {
+        id quantity = [quantities objectAtIndex:i];
+        NSInteger quantityInteger = [quantity integerValue];
+        NSInteger newQuantityValue = (quantityInteger * numberOfGuest) / prevNumberOfGuest;
+        [quantities replaceObjectAtIndex:i withObject:[NSString stringWithFormat:@"%i", newQuantityValue]];
+    }
+    [ingredientsTable reloadData];
 }
 
 @end

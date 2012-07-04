@@ -256,7 +256,7 @@
 											<string>WebURLsWithTitlesPboardType</string>
 											<string>public.url</string>
 										</set>
-										<string key="NSFrameSize">{299, 14}</string>
+										<string key="NSFrameSize">{297, 14}</string>
 										<reference key="NSSuperview" ref="75605320"/>
 										<reference key="NSWindow"/>
 										<reference key="NSNextKeyView" ref="514565105"/>
@@ -275,7 +275,7 @@
 												<nil key="NSDelegate"/>
 											</object>
 											<reference key="NSTextView" ref="631292772"/>
-											<double key="NSWidth">299</double>
+											<double key="NSWidth">297</double>
 											<int key="NSTCFlags">1</int>
 										</object>
 										<object class="NSTextViewSharedData" key="NSSharedData">
@@ -313,11 +313,11 @@
 										</object>
 										<int key="NSTVFlags">6</int>
 										<string key="NSMaxSize">{463, 1e+07}</string>
-										<string key="NSMinize">{209, 13}</string>
+										<string key="NSMinize">{209, 12}</string>
 										<nil key="NSDelegate"/>
 									</object>
 								</array>
-								<string key="NSFrameSize">{314, 129}</string>
+								<string key="NSFrame">{{1, 1}, {312, 127}}</string>
 								<reference key="NSSuperview" ref="192246720"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="631292772"/>
@@ -374,7 +374,7 @@
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="75605320"/>
-						<int key="NSsFlags">0</int>
+						<int key="NSsFlags">2</int>
 						<reference key="NSVScroller" ref="603045329"/>
 						<reference key="NSHScroller" ref="514565105"/>
 						<reference key="NSContentView" ref="75605320"/>
@@ -569,7 +569,7 @@
 											</object>
 										</object>
 										<double key="NSRowHeight">17</double>
-										<int key="NSTvFlags">-700448768</int>
+										<int key="NSTvFlags">-692060160</int>
 										<reference key="NSDelegate"/>
 										<reference key="NSDataSource"/>
 										<int key="NSColumnAutoresizingStyle">4</int>

@@ -2,10 +2,10 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1060</int>
-		<string key="IBDocument.SystemVersion">11E53</string>
+		<string key="IBDocument.SystemVersion">10K549</string>
 		<string key="IBDocument.InterfaceBuilderVersion">1938</string>
-		<string key="IBDocument.AppKitVersion">1138.47</string>
-		<string key="IBDocument.HIToolboxVersion">569.00</string>
+		<string key="IBDocument.AppKitVersion">1038.36</string>
+		<string key="IBDocument.HIToolboxVersion">461.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
 			<string key="NS.object.0">1938</string>
@@ -281,8 +281,8 @@
 							<object class="NSMutableString" key="NSToolbarItemIdentifier">
 								<characters key="NS.bytes">2C1D234F-BDE4-4448-A08A-4B031B6DE88D</characters>
 							</object>
-							<string key="NSToolbarItemLabel">Add</string>
-							<string key="NSToolbarItemPaletteLabel">Add</string>
+							<string key="NSToolbarItemLabel">Ajouter</string>
+							<string key="NSToolbarItemPaletteLabel">Ajouter</string>
 							<nil key="NSToolbarItemToolTip"/>
 							<nil key="NSToolbarItemView"/>
 							<object class="NSCustomResource" key="NSToolbarItemImage">
@@ -333,7 +333,7 @@
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{0, 14}, {96, 22}}</string>
 								<reference key="NSSuperview"/>
-								<string key="NSReuseIdentifierKey">_NS:9</string>
+								<reference key="NSWindow"/>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSSearchFieldCell" key="NSCell" id="614770364">
 									<int key="NSCellFlags">879885888</int>
@@ -344,7 +344,6 @@
 										<double key="NSSize">13</double>
 										<int key="NSfFlags">1044</int>
 									</object>
-									<string key="NSCellIdentifier">_NS:9</string>
 									<reference key="NSControlView" ref="965695304"/>
 									<int key="NSTextBezelStyle">1</int>
 									<object class="NSColor" key="NSBackgroundColor">
@@ -439,8 +438,8 @@
 							<object class="NSMutableString" key="NSToolbarItemIdentifier">
 								<characters key="NS.bytes">E8120AB7-7AA9-47AD-AC98-300A6856493E</characters>
 							</object>
-							<string key="NSToolbarItemLabel">Delete</string>
-							<string key="NSToolbarItemPaletteLabel">Delete</string>
+							<string key="NSToolbarItemLabel">Supprimer</string>
+							<string key="NSToolbarItemPaletteLabel">Supprimer</string>
 							<nil key="NSToolbarItemToolTip"/>
 							<nil key="NSToolbarItemView"/>
 							<object class="NSCustomResource" key="NSToolbarItemImage">
@@ -512,7 +511,7 @@
 							<nil key="NSToolbarItemView"/>
 							<object class="NSCustomResource" key="NSToolbarItemImage">
 								<string key="NSClassName">NSImage</string>
-								<string key="NSResourceName">NSToolbarShowColors</string>
+								<string key="NSResourceName">NSToolbarShowColorsItemImage</string>
 							</object>
 							<nil key="NSToolbarItemTarget"/>
 							<string key="NSToolbarItemAction">orderFrontColorPanel:</string>
@@ -532,7 +531,7 @@
 							<nil key="NSToolbarItemView"/>
 							<object class="NSCustomResource" key="NSToolbarItemImage">
 								<string key="NSClassName">NSImage</string>
-								<string key="NSResourceName">NSToolbarShowFonts</string>
+								<string key="NSResourceName">NSToolbarShowFontsItemImage</string>
 							</object>
 							<nil key="NSToolbarItemTarget"/>
 							<string key="NSToolbarItemAction">orderFrontFontPanel:</string>
@@ -594,7 +593,6 @@
 					</array>
 					<array key="NSToolbarIBSelectableItems" id="0"/>
 				</object>
-				<nil key="NSUserInterfaceItemIdentifier"/>
 				<string key="NSWindowContentMinSize">{600, 500}</string>
 				<object class="NSView" key="NSWindowView" id="439893737">
 					<reference key="NSNextResponder"/>
@@ -603,10 +601,9 @@
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {1280, 778}}</string>
+				<string key="NSScreenRect">{{0, 0}, {1920, 1058}}</string>
 				<string key="NSMinSize">{600, 578}</string>
-				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
-				<bool key="NSWindowIsRestorable">YES</bool>
+				<string key="NSMaxSize">{1e+13, 1e+13}</string>
 			</object>
 			<object class="NSCustomObject" id="976324537">
 				<string key="NSClassName">CKAppDelegate</string>
@@ -1208,11 +1205,11 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="NSMenuCheckmark">{11, 11}</string>
-			<string key="NSMenuMixedState">{10, 3}</string>
+			<string key="NSMenuCheckmark">{9, 8}</string>
+			<string key="NSMenuMixedState">{7, 2}</string>
 			<string key="NSToolbarPrint">{32, 32}</string>
-			<string key="NSToolbarShowColors">{32, 32}</string>
-			<string key="NSToolbarShowFonts">{32, 32}</string>
+			<string key="NSToolbarShowColorsItemImage">{32, 32}</string>
+			<string key="NSToolbarShowFontsItemImage">{32, 32}</string>
 			<string key="add">{32, 32}</string>
 			<string key="delete">{32, 32}</string>
 			<string key="house">{22, 22}</string>

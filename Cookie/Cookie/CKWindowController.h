@@ -12,6 +12,7 @@
 #import "CKMainViewController.h"
 #import "CKRecipesViewController.h"
 #import "CKRecipeEditionViewController.h"
+#import "CKRecipeViewController.h"
 
 @interface CKWindowController : NSWindowController
 - (IBAction)pushMainView:(id)sender;
