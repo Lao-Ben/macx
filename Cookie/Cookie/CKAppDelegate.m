@@ -22,7 +22,7 @@
     [CKAppDelegate checkFoldersExistance];
     recipes = [[CKRecipes alloc] initWithDictionnary:[CKRecipesSerializer deserialize]];
     
-  //  if (recipes.count <= 0) {
+    if (recipes.count <= 0) {
         NSData *data = [[NSData alloc] init];
         NSNumber *rating = [NSNumber numberWithInt:4];
         
@@ -30,14 +30,14 @@
         
         CKRecipe *recipe2 = [[CKRecipe alloc] initWithUniqueID:@"124332" andName:@"Entree 2" andCategory:[NSNumber numberWithInt:0] andPictureID:@"1243" andRating:rating andSummary:data andIngredients:[[NSArray arrayWithObject:@"Pomme"] retain]];
         
-        CKRecipe *recipe3 = [[CKRecipe alloc] initWithUniqueID:@"124332" andName:@"Plat 1" andCategory:[NSNumber numberWithInt:2] andPictureID:@"1243" andRating:rating andSummary:data andIngredients:[[NSArray arrayWithObject:@"Pomme"] retain]];
+        CKRecipe *recipe3 = [[CKRecipe alloc] initWithUniqueID:@"124332" andName:@"Plat 1" andCategory:[NSNumber numberWithInt:1] andPictureID:@"1243" andRating:rating andSummary:data andIngredients:[[NSArray arrayWithObject:@"Pomme"] retain]];
         
-        CKRecipe *recipe4 = [[CKRecipe alloc] initWithUniqueID:@"124332" andName:@"Dessert 1" andCategory:[NSNumber numberWithInt:1] andPictureID:@"1243" andRating:rating andSummary:data andIngredients:[[NSArray arrayWithObject:@"Pomme"] retain]];
+        CKRecipe *recipe4 = [[CKRecipe alloc] initWithUniqueID:@"124332" andName:@"Dessert 1" andCategory:[NSNumber numberWithInt:2] andPictureID:@"1243" andRating:rating andSummary:data andIngredients:[[NSArray arrayWithObject:@"Pomme"] retain]];
         [recipes add:recipe];
         [recipes add:recipe2];
         [recipes add:recipe3];
         [recipes add:recipe4];
-    //}
+    }
 }
 
 + (NSString*) getApplicationPath
