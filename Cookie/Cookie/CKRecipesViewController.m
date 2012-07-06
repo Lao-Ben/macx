@@ -42,6 +42,7 @@
     [self viewWillLoad];
     [super loadView];
     [self viewDidLoad];
+    [[self platsTable] setDoubleAction:@selector(toto:)];
 }
 
 - (void)fillTables {
@@ -99,6 +100,11 @@
         dessertsTable.dataSource = (id<NSTableViewDataSource>)dataSource;
         [dessertsTable reloadData];
     }
+}
+
+- (void)toto
+{
+    NSLog(@"Bonjour, je suis toto");
 }
 
 @end

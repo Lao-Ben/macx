@@ -53,15 +53,11 @@
 }
 
 - (IBAction)pushRecipesView:(id)sender {
-    CKRecipesViewController *recipesViewController = [[CKRecipesViewController alloc] initWithNibName:@"CKRecipesView" bundle:nil];    
-    [self.window setContentView:[recipesViewController view]];
-    [self showWindow:self];
+    [self pushRecipesView];
 }
 
 - (IBAction)pushRecipeEditionView:(id)sender {
-    CKRecipeEditionViewController *recipeEditionViewController = [[CKRecipeEditionViewController alloc] initWithNibName:@"CKRecipeEditionView" bundle:nil];    
-    [self.window setContentView:[recipeEditionViewController view]];
-    [self showWindow:self];
+    [self pushEditionView];
     
 //    CKRecipeViewController *recipeViewController = [[CKRecipeViewController alloc] initWithNibName:@"CKRecipeView" bundle:nil];    
 //    [self.window setContentView:[recipeViewController view]];
@@ -84,6 +80,13 @@
 //                   andSummary:data
 //               andIngredients:ingredients
 //                   andPicture:@"193757280"];
+}
+
+- (void) pushRecipesView
+{
+    CKRecipesViewController *recipesViewController = [[CKRecipesViewController alloc] initWithNibName:@"CKRecipesView" bundle:nil];    
+    [self.window setContentView:[recipesViewController view]];
+    [self showWindow:self];
 }
 
 - (void) pushEditionView

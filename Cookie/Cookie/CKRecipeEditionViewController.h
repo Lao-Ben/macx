@@ -10,6 +10,7 @@
 #import "CKRecipe.h"
 #import "CKAppDelegate.h"
 #import "CKRecipes.h"
+#import "CKWindowController.h"
 
 @interface CKRecipeEditionViewController : NSViewController <NSTableViewDataSource, NSTextViewDelegate>
 {
