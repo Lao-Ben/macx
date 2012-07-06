@@ -20,5 +20,6 @@
 
 - (void) addRecipeWithUniqueID:(NSString*)newUniqueID andName:(NSString*)newName andCategory:(NSNumber*)newCategory andPictureID:(NSString*)newPictureID andRating:(NSNumber*)newRating andSummary:(NSData*)newSummary andIngredients:(NSArray*)newIngredients;
 - (void) deleteRecipeAtIndex:(NSInteger)row;
-
+- (NSInteger) numberOfRowsInTableView:(NSTableView *) tableView;
+-(id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex;
 @end

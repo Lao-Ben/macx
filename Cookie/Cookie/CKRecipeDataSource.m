@@ -38,19 +38,26 @@
 }
 
 - (NSInteger) numberOfRowsInTableView:(NSTableView *) tableView {
-    return [self.items count];
+    NSLog(@"size : %li", items.count);
+    return items.count;
 }
 
-- (void)tableView:(NSTableView *)tableView willDisplayCell:(id)cell forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
+- (void)tableView:(NSTableView *)tableView willDisplayCell:(id)cell forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row { 
+}
 
-    CKRecipe *recipe = [self.items objectAtIndex:row];
-    CKRecipeCell *recipeCell = (CKRecipeCell *)cell;
+-(id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex{
 
+    NSLog(@"oo size : %li", items.count);
+
+    CKRecipe *recipe = [self.items objectAtIndex:rowIndex];
+    CKRecipeCell *recipeCell = [[CKRecipeCell alloc] init];
+    
     [recipeCell setTitle:recipe.name];
     [recipeCell setRating:recipe.rating.stringValue];
     NSString *imgPath = [CKAppDelegate getPicturesPath];
     imgPath = [imgPath stringByAppendingString:recipe.pictureID];
     [recipeCell setImage:[[NSImage alloc] initWithContentsOfFile:imgPath]];
+    return recipeCell;
 }
 
 - (void)dealloc
