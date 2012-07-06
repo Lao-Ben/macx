@@ -59,31 +59,38 @@
 }
 
 - (IBAction)pushRecipeEditionView:(id)sender {
-//    CKRecipeEditionViewController *recipeEditionViewController = [[CKRecipeEditionViewController alloc] initWithNibName:@"CKRecipeEditionView" bundle:nil];    
-//    [self.window setContentView:[recipeEditionViewController view]];
-//    [self showWindow:self];
-    
-    CKRecipeViewController *recipeViewController = [[CKRecipeViewController alloc] initWithNibName:@"CKRecipeView" bundle:nil];    
-    [self.window setContentView:[recipeViewController view]];
+    CKRecipeEditionViewController *recipeEditionViewController = [[CKRecipeEditionViewController alloc] initWithNibName:@"CKRecipeEditionView" bundle:nil];    
+    [self.window setContentView:[recipeEditionViewController view]];
     [self showWindow:self];
+    
+//    CKRecipeViewController *recipeViewController = [[CKRecipeViewController alloc] initWithNibName:@"CKRecipeView" bundle:nil];    
+//    [self.window setContentView:[recipeViewController view]];
+//    [self showWindow:self];
     
     
     //Test of the Display Recipe --- To Be Remove ---
-    NSMutableArray* ingredients;
-    NSMutableArray* quantities = [[NSMutableArray alloc] init];
-    [quantities addObject:@"50"];
-    NSMutableArray* measures = [[NSMutableArray alloc] init];
-    [measures addObject:@"du bon gros choux"];
-    ingredients = [[NSMutableArray alloc] initWithObjects:measures, quantities, nil ];
-    
-    
-    NSData* data = [@"C'est bon et c'est pas cher" dataUsingEncoding:NSUTF8StringEncoding];
-    [recipeViewController setUpRecipeWithName:@"Soupe aux Choux"
-                  andCategory:[NSNumber numberWithInt:1]
-                      andRate:[NSNumber numberWithInt:5]
-                   andSummary:data
-               andIngredients:ingredients
-                   andPicture:@"193757280"];
+//    NSMutableArray* ingredients;
+//    NSMutableArray* quantities = [[NSMutableArray alloc] init];
+//    [quantities addObject:@"50"];
+//    NSMutableArray* measures = [[NSMutableArray alloc] init];
+//    [measures addObject:@"du bon gros choux"];
+//    ingredients = [[NSMutableArray alloc] initWithObjects:measures, quantities, nil ];
+//    
+//    
+//    NSData* data = [@"C'est bon et c'est pas cher" dataUsingEncoding:NSUTF8StringEncoding];
+//    [recipeViewController setUpRecipeWithName:@"Soupe aux Choux"
+//                  andCategory:[NSNumber numberWithInt:1]
+//                      andRate:[NSNumber numberWithInt:5]
+//                   andSummary:data
+//               andIngredients:ingredients
+//                   andPicture:@"193757280"];
+}
+
+- (void) pushEditionView
+{
+    CKRecipeEditionViewController *recipeEditionViewController = [[CKRecipeEditionViewController alloc] initWithNibName:@"CKRecipeEditionView" bundle:nil];    
+    [self.window setContentView:[recipeEditionViewController view]];
+    [self showWindow:self];
 }
 
 @end

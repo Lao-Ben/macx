@@ -123,4 +123,8 @@
     [ingredientsTable reloadData];
 }
 
+- (IBAction)editAction:(id)sender {
+    CKWindowController *windowController = [[NSApp delegate] windowController];
+    [windowController pushEditionView];
+}
 @end

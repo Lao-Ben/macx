@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "CKAppDelegate.h"
+#import "CKWindowController.h"
 
 @interface CKRecipeViewController : NSViewController
 {
@@ -28,6 +29,7 @@
 @property (assign) IBOutlet NSLevelIndicator *recipeRate;
 @property (assign) IBOutlet NSButton *editButton;
 
+- (IBAction)editAction:(id)sender;
 
 // Methods
 
