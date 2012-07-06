@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "CKRecipe.h"
+#import "CKRecipesSerializer.h"
 
 @interface CKRecipes : NSObject {
     NSMutableArray *recipeArray;

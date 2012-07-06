@@ -46,12 +46,8 @@
 }
 
 -(id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex{
-
-    NSLog(@"oo size : %li", items.count);
-
     CKRecipe *recipe = [self.items objectAtIndex:rowIndex];
     CKRecipeCell *recipeCell = [[CKRecipeCell alloc] init];
-    
     [recipeCell setTitle:recipe.name];
     [recipeCell setRating:recipe.rating.stringValue];
     NSString *imgPath = [CKAppDelegate getPicturesPath];

@@ -27,7 +27,7 @@
         recipeArray = [[NSMutableArray alloc] init];
         NSArray *array = [dictionnary objectForKey:@"Recipes"];
         for (NSDictionary *recipeDict in array) {
-            CKRecipe *recipe = [[CKRecipe alloc] initWithUniqueID:[recipeDict objectForKey:@"UniqueID"] andName:[recipeDict objectForKey:@"Name"] andCategory:[recipeDict objectForKey:@"Category"] andPictureID:[recipeDict objectForKey:@"PictureID"] andRating:[recipeDict objectForKey:@"Rating"] andSummary:[recipeDict objectForKey:@"Summary"] andIngredients:[recipeDict objectForKey:@"Ingredients"]];
+            CKRecipe *recipe = [[CKRecipe alloc] initWithUniqueID:[[recipeDict objectForKey:@"UniqueID"] retain] andName:[[recipeDict objectForKey:@"Name"] retain] andCategory:[[recipeDict objectForKey:@"Category"] retain] andPictureID:[[recipeDict objectForKey:@"PictureID"] retain] andRating:[[recipeDict objectForKey:@"Rating"] retain] andSummary:[[recipeDict objectForKey:@"Summary"] retain] andIngredients:[[recipeDict objectForKey:@"Ingredients"] retain]];
             [recipeArray addObject:recipe];
             NSLog(@"deserialize name : %@", recipe.name);
         }
@@ -43,6 +43,8 @@
 
 - (void)add:(CKRecipe*)recipe {
     [recipeArray addObject:recipe];
+    NSDictionary* dict = [self toDictionnary];
+    [CKRecipesSerializer serialize:dict];
 }
 
 - (NSUInteger) count {
