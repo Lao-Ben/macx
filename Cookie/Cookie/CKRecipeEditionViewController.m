@@ -161,21 +161,22 @@
 
 - (NSImage*) getResizedImage:(NSImage*) image
 {
-    //FIXME: DownScale doesn't work !
-    NSSize size = NSZeroSize;      
-    size.width = image.size.width*0.5;
-    size.height = image.size.height*0.5; 
-    
-    NSImage *ret = [[NSImage alloc] initWithSize:size];
-    [ret lockFocus];
-    NSAffineTransform *transform = [NSAffineTransform transform];
-    [transform scaleBy:0.5];  
-    [transform concat]; 
-    [image drawAtPoint:NSZeroPoint fromRect:NSZeroRect operation:NSCompositeCopy fraction:1.0];    
-    [ret unlockFocus];        
-    
-    return [ret autorelease];
+    NSBitmapImageRep *oldBitmap = [[image representations] objectAtIndex:0];
+    NSBitmapImageRep *newBitmap = [[NSBitmapImageRep alloc]
+                                   initWithBitmapDataPlanes:NULL pixelsWide:128
+                                   pixelsHigh:128 bitsPerSample:8 samplesPerPixel:4 hasAlpha:YES
+                                   isPlanar:NO colorSpaceName:NSCalibratedRGBColorSpace
+                                   bitmapFormat:NSAlphaFirstBitmapFormat bytesPerRow:0 bitsPerPixel:32];
+    [NSGraphicsContext saveGraphicsState];
+    [NSGraphicsContext setCurrentContext:[NSGraphicsContext
+                                          graphicsContextWithBitmapImageRep:newBitmap]];
+    [oldBitmap drawInRect:NSMakeRect(0,0,128,128)];
+    [NSGraphicsContext restoreGraphicsState];
+    NSImage *resized = [[NSImage alloc] initWithSize:[newBitmap size]];
+    [resized addRepresentation: newBitmap];
+    return [resized autorelease];
 }
+
 
 - (void) setImageToRecipeWithFile:(NSURL *) newFileEmplacement
 {
