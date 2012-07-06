@@ -50,9 +50,21 @@
     CKRecipeCell *recipeCell = [[CKRecipeCell alloc] init];
     [recipeCell setTitle:recipe.name];
     [recipeCell setRating:recipe.rating.stringValue];
-    NSString *imgPath = [CKAppDelegate getPicturesPath];
-    imgPath = [imgPath stringByAppendingString:recipe.pictureID];
-    [recipeCell setImage:[[NSImage alloc] initWithContentsOfFile:imgPath]];
+    
+    NSFileManager* fileMgr = [NSFileManager defaultManager];
+    NSString* pathForPicture = [[CKAppDelegate getPicturesPath] 
+                                stringByAppendingPathComponent:
+                                [NSString stringWithFormat:@"%@.jpeg",recipe.pictureID]
+                                ];
+    BOOL pictureExists = [fileMgr fileExistsAtPath:pathForPicture];
+    if (pictureExists) {
+        NSImage *image = [[[NSImage alloc] initWithContentsOfFile:pathForPicture] retain];
+        NSLog(@"img loaded in cell %@", image);
+        [recipeCell setImage:image];
+    }
+    NSLog(@"%@",pathForPicture);
+
+
     return recipeCell;
 }
 
