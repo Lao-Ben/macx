@@ -17,6 +17,7 @@
 @interface CKWindowController : NSWindowController
 - (IBAction)pushMainView:(id)sender;
 - (IBAction)pushRecipesView:(id)sender;
+- (IBAction)pushEditionView:(id)sender;
 - (void) pushRecipesView;
 - (void) pushEditionView;
 - (void) pushRecipeViewWithRecipe:(CKRecipe*)recipe;

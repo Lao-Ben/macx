@@ -70,6 +70,10 @@
     //                   andPicture:@"193757280"];
 }
 
+- (IBAction)pushEditionView:(id)sender {
+    [self pushEditionView];
+}
+
 - (void) pushRecipesView
 {
     CKRecipesViewController *recipesViewController = [[CKRecipesViewController alloc] initWithNibName:@"CKRecipesView" bundle:nil];    

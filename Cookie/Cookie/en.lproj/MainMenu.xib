@@ -730,14 +730,6 @@
 					<int key="connectionID">1188</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">pushRecipeEditionView:</string>
-						<reference key="source" ref="360625591"/>
-						<reference key="destination" ref="451146489"/>
-					</object>
-					<int key="connectionID">1191</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">toolbar</string>
 						<reference key="source" ref="360625591"/>
@@ -758,6 +750,14 @@
 						<string key="label">searchBar</string>
 						<reference key="source" ref="360625591"/>
 						<reference key="destination" ref="965695304"/>
+					</object>
+					<int key="connectionID">1194</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">pushEditionView:</string>
+						<reference key="source" ref="360625591"/>
+						<reference key="destination" ref="451146489"/>
 					</object>
 					<int key="connectionID">1194</int>
 				</object>
@@ -1119,7 +1119,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1193</int>
+			<int key="maxID">1194</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1135,10 +1135,15 @@
 					<string key="className">CKWindowController</string>
 					<string key="superclassName">NSWindowController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="pushEditionView:">id</string>
 						<string key="pushMainView:">id</string>
 						<string key="pushRecipesView:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="pushEditionView:">
+							<string key="name">pushEditionView:</string>
+							<string key="candidateClassName">id</string>
+						</object>
 						<object class="IBActionInfo" key="pushMainView:">
 							<string key="name">pushMainView:</string>
 							<string key="candidateClassName">id</string>
