@@ -19,4 +19,5 @@
 - (IBAction)pushRecipesView:(id)sender;
 - (void) pushRecipesView;
 - (void) pushEditionView;
+- (void) pushRecipeViewWithRecipe:(CKRecipe*)recipe;
 @end
