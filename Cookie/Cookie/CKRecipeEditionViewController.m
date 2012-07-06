@@ -269,6 +269,8 @@
     {
         
     }
+    CKWindowController* windowController = [[[self view] window] windowController];
+    [windowController pushRecipesView];
 }
 
 

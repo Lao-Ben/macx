@@ -18,5 +18,6 @@
 @property (assign) IBOutlet NSSearchField *searchField;
 
 -(IBAction)updateFilter:sender;
+- (void)toto;
 
 @end
