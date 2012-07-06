@@ -18,6 +18,5 @@
 @property (assign) IBOutlet NSSearchField *searchField;
 
 -(IBAction)updateFilter:sender;
-- (void)toto;
-
+- (void)doubleClick:(id)aTableView;
 @end

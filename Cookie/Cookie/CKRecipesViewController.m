@@ -42,7 +42,12 @@
     [self viewWillLoad];
     [super loadView];
     [self viewDidLoad];
-    [[self platsTable] setDoubleAction:@selector(toto:)];
+    [[self dessertsTable] setTarget:self];
+    [[self platsTable] setTarget:self];
+    [[self dessertsTable] setDoubleAction:@selector(doubleClick:)];
+    [[self platsTable] setDoubleAction:@selector(doubleClick:)];
+    [[self entreesTable] setDoubleAction:@selector(doubleClick:)];
+
 }
 
 - (void)fillTables {
@@ -102,9 +107,11 @@
     }
 }
 
-- (void)toto
+- (void)doubleClick:(id)aTableView
 {
-    NSLog(@"Bonjour, je suis toto");
+    NSLog( @"double-click on row ");
+    CKWindowController* windowController = [[[self view] window] windowController];
+    [windowController pushRecipeViewWithRecipe:nil];
 }
 
 @end
