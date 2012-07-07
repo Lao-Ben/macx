@@ -41,10 +41,8 @@
 - (void)tableView:(NSTableView *)tableView willDisplayCell:(id)cell forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row { 
     
     CKRecipeCell *recipeCell = (CKRecipeCell *)cell;
-    NSLog(@"title : %@", recipeCell.title);
     
     CKAppDelegate *appDelegate = [NSApp delegate];
-
     
     for (CKRecipe *recipe in appDelegate.recipes.recipeArray) {
         if ([recipe.name isEqualToString:recipeCell.title]) {

@@ -69,7 +69,13 @@
     if (recipeArray.count <= 0) {
         return nil;
     }
-    int rand = (arc4random() % recipeArray.count - 1);
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:[NSDate date]];
+    NSInteger day = [components day];
+    NSInteger month = [components month];
+    NSInteger year = [components year];
+    int time = year + month + day; 
+    int rand = (time % recipeArray.count);
+    NSLog(@"rand recipe %d", rand);
     return [recipeArray objectAtIndex:rand];
 }
 

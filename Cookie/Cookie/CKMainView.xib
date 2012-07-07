@@ -248,12 +248,10 @@
 											<string key="NSReuseIdentifierKey">_NS:16</string>
 											<reference key="NSTableView" ref="14716946"/>
 										</object>
-										<object class="_NSCornerView" key="NSCornerView" id="936828556">
-											<reference key="NSNextResponder" ref="1012994419"/>
+										<object class="_NSCornerView" key="NSCornerView">
+											<nil key="NSNextResponder"/>
 											<int key="NSvFlags">-2147483392</int>
 											<string key="NSFrame">{{224, 0}, {16, 17}}</string>
-											<reference key="NSSuperview" ref="1012994419"/>
-											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="348572390"/>
 											<string key="NSReuseIdentifierKey">_NS:19</string>
 										</object>
@@ -378,7 +376,6 @@
 								<reference key="NSBGColor" ref="5063927"/>
 								<int key="NScvFlags">4</int>
 							</object>
-							<reference ref="936828556"/>
 						</array>
 						<string key="NSFrame">{{304, 20}, {276, 200}}</string>
 						<reference key="NSSuperview" ref="1005"/>
@@ -390,7 +387,6 @@
 						<reference key="NSHScroller" ref="656477465"/>
 						<reference key="NSContentView" ref="348572390"/>
 						<reference key="NSHeaderClipView" ref="387020070"/>
-						<reference key="NSCornerView" ref="936828556"/>
 						<bytes key="NSScrollAmts">QSAAAEEgAABBmAAAQZgAAA</bytes>
 					</object>
 					<object class="NSScrollView" id="409770872">
@@ -420,12 +416,10 @@
 											<string key="NSReuseIdentifierKey">_NS:16</string>
 											<reference key="NSTableView" ref="930104668"/>
 										</object>
-										<object class="_NSCornerView" key="NSCornerView" id="863146673">
-											<reference key="NSNextResponder" ref="409770872"/>
+										<object class="_NSCornerView" key="NSCornerView">
+											<nil key="NSNextResponder"/>
 											<int key="NSvFlags">-2147483392</int>
 											<string key="NSFrame">{{224, 0}, {16, 17}}</string>
-											<reference key="NSSuperview" ref="409770872"/>
-											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="126677277"/>
 											<string key="NSReuseIdentifierKey">_NS:19</string>
 										</object>
@@ -526,7 +520,6 @@
 								<reference key="NSBGColor" ref="5063927"/>
 								<int key="NScvFlags">4</int>
 							</object>
-							<reference ref="863146673"/>
 						</array>
 						<string key="NSFrame">{{20, 20}, {276, 200}}</string>
 						<reference key="NSSuperview" ref="1005"/>
@@ -538,7 +531,6 @@
 						<reference key="NSHScroller" ref="191408211"/>
 						<reference key="NSContentView" ref="126677277"/>
 						<reference key="NSHeaderClipView" ref="431878017"/>
-						<reference key="NSCornerView" ref="863146673"/>
 						<bytes key="NSScrollAmts">QSAAAEEgAABBmAAAQZgAAA</bytes>
 					</object>
 				</array>
@@ -558,6 +550,38 @@
 						<reference key="destination" ref="1005"/>
 					</object>
 					<int key="connectionID">2</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">dayImage</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="709286940"/>
+					</object>
+					<int key="connectionID">387</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">dayName</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="212801242"/>
+					</object>
+					<int key="connectionID">388</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">dayCategory</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="664661782"/>
+					</object>
+					<int key="connectionID">389</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">dayRating</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="1041619795"/>
+					</object>
+					<int key="connectionID">390</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -827,13 +851,37 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">386</int>
+			<int key="maxID">390</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
 					<string key="className">CKMainViewController</string>
 					<string key="superclassName">NSViewController</string>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="dayCategory">NSTextField</string>
+						<string key="dayImage">NSImageView</string>
+						<string key="dayName">NSTextField</string>
+						<string key="dayRating">NSLevelIndicator</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="dayCategory">
+							<string key="name">dayCategory</string>
+							<string key="candidateClassName">NSTextField</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="dayImage">
+							<string key="name">dayImage</string>
+							<string key="candidateClassName">NSImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="dayName">
+							<string key="name">dayName</string>
+							<string key="candidateClassName">NSTextField</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="dayRating">
+							<string key="name">dayRating</string>
+							<string key="candidateClassName">NSLevelIndicator</string>
+						</object>
+					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/CKMainViewController.h</string>
