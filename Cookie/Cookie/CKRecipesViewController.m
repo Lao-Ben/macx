@@ -83,7 +83,8 @@
     {
         NSLog(@"Entrées");
         NSMutableArray *results = [appDelegate.recipes recipesInCategory:0 withIngredients:tab];
-        CKRecipeDataSource *dataSource = [[CKRecipeDataSource alloc] initWithRecipes:results];
+        CKRecipeDataSource *dataSource = [[CKRecipeDataSource alloc] init];
+        dataSource.items = results;
             
         entreesTable.dataSource = (id<NSTableViewDataSource>)dataSource;
         [entreesTable reloadData];
@@ -92,7 +93,8 @@
     {
         NSLog(@"Plats");
         NSMutableArray *results = [appDelegate.recipes recipesInCategory:1 withIngredients:tab];
-        CKRecipeDataSource *dataSource = [[CKRecipeDataSource alloc] initWithRecipes:results];
+        CKRecipeDataSource *dataSource = [[CKRecipeDataSource alloc] init];
+        dataSource.items = results;
         
         platsTable.dataSource = (id<NSTableViewDataSource>)dataSource;
         [platsTable reloadData];
@@ -101,7 +103,8 @@
     {
         NSLog(@"Desserts");
         NSMutableArray *results = [appDelegate.recipes recipesInCategory:2 withIngredients:tab];
-        CKRecipeDataSource *dataSource = [[CKRecipeDataSource alloc] initWithRecipes:results];
+        CKRecipeDataSource *dataSource = [[CKRecipeDataSource alloc] init];
+        dataSource.items = results;
         
         dessertsTable.dataSource = (id<NSTableViewDataSource>)dataSource;
         [dessertsTable reloadData];
