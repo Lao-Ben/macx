@@ -85,7 +85,7 @@
     {
         CKRecipe *recipe = [recipes objectAtIndex:i];
         NSArray *ingredientsInRecipe = [recipe ingredients];
-        NSInteger countIngredients = [ingredientsInRecipe count];
+        NSInteger countIngredients = [[ingredientsInRecipe objectAtIndex:0] count];
         
         for (int j = 0; j < [ingredients count]; j++)
         {

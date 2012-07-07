@@ -78,7 +78,12 @@
     
     if ([tabSelected isEqualToString:@"Entrées"])
     {
-        NSMutableArray *results = [appDelegate.recipes recipesInCategory:0 withIngredients:tab];
+        NSMutableArray *results;
+        if ([filter isEqualToString:@""])
+            results = [appDelegate.recipes recipesInCategory:0];
+        else
+            results = [appDelegate.recipes recipesInCategory:0 withIngredients:tab];
+        
         CKRecipeDataSource *dataSource = [[CKRecipeDataSource alloc] init];
         dataSource.items = results;
             
@@ -87,8 +92,11 @@
     }
     else if ([tabSelected isEqualToString:@"Plats"])
     {
-       // NSLog(@"Plats");
-        NSMutableArray *results = [appDelegate.recipes recipesInCategory:1 withIngredients:tab];
+        NSMutableArray *results;
+        if ([filter isEqualToString:@""])
+            results = [appDelegate.recipes recipesInCategory:1];
+        else
+            results = [appDelegate.recipes recipesInCategory:1 withIngredients:tab];
         CKRecipeDataSource *dataSource = [[CKRecipeDataSource alloc] init];
         dataSource.items = results;
         
@@ -97,8 +105,11 @@
     }
     else
     {
-       // NSLog(@"Desserts");
-        NSMutableArray *results = [appDelegate.recipes recipesInCategory:2 withIngredients:tab];
+        NSMutableArray *results;
+        if ([filter isEqualToString:@""])
+            results = [appDelegate.recipes recipesInCategory:2];
+        else
+            results = [appDelegate.recipes recipesInCategory:2 withIngredients:tab];
         CKRecipeDataSource *dataSource = [[CKRecipeDataSource alloc] init];
         dataSource.items = results;
         
