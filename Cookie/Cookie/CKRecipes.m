@@ -86,7 +86,7 @@
     {
         CKRecipe *recipe = [recipes objectAtIndex:i];
         NSArray *ingredientsInRecipe = [recipe ingredients];
-        NSInteger countIngredients = [ingredientsInRecipe count];
+        NSInteger countIngredients = [[ingredientsInRecipe objectAtIndex:0] count];
         
         for (int j = 0; j < [ingredients count]; j++)
         {
@@ -94,7 +94,7 @@
             for(int k = 0; k < countIngredients; k++)
             {
                 //Probleme
-                NSString *ingredientAtIndexK = [[ingredientsInRecipe objectAtIndex:1] objectAtIndex:k];
+                NSString *ingredientAtIndexK = [[ingredientsInRecipe objectAtIndex:0] objectAtIndex:k];
                 ingredientAtIndexK = [ingredientAtIndexK lowercaseString];
                 //CECI NEST PAS UNE STRING
                 NSRange range = [ingredientAtIndexK rangeOfString:[[ingredients objectAtIndex:j] lowercaseString]];
