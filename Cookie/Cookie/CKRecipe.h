@@ -27,7 +27,7 @@
 @property (nonatomic, retain) NSArray *ingredients;
 
 - (id) initWithUniqueID:(NSString*)newUniqueID andName:(NSString*)newName andCategory:(NSNumber*)newCategory andPictureID:(NSString*)newPictureID andRating:(NSNumber*)newRating andSummary:(NSData*)newSummary andIngredients:(NSArray*)newIngredients;
-
 - (id)copyWithZone:(NSZone *)zone;
+- (NSNumber *)numberFromUniqueID;
 
 @end

@@ -7,7 +7,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
-
+#import "CKAppDelegate.h"
 @interface CKMainViewController : NSViewController
+@property (assign) IBOutlet NSImageView *dayImage;
+@property (assign) IBOutlet NSTextField *dayName;
+@property (assign) IBOutlet NSTextField *dayCategory;
+@property (assign) IBOutlet NSLevelIndicator *dayRating;
+@property (assign) IBOutlet NSTableView *lastTable;
+@property (assign) IBOutlet NSTableView *bestTable;
 
 @end

@@ -69,7 +69,13 @@
     if (recipeArray.count <= 0) {
         return nil;
     }
-    int rand = (int)(arc4random() % recipeArray.count - 1);
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:[NSDate date]];
+    NSInteger day = [components day];
+    NSInteger month = [components month];
+    NSInteger year = [components year];
+    int time = year + month + day; 
+    int rand = (time % recipeArray.count);
+    NSLog(@"rand recipe %d", rand);
     return [recipeArray objectAtIndex:rand];
 }
 
@@ -132,26 +138,34 @@
 
 
 + (NSMutableArray*) orderByRating:(NSMutableArray *)recipes {
-    NSMutableArray *sortedArray = [[NSMutableArray alloc] initWithCapacity:[recipes count]];
 
-    [sortedArray arrayByAddingObjectsFromArray: [recipes sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
-        NSNumber *first = [(CKRecipe*)a rating];
-        NSNumber *second = [(CKRecipe*)b rating];
-        return -[first compare:second];
-    }] ];
+    NSString * SORT_FIELD = @"rating";
     
-    return sortedArray;
+    NSSortDescriptor *lastDescriptor =
+    [[[NSSortDescriptor alloc]
+      initWithKey:SORT_FIELD
+      ascending:NO
+      selector:@selector(compare:)] autorelease];
+    
+    NSArray * descriptors = [NSArray arrayWithObjects:lastDescriptor, nil];
+    NSArray * sortedArray = [recipes sortedArrayUsingDescriptors:descriptors];
+    
+    return [NSMutableArray arrayWithArray:sortedArray];
 }
 
 + (NSMutableArray*) orderById:(NSMutableArray *)recipes {
-    NSMutableArray *sortedArray = [NSMutableArray alloc];
     
-    [sortedArray arrayByAddingObjectsFromArray: [recipes sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
-        NSNumber *first = [NSNumber numberWithInteger: [[(CKRecipe*)a uniqueID] integerValue]];
-        NSNumber *second =[NSNumber numberWithInteger: [[(CKRecipe*)b uniqueID] integerValue]];
-        return [first compare:second];
-    }] ];
+    NSString * SORT_FIELD = @"uniqueID";
     
-    return sortedArray;
+    NSSortDescriptor *lastDescriptor =
+    [[[NSSortDescriptor alloc]
+      initWithKey:SORT_FIELD
+      ascending:NO
+      selector:@selector(compare:)] autorelease];
+    
+    NSArray * descriptors = [NSArray arrayWithObjects:lastDescriptor, nil];
+    NSArray * sortedArray = [recipes sortedArrayUsingDescriptors:descriptors];
+    
+    return [NSMutableArray arrayWithArray:sortedArray];
 }
 @end
