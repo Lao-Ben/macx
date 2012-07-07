@@ -28,14 +28,11 @@
 }
 
 - (void)viewWillLoad {
-    NSLog(@"WILL LOAD");
     // Here for subclasses to override.
 }
 
 - (void)viewDidLoad {
-    NSLog(@"DID LOAD");
     [self fillTables];
-    // Here for subclasses to override.
 }
 
 - (void)loadView {
@@ -81,7 +78,6 @@
     
     if ([tabSelected isEqualToString:@"Entrées"])
     {
-        NSLog(@"Entrées");
         NSMutableArray *results = [appDelegate.recipes recipesInCategory:0 withIngredients:tab];
         CKRecipeDataSource *dataSource = [[CKRecipeDataSource alloc] init];
         dataSource.items = results;
@@ -91,7 +87,6 @@
     }
     else if ([tabSelected isEqualToString:@"Plats"])
     {
-        NSLog(@"Plats");
         NSMutableArray *results = [appDelegate.recipes recipesInCategory:1 withIngredients:tab];
         CKRecipeDataSource *dataSource = [[CKRecipeDataSource alloc] init];
         dataSource.items = results;
@@ -101,7 +96,6 @@
     }
     else
     {
-        NSLog(@"Desserts");
         NSMutableArray *results = [appDelegate.recipes recipesInCategory:2 withIngredients:tab];
         CKRecipeDataSource *dataSource = [[CKRecipeDataSource alloc] init];
         dataSource.items = results;

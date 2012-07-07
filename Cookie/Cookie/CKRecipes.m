@@ -53,15 +53,11 @@
 
 - (NSMutableArray*) recipesInCategory:(NSUInteger)category {
     NSMutableArray *recipes = [[NSMutableArray alloc] init];
-    NSLog(@"inCategory");
     for (CKRecipe *recipe in recipeArray) {
         if (recipe.category.intValue == category) {
-            NSLog(@"added recipe");
             [recipes addObject:recipe];
         }
     }
-    NSLog(@"cpt recipes : %li", recipes.count);
-
     return [recipes retain];
 }
 
@@ -75,7 +71,6 @@
     NSInteger year = [components year];
     int time = year + month + day; 
     int rand = (time % recipeArray.count);
-    NSLog(@"rand recipe %d", rand);
     return [recipeArray objectAtIndex:rand];
 }
 
@@ -102,7 +97,6 @@
             
                 if (range.location != NSNotFound)
                 {
-                    NSLog(@"Recette Présente");
                     present = YES;
                     break;
                 }

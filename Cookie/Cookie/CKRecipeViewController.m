@@ -70,9 +70,7 @@
     if (pictureExists) {
         NSImage *image = [[NSImage alloc] initWithContentsOfFile:pathForPicture];
         [recipeImage setImage:image];
-    }
-    NSLog(@"%@",pathForPicture);
-    
+    }    
 }
 
 - (void) initItemGuests

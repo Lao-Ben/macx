@@ -31,13 +31,10 @@
 }
 
 - (void)viewWillLoad {
-    NSLog(@"WILL LOAD MAIN");
     // Here for subclasses to override.
 }
 
-- (void)viewDidLoad {
-    NSLog(@"DID LOAD MAIN");
-    
+- (void)viewDidLoad {    
     [CKAppDelegate checkFoldersExistance];
     CKAppDelegate *appDelegate = [NSApp delegate];
     CKRecipes *recipes = [[CKRecipes alloc] initWithDictionnary:[CKRecipesSerializer deserialize]];
@@ -87,7 +84,6 @@
             NSImage *image = [[NSImage alloc] initWithContentsOfFile:pathForPicture];
             [dayImage setImage:image];
         }
-        NSLog(@"%@",pathForPicture);
     }
     
 [self fillTables];
