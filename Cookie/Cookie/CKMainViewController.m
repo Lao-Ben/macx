@@ -54,6 +54,7 @@
         [recipes add:recipe2];
         [recipes add:recipe3];
         [recipes add:recipe4];
+        recipes.recipeArray = [CKRecipes orderByRating:recipes.recipeArray];
     }
 
     appDelegate.recipes = recipes;

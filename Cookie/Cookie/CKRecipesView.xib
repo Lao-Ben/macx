@@ -2,13 +2,13 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1060</int>
-		<string key="IBDocument.SystemVersion">10K549</string>
-		<string key="IBDocument.InterfaceBuilderVersion">1938</string>
-		<string key="IBDocument.AppKitVersion">1038.36</string>
-		<string key="IBDocument.HIToolboxVersion">461.00</string>
+		<string key="IBDocument.SystemVersion">11E53</string>
+		<string key="IBDocument.InterfaceBuilderVersion">2182</string>
+		<string key="IBDocument.AppKitVersion">1138.47</string>
+		<string key="IBDocument.HIToolboxVersion">569.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string key="NS.object.0">1938</string>
+			<string key="NS.object.0">2182</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>NSScroller</string>
@@ -128,7 +128,6 @@
 						<string key="NSFrame">{{13, 40}, {574, 446}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="48510142"/>
 						<array class="NSMutableArray" key="NSTabViewItems">
 							<object class="NSTabViewItem" id="902543736">
 								<string key="NSIdentifier">1</string>
@@ -149,7 +148,7 @@
 															<int key="NSvFlags">256</int>
 															<string key="NSFrameSize">{518, 362}</string>
 															<reference key="NSSuperview" ref="368779099"/>
-															<reference key="NSNextKeyView" ref="463491155"/>
+															<reference key="NSNextKeyView" ref="43277927"/>
 															<bool key="NSEnabled">YES</bool>
 															<object class="NSTableHeaderView" key="NSHeaderView" id="747529715">
 																<reference key="NSNextResponder" ref="43277927"/>
@@ -236,6 +235,7 @@
 															<int key="NSDraggingSourceMaskForNonLocal">0</int>
 															<bool key="NSAllowsTypeSelect">YES</bool>
 															<int key="NSTableViewDraggingDestinationStyle">0</int>
+															<int key="NSTableViewGroupRowStyle">1</int>
 														</object>
 													</array>
 													<string key="NSFrame">{{1, 17}, {518, 362}}</string>
@@ -287,13 +287,12 @@
 											</array>
 											<string key="NSFrame">{{17, 17}, {520, 380}}</string>
 											<reference key="NSSuperview" ref="82563441"/>
-											<reference key="NSNextKeyView" ref="43277927"/>
-											<int key="NSsFlags">562</int>
+											<reference key="NSNextKeyView" ref="368779099"/>
+											<int key="NSsFlags">133682</int>
 											<reference key="NSVScroller" ref="463491155"/>
 											<reference key="NSHScroller" ref="859057640"/>
 											<reference key="NSContentView" ref="368779099"/>
 											<reference key="NSHeaderClipView" ref="43277927"/>
-											<reference key="NSCornerView" ref="978104964"/>
 											<bytes key="NSScrollAmts">QSAAAEEgAABCmAAAQpgAAA</bytes>
 										</object>
 									</array>
@@ -328,7 +327,7 @@
 															<int key="NSvFlags">256</int>
 															<string key="NSFrameSize">{518, 362}</string>
 															<reference key="NSSuperview" ref="210162039"/>
-															<reference key="NSNextKeyView" ref="921548202"/>
+															<reference key="NSNextKeyView" ref="858577175"/>
 															<bool key="NSEnabled">YES</bool>
 															<object class="NSTableHeaderView" key="NSHeaderView" id="231013767">
 																<reference key="NSNextResponder" ref="858577175"/>
@@ -390,6 +389,7 @@
 															<int key="NSDraggingSourceMaskForNonLocal">0</int>
 															<bool key="NSAllowsTypeSelect">YES</bool>
 															<int key="NSTableViewDraggingDestinationStyle">0</int>
+															<int key="NSTableViewGroupRowStyle">1</int>
 														</object>
 													</array>
 													<string key="NSFrame">{{1, 17}, {518, 362}}</string>
@@ -441,13 +441,12 @@
 											</array>
 											<string key="NSFrame">{{17, 17}, {520, 380}}</string>
 											<reference key="NSSuperview" ref="1021005106"/>
-											<reference key="NSNextKeyView" ref="858577175"/>
-											<int key="NSsFlags">562</int>
+											<reference key="NSNextKeyView" ref="210162039"/>
+											<int key="NSsFlags">133682</int>
 											<reference key="NSVScroller" ref="921548202"/>
 											<reference key="NSHScroller" ref="100371411"/>
 											<reference key="NSContentView" ref="210162039"/>
 											<reference key="NSHeaderClipView" ref="858577175"/>
-											<reference key="NSCornerView" ref="778948346"/>
 											<bytes key="NSScrollAmts">QSAAAEEgAABCmAAAQpgAAA</bytes>
 										</object>
 									</array>
@@ -477,7 +476,7 @@
 															<string key="NSFrameSize">{518, 362}</string>
 															<reference key="NSSuperview" ref="278534917"/>
 															<reference key="NSWindow"/>
-															<reference key="NSNextKeyView" ref="7546593"/>
+															<reference key="NSNextKeyView" ref="989185290"/>
 															<bool key="NSEnabled">YES</bool>
 															<object class="NSTableHeaderView" key="NSHeaderView" id="749684564">
 																<reference key="NSNextResponder" ref="989185290"/>
@@ -490,11 +489,9 @@
 																<reference key="NSTableView" ref="82221951"/>
 															</object>
 															<object class="_NSCornerView" key="NSCornerView" id="349839330">
-																<reference key="NSNextResponder" ref="493666393"/>
+																<nil key="NSNextResponder"/>
 																<int key="NSvFlags">-2147483392</int>
 																<string key="NSFrame">{{224, 0}, {16, 17}}</string>
-																<reference key="NSSuperview" ref="493666393"/>
-																<reference key="NSWindow"/>
 																<reference key="NSNextKeyView" ref="278534917"/>
 															</object>
 															<array class="NSMutableArray" key="NSTableColumns">
@@ -542,6 +539,7 @@
 															<int key="NSDraggingSourceMaskForNonLocal">0</int>
 															<bool key="NSAllowsTypeSelect">YES</bool>
 															<int key="NSTableViewDraggingDestinationStyle">0</int>
+															<int key="NSTableViewGroupRowStyle">1</int>
 														</object>
 													</array>
 													<string key="NSFrame">{{1, 17}, {518, 362}}</string>
@@ -593,18 +591,16 @@
 													<reference key="NSBGColor" ref="686925377"/>
 													<int key="NScvFlags">4</int>
 												</object>
-												<reference ref="349839330"/>
 											</array>
 											<string key="NSFrame">{{17, 17}, {520, 380}}</string>
 											<reference key="NSSuperview" ref="48510142"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="989185290"/>
-											<int key="NSsFlags">562</int>
+											<reference key="NSNextKeyView" ref="278534917"/>
+											<int key="NSsFlags">133682</int>
 											<reference key="NSVScroller" ref="7546593"/>
 											<reference key="NSHScroller" ref="359296206"/>
 											<reference key="NSContentView" ref="278534917"/>
 											<reference key="NSHeaderClipView" ref="989185290"/>
-											<reference key="NSCornerView" ref="349839330"/>
 											<bytes key="NSScrollAmts">QSAAAEEgAABCmAAAQpgAAA</bytes>
 										</object>
 									</array>
@@ -692,6 +688,14 @@
 						<reference key="destination" ref="795790159"/>
 					</object>
 					<int key="connectionID">176</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">tabs</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="722556266"/>
+					</object>
+					<int key="connectionID">183</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -1040,7 +1044,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">182</int>
+			<int key="maxID">183</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1063,23 +1067,26 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">CKRecipesViewController</string>
 					<string key="superclassName">NSViewController</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">updateFilter:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">updateFilter:</string>
-						<object class="IBActionInfo" key="NS.object.0">
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="deleteRecipes:">id</string>
+						<string key="updateFilter:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="deleteRecipes:">
+							<string key="name">deleteRecipes:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="updateFilter:">
 							<string key="name">updateFilter:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-					</object>
+					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="dessertsTable">NSTableView</string>
 						<string key="entreesTable">NSTableView</string>
 						<string key="platsTable">NSTableView</string>
 						<string key="searchField">NSSearchField</string>
-						<string key="tabView">NSTabView</string>
+						<string key="tabs">NSTabView</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="dessertsTable">
@@ -1098,8 +1105,8 @@
 							<string key="name">searchField</string>
 							<string key="candidateClassName">NSSearchField</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="tabView">
-							<string key="name">tabView</string>
+						<object class="IBToOneOutletInfo" key="tabs">
+							<string key="name">tabs</string>
 							<string key="candidateClassName">NSTabView</string>
 						</object>
 					</dictionary>

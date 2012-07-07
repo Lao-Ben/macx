@@ -43,6 +43,7 @@
 
 - (void)add:(CKRecipe*)recipe {
     [recipeArray addObject:recipe];
+    recipeArray = [CKRecipes orderByRating:recipeArray];
     NSDictionary* dict = [self toDictionnary];
     [CKRecipesSerializer serialize:dict];
 }
@@ -137,14 +138,22 @@
 + (NSMutableArray*) orderByRating:(NSMutableArray *)recipes {
 
     NSString * SORT_FIELD = @"rating";
+    NSString * SECOND_SORT_FIELD = @"name";
+
     
     NSSortDescriptor *lastDescriptor =
     [[[NSSortDescriptor alloc]
       initWithKey:SORT_FIELD
       ascending:NO
       selector:@selector(compare:)] autorelease];
+
+    NSSortDescriptor *nameDescriptor =
+    [[[NSSortDescriptor alloc]
+      initWithKey:SECOND_SORT_FIELD
+      ascending:NO
+      selector:@selector(localizedCaseInsensitiveCompare:)] autorelease];
     
-    NSArray * descriptors = [NSArray arrayWithObjects:lastDescriptor, nil];
+    NSArray * descriptors = [NSArray arrayWithObjects:lastDescriptor, nameDescriptor, nil];
     NSArray * sortedArray = [recipes sortedArrayUsingDescriptors:descriptors];
     
     return [NSMutableArray arrayWithArray:sortedArray];
