@@ -105,11 +105,64 @@
     }
 }
 
+-(IBAction)deleteRecipes:sender
+{
+    NSAlert *alert = [[[NSAlert alloc] init] autorelease]; 
+    [alert addButtonWithTitle:@"Supprimer"];
+    [alert addButtonWithTitle:@"Conserver"];
+    [alert setMessageText:@"Etes vous certain de vouloir supprimer \rles recettes ?"];
+    [alert setInformativeText:@"La suppression est définitive !"];
+    [alert setAlertStyle:NSWarningAlertStyle];
+    SEL callback = @selector(didDeletionAlert:returnCode:);
+    [alert beginSheetModalForWindow:[[self view] window]
+                      modalDelegate:self
+                     didEndSelector:callback
+                        contextInfo:nil];
+         //   NSLog(@"delete");
+}
+
+- (void) didDeletionAlert:(NSAlert*)alert returnCode:(int)button
+{
+    if (button == NSAlertFirstButtonReturn)
+    {
+        
+        NSString *tabSelected = [[tabView selectedTabViewItem] label];
+        NSIndexSet* indexSet = nil;
+        CKRecipeDataSource* dataSource = nil;
+        if ([tabSelected isEqualToString:@"Entrées"])
+        {
+                    NSLog(@"entree");
+            dataSource = entreesTable.dataSource;
+            indexSet = [entreesTable selectedRowIndexes];
+        }
+        else if ([tabSelected isEqualToString:@"Plats"])
+        {
+                             NSLog(@"plat");
+            dataSource = platsTable.dataSource;
+            indexSet = [platsTable selectedRowIndexes];
+        }
+        else
+        {
+                             NSLog(@"dst");
+            dataSource = dessertsTable.dataSource;
+            indexSet = [dessertsTable selectedRowIndexes];
+        }
+//        NSUInteger index = [indexSet firstIndex];
+//        while (index != NSNotFound) {
+//            index = [indexSet indexGreaterThanIndex:index];
+//                    NSLog(@"_>>%i",(int)index);
+//        }
+        NSInteger sr = [entreesTable numberOfRows];
+        int a = (int) sr;
+        NSLog(@"Callback OKAY %d",a);
+        NSLog(@"|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
+    }
+}
+
 - (void)doubleClick:(id)aTableView
 {
     NSString *tabSelected = [[tabView selectedTabViewItem] label];
     CKWindowController* windowController = [[[self view] window] windowController];
-    NSLog( @"double-click on row ");
     CKRecipeDataSource* dataSource = nil;
     NSInteger selectedRow = 0;
     

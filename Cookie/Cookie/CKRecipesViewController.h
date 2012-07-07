@@ -18,7 +18,8 @@
 @property (assign) IBOutlet NSSearchField *searchField;
 
 -(IBAction)updateFilter:sender;
-
+-(IBAction)deleteRecipes:sender;
 - (void)doubleClick:(id)aTableView;
 - (void)fillTables;
+- (void) didDeletionAlert:(NSAlert*)alert returnCode:(int)button;
 @end

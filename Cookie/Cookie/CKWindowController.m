@@ -87,5 +87,4 @@
     [self.window setContentView:[recipeEditionViewController view]];
     [self showWindow:self];
 }
-
 @end
