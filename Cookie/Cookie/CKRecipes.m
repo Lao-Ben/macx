@@ -69,7 +69,7 @@
     if (recipeArray.count <= 0) {
         return nil;
     }
-    int rand = (arc4random() % recipeArray.count - 1);
+    int rand = (int)(arc4random() % recipeArray.count - 1);
     return [recipeArray objectAtIndex:rand];
 }
 

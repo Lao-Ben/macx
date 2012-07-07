@@ -14,7 +14,7 @@
 #define CKDidChange @"RecipeAdded"
 
 
-@interface CKRecipeDataSource : NSObject
+@interface CKRecipeDataSource : NSObject <NSTableViewDataSource>
 
 @property (retain) NSMutableArray *items;
 

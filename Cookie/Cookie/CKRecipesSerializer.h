@@ -12,5 +12,5 @@
 
 + (void)serialize:(NSDictionary*)recipes;
 + (NSDictionary*)deserialize;
-
++ (NSString*)getPListPath;
 @end
