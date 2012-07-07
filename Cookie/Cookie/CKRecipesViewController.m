@@ -42,6 +42,7 @@
     [self viewWillLoad];
     [super loadView];
     [self viewDidLoad];
+    [[self entreesTable] setTarget:self];
     [[self dessertsTable] setTarget:self];
     [[self platsTable] setTarget:self];
     [[self dessertsTable] setDoubleAction:@selector(doubleClick:)];
@@ -112,9 +113,30 @@
 
 - (void)doubleClick:(id)aTableView
 {
-    NSLog( @"double-click on row ");
+    NSString *tabSelected = [[tabView selectedTabViewItem] label];
     CKWindowController* windowController = [[[self view] window] windowController];
-    [windowController pushRecipeViewWithRecipe:nil];
+    NSLog( @"double-click on row ");
+    CKRecipeDataSource* dataSource = nil;
+    NSInteger selectedRow = 0;
+    
+    if ([tabSelected isEqualToString:@"Entrées"])
+    {
+        dataSource = entreesTable.dataSource;
+        selectedRow = [entreesTable selectedRow];
+    }
+    else if ([tabSelected isEqualToString:@"Plats"])
+    {
+        dataSource = platsTable.dataSource;
+        selectedRow = [platsTable selectedRow];
+    }
+    else
+    {
+        dataSource = dessertsTable.dataSource;
+        selectedRow = [dessertsTable selectedRow];
+    }
+    NSArray* recipesArray = dataSource.items;
+    CKRecipe* selectedRecipe = [recipesArray objectAtIndex:selectedRow];
+    [windowController pushRecipeViewWithRecipe:selectedRecipe];
 }
 
 @end
