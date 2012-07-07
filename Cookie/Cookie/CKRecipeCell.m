@@ -12,14 +12,6 @@
 
 @synthesize image, rating;
 
-- (id)init {
-    self = [super init];
-    if (self) {
-           
-    }
-    return self;
-}
-
 - (id)copyWithZone:(NSZone *)zone
 {
     CKRecipeCell *cell = [super copyWithZone:zone];

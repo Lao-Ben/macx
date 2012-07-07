@@ -15,7 +15,7 @@
     NSString *rating;
 }
 
-@property (assign) IBOutlet NSImage *image;
-@property (assign) IBOutlet NSString *rating;
+@property (readwrite, retain) NSImage *image;
+@property (readwrite, copy) NSString *rating;
 
 @end

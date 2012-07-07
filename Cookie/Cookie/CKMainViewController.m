@@ -24,4 +24,21 @@
     return self;
 }
 
+- (void)viewWillLoad {
+    NSLog(@"WILL LOAD");
+    // Here for subclasses to override.
+}
+
+- (void)viewDidLoad {
+    NSLog(@"DID LOAD");
+    
+    // Here for subclasses to override.
+}
+
+- (void)loadView {
+    [self viewWillLoad];
+    [super loadView];
+    [self viewDidLoad];
+}
+
 @end

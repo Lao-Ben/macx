@@ -14,14 +14,10 @@
 
 - (id)init
 {
+    NSLog(@"init");
     self = [super init];
     if (self) {
         self.items = [NSMutableArray array];
-
-        NSData *data = [[NSData alloc] init];
-        NSNumber *rating = [NSNumber numberWithInt:4];
-        CKRecipe *recipe = [[CKRecipe alloc] initWithUniqueID:@"124332" andName:@"DataSource error" andCategory:[NSNumber numberWithInt:0] andPictureID:@"1243" andRating:rating andSummary:data andIngredients:[[NSArray arrayWithObject:@"Pomme"] retain]];
-        [items addObject:recipe];
     }
     return self;
 }
@@ -43,28 +39,49 @@
 }
 
 - (void)tableView:(NSTableView *)tableView willDisplayCell:(id)cell forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row { 
+    
+    CKRecipeCell *recipeCell = (CKRecipeCell *)cell;
+    NSLog(@"title : %@", recipeCell.title);
+    
+    CKAppDelegate *appDelegate = [NSApp delegate];
+
+    
+    for (CKRecipe *recipe in appDelegate.recipes.recipeArray) {
+        if ([recipe.name isEqualToString:recipeCell.title]) {
+            NSFileManager* fileMgr = [NSFileManager defaultManager];
+            NSString* pathForPicture = [[CKAppDelegate getMiniaturePath] 
+                                        stringByAppendingPathComponent:
+                                        [NSString stringWithFormat:@"%@.jpeg",recipe.pictureID]
+                                        ];
+            BOOL pictureExists = [fileMgr fileExistsAtPath:pathForPicture];
+            if (pictureExists) {
+                NSImage *image = [[[NSImage alloc] initWithContentsOfFile:pathForPicture] retain];
+                NSLog(@"img loaded in cell %@", image);
+                [recipeCell setImage:image];
+            }
+            NSLog(@"%@",pathForPicture);            
+        }
+    }
+
+    
+    if (items.count == 0) {
+        NSLog(@"COUNT AT 0 // index : %li size : items.count : %li", row, items.count);
+        return;
+    }
+    
+    NSLog(@"WillDisplayCellIndex index : %li size : items.count : %li", row, items.count);
 }
 
 -(id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex{
-    CKRecipe *recipe = [self.items objectAtIndex:rowIndex];
-    CKRecipeCell *recipeCell = [[CKRecipeCell alloc] init];
-    [recipeCell setTitle:recipe.name];
-    [recipeCell setRating:recipe.rating.stringValue];
+    NSLog(@"size : %li  index : %li", items.count, rowIndex);
     
-    NSFileManager* fileMgr = [NSFileManager defaultManager];
-    NSString* pathForPicture = [[CKAppDelegate getPicturesPath] 
-                                stringByAppendingPathComponent:
-                                [NSString stringWithFormat:@"%@.jpeg",recipe.pictureID]
-                                ];
-    BOOL pictureExists = [fileMgr fileExistsAtPath:pathForPicture];
-    if (pictureExists) {
-        NSImage *image = [[[NSImage alloc] initWithContentsOfFile:pathForPicture] retain];
-        NSLog(@"img loaded in cell %@", image);
-        [recipeCell setImage:image];
-    }
-    NSLog(@"%@",pathForPicture);
-
-
+    CKRecipe *recipe = [self.items objectAtIndex:rowIndex];
+    
+    CKRecipeCell *recipeCell = [[CKRecipeCell alloc] init];
+    recipeCell.title = recipe.name;
+   // [recipeCell setRating:recipe.rating.stringValue];
+    
+    
     return recipeCell;
 }
 
