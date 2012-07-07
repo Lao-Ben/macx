@@ -94,10 +94,15 @@
             BOOL present = NO;
             for(int k = 0; k < countIngredients; k++)
             {
-                NSRange range = [[[ingredients objectAtIndex:k] lowercaseString] rangeOfString:[[ingredients objectAtIndex:j] lowercaseString]];
+                //Probleme
+                NSString *ingredientAtIndexK = [[ingredientsInRecipe objectAtIndex:1] objectAtIndex:k];
+                ingredientAtIndexK = [ingredientAtIndexK lowercaseString];
+                //CECI NEST PAS UNE STRING
+                NSRange range = [ingredientAtIndexK rangeOfString:[[ingredients objectAtIndex:j] lowercaseString]];
             
                 if (range.location != NSNotFound)
                 {
+                    NSLog(@"Recette Présente");
                     present = YES;
                     break;
                 }
@@ -109,7 +114,7 @@
             }
         }
     }
-    return [CKRecipes orderByRating:recipes];
+    return recipes;
 }
 
 - (NSDictionary*)toDictionnary
