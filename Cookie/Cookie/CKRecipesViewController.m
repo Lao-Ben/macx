@@ -87,6 +87,7 @@
     }
     else if ([tabSelected isEqualToString:@"Plats"])
     {
+       // NSLog(@"Plats");
         NSMutableArray *results = [appDelegate.recipes recipesInCategory:1 withIngredients:tab];
         CKRecipeDataSource *dataSource = [[CKRecipeDataSource alloc] init];
         dataSource.items = results;
@@ -96,6 +97,7 @@
     }
     else
     {
+       // NSLog(@"Desserts");
         NSMutableArray *results = [appDelegate.recipes recipesInCategory:2 withIngredients:tab];
         CKRecipeDataSource *dataSource = [[CKRecipeDataSource alloc] init];
         dataSource.items = results;

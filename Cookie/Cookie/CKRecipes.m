@@ -53,11 +53,14 @@
 
 - (NSMutableArray*) recipesInCategory:(NSUInteger)category {
     NSMutableArray *recipes = [[NSMutableArray alloc] init];
+    //NSLog(@"inCategory");
     for (CKRecipe *recipe in recipeArray) {
         if (recipe.category.intValue == category) {
             [recipes addObject:recipe];
         }
     }
+   // NSLog(@"cpt recipes : %li", recipes.count);
+
     return [recipes retain];
 }
 
