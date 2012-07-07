@@ -17,6 +17,8 @@
 @synthesize dayName;
 @synthesize dayCategory;
 @synthesize dayRating;
+@synthesize lastTable;
+@synthesize bestTable;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -86,14 +88,31 @@
             [dayImage setImage:image];
         }
         NSLog(@"%@",pathForPicture);
-
     }
+    
+[self fillTables];
 }
 
 - (void)loadView {
     [self viewWillLoad];
     [super loadView];
     [self viewDidLoad];
+}
+
+
+- (void)fillTables {
+    CKAppDelegate *appDelegate = [NSApp delegate];
+    
+    CKRecipeDataSource *dataSource = [[CKRecipeDataSource alloc] init];
+    dataSource.items = [CKRecipes orderById:appDelegate.recipes.recipeArray];    
+    [lastTable setDataSource:dataSource];  
+    
+    CKRecipeDataSource *dataSource2 = [[CKRecipeDataSource alloc] init];
+    dataSource2.items = [CKRecipes orderByRating:appDelegate.recipes.recipeArray];
+    [bestTable setDataSource:dataSource2];
+    
+    [lastTable reloadData];    
+    [bestTable reloadData];
 }
 
 @end

@@ -138,26 +138,34 @@
 
 
 + (NSMutableArray*) orderByRating:(NSMutableArray *)recipes {
-    NSMutableArray *sortedArray = [[NSMutableArray alloc] initWithCapacity:[recipes count]];
 
-    [sortedArray arrayByAddingObjectsFromArray: [recipes sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
-        NSNumber *first = [(CKRecipe*)a rating];
-        NSNumber *second = [(CKRecipe*)b rating];
-        return -[first compare:second];
-    }] ];
+    NSString * SORT_FIELD = @"rating";
     
-    return sortedArray;
+    NSSortDescriptor *lastDescriptor =
+    [[[NSSortDescriptor alloc]
+      initWithKey:SORT_FIELD
+      ascending:NO
+      selector:@selector(compare:)] autorelease];
+    
+    NSArray * descriptors = [NSArray arrayWithObjects:lastDescriptor, nil];
+    NSArray * sortedArray = [recipes sortedArrayUsingDescriptors:descriptors];
+    
+    return [NSMutableArray arrayWithArray:sortedArray];
 }
 
 + (NSMutableArray*) orderById:(NSMutableArray *)recipes {
-    NSMutableArray *sortedArray = [NSMutableArray alloc];
     
-    [sortedArray arrayByAddingObjectsFromArray: [recipes sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
-        NSNumber *first = [NSNumber numberWithInteger: [[(CKRecipe*)a uniqueID] integerValue]];
-        NSNumber *second =[NSNumber numberWithInteger: [[(CKRecipe*)b uniqueID] integerValue]];
-        return [first compare:second];
-    }] ];
+    NSString * SORT_FIELD = @"uniqueID";
     
-    return sortedArray;
+    NSSortDescriptor *lastDescriptor =
+    [[[NSSortDescriptor alloc]
+      initWithKey:SORT_FIELD
+      ascending:NO
+      selector:@selector(compare:)] autorelease];
+    
+    NSArray * descriptors = [NSArray arrayWithObjects:lastDescriptor, nil];
+    NSArray * sortedArray = [recipes sortedArrayUsingDescriptors:descriptors];
+    
+    return [NSMutableArray arrayWithArray:sortedArray];
 }
 @end

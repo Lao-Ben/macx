@@ -29,4 +29,8 @@
     CKRecipe *cellInfo = [[CKRecipe alloc] initWithUniqueID:[self uniqueID] andName:[self name] andCategory:[self category] andPictureID:[self pictureID] andRating:[self rating] andSummary:[self summary] andIngredients:[self ingredients]];
     return cellInfo;
 }
+
+- (NSNumber *)numberFromUniqueID {
+    return [NSNumber numberWithInteger: [uniqueID integerValue]];
+}
 @end
