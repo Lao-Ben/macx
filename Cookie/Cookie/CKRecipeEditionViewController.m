@@ -27,7 +27,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        NSLog(@"RecipesEditionView loaded");
         NSMutableArray* quantities = [[NSMutableArray alloc] init];
         NSMutableArray* measures = [[NSMutableArray alloc] init];
         self.ingredients = [[NSMutableArray alloc] initWithObjects:measures, quantities, nil ];

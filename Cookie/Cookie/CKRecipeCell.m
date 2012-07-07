@@ -19,7 +19,7 @@
         return nil;
     }
     
-    NSLog(@"CopyWithZone");
+   // NSLog(@"CopyWithZone");
     
     // Clear the image and rating as they won't be retained
     cell->image = nil;
@@ -67,11 +67,11 @@
 
 - (void)drawInteriorWithFrame:(NSRect)cellFrame inView:(NSView *)controlView
 {
-    NSLog(@"Cell drawing %@", rating);
+   // NSLog(@"Cell drawing %@", rating);
 
     NSRect imageRect = [self imageRectForBounds:cellFrame];
     if (image) {
-        NSLog(@"Cell contains image");
+       // NSLog(@"Cell contains image");
         [image drawInRect:imageRect 
                  fromRect:NSZeroRect 
                 operation:NSCompositeSourceOver

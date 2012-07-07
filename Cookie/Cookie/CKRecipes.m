@@ -29,7 +29,7 @@
         for (NSDictionary *recipeDict in array) {
             CKRecipe *recipe = [[CKRecipe alloc] initWithUniqueID:[[recipeDict objectForKey:@"UniqueID"] retain] andName:[[recipeDict objectForKey:@"Name"] retain] andCategory:[[recipeDict objectForKey:@"Category"] retain] andPictureID:[[recipeDict objectForKey:@"PictureID"] retain] andRating:[[recipeDict objectForKey:@"Rating"] retain] andSummary:[[recipeDict objectForKey:@"Summary"] retain] andIngredients:[[recipeDict objectForKey:@"Ingredients"] retain]];
             [recipeArray addObject:recipe];
-            NSLog(@"deserialize name : %@", recipe.name);
+           // NSLog(@"deserialize name : %@", recipe.name);
         }
     }
     return self;
@@ -53,14 +53,14 @@
 
 - (NSMutableArray*) recipesInCategory:(NSUInteger)category {
     NSMutableArray *recipes = [[NSMutableArray alloc] init];
-    NSLog(@"inCategory");
+    //NSLog(@"inCategory");
     for (CKRecipe *recipe in recipeArray) {
         if (recipe.category.intValue == category) {
             NSLog(@"added recipe");
             [recipes addObject:recipe];
         }
     }
-    NSLog(@"cpt recipes : %li", recipes.count);
+   // NSLog(@"cpt recipes : %li", recipes.count);
 
     return [recipes retain];
 }
@@ -121,7 +121,7 @@
         NSArray *keys = [NSArray arrayWithObjects:@"UniqueID", @"Name", @"Category", @"PictureID", @"Rating", @"Summary", @"Ingredients", nil];
         NSArray *values = [NSArray arrayWithObjects:recipe.uniqueID, recipe.name, recipe.category, recipe.pictureID, recipe.rating, recipe.summary, recipe.ingredients, nil];
         
-        NSLog(@"recipe: %@ nbKeys: %lu nbValues: %lu",recipe.name, keys.count, values.count);
+       // NSLog(@"recipe: %@ nbKeys: %lu nbValues: %lu",recipe.name, keys.count, values.count);
         
         NSDictionary *recipeDict = [NSDictionary dictionaryWithObjects:values forKeys: keys]; 
         [tempArray addObject:recipeDict];
