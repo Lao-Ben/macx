@@ -42,7 +42,7 @@
     return self;
 }
 
-- (void) awakeFromNib
+-(void) awakeFromNib
 {
     NSNotificationCenter *notif = [NSNotificationCenter defaultCenter];
     [notif addObserver:self selector:@selector(textDidChange:) 
@@ -305,7 +305,6 @@
                                                 andRating:rating
                                                andSummary:data
                                            andIngredients:ingredients];
-    NSLog(@"%@",uniqueImageId);
     if (isEditing) {
         [recipes remove:oldRecipeName];
     }

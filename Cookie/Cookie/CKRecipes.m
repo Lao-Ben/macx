@@ -43,7 +43,8 @@
 
 - (void)add:(CKRecipe*)recipe {
     [recipeArray addObject:recipe];
-    recipeArray = [CKRecipes orderByRating:recipeArray];
+    // FIXME : f****** bug
+    //recipeArray = [CKRecipes orderByRating:recipeArray];
     NSDictionary* dict = [self toDictionnary];
     [CKRecipesSerializer serialize:dict];
 }
@@ -90,7 +91,6 @@
     NSInteger year = [components year];
     int time = (int)(year + month + day); 
     int rand = (int)(time % recipeArray.count);
-    NSLog(@"rand recipe %d", rand);
     return [recipeArray objectAtIndex:rand];
 }
 
