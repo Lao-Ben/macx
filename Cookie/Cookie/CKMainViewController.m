@@ -222,7 +222,7 @@
     
     
     CKRecipe *recipe2 = [[CKRecipe alloc] initWithUniqueID:@"Velouté de poireaux au curry" andName:@"Velouté de poireaux au curry" andCategory:[NSNumber numberWithInt:0] andPictureID:uniqueImageId2 andRating:rating2 andSummary:data2 andIngredients:[[NSArray arrayWithObjects:name2, measures2, nil] retain]];
-    CKRecipe *recipe3 = [[CKRecipe alloc] initWithUniqueID:@"Soupe de légumes délicieuse et diététique" andName:@"Soupe de légumes délicieuse et diététique" andCategory:[NSNumber numberWithInt:0] andPictureID:uniqueImageId3 andRating:rating3 andSummary:data3 andIngredients:[[NSArray arrayWithObjects:name3, measures3, nil] retain]];
+    CKRecipe *recipe3 = [[CKRecipe alloc] initWithUniqueID:@"Soupe de légumes diététique" andName:@"Soupe de légumes diététique" andCategory:[NSNumber numberWithInt:0] andPictureID:uniqueImageId3 andRating:rating3 andSummary:data3 andIngredients:[[NSArray arrayWithObjects:name3, measures3, nil] retain]];
     
     [recipes add:recipe2];
     [recipes add:recipe3];
