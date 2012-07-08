@@ -63,6 +63,18 @@
     return ratingRect;
 }
 
+- (NSRect)ratingRectForBounds:(NSRect)bounds withDecal:(NSNumber *)decal
+{
+    NSRect ratingRect = bounds;
+    
+    ratingRect.origin.x += BORDER_SIZE * 2 + IMAGE_SIZE + decal.doubleValue;
+    ratingRect.origin.y += BORDER_SIZE + IMAGE_SIZE / 2;
+    ratingRect.size.width = 12;
+    ratingRect.size.height = 11;
+    
+    return ratingRect;
+}
+
 - (void)drawInteriorWithFrame:(NSRect)cellFrame inView:(NSView *)controlView
 {
     NSRect imageRect = [self imageRectForBounds:cellFrame];
@@ -117,18 +129,6 @@
     imageRect.size.height = IMAGE_SIZE;
     
     return imageRect;
-}
-
-- (NSRect)ratingRectForBounds:(NSRect)bounds withDecal:(NSNumber *)decal
-{
-    NSRect ratingRect = bounds;
-    
-    ratingRect.origin.x += BORDER_SIZE * 2 + IMAGE_SIZE + decal.doubleValue;
-    ratingRect.origin.y += BORDER_SIZE + IMAGE_SIZE / 2;
-    ratingRect.size.width = 12;
-    ratingRect.size.height = 11;
-    
-    return ratingRect;
 }
 
 - (NSRect)titleRectForBounds:(NSRect)bounds
