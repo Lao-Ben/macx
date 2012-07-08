@@ -22,4 +22,5 @@
 - (void) deleteRecipeAtIndex:(NSInteger)row;
 - (NSInteger) numberOfRowsInTableView:(NSTableView *) tableView;
 -(id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex;
+- (void)tableView:(NSTableView *)tableView willDisplayCell:(id)cell forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row;
 @end

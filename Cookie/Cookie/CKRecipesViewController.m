@@ -234,4 +234,7 @@
     }
 }
 
+- (void)tableView:(NSTableView *)tableView willDisplayCell:(id)cell forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
+    [((CKRecipeDataSource *)tableView.dataSource) tableView:tableView willDisplayCell:cell forTableColumn:tableColumn row:row];
+}
 @end
