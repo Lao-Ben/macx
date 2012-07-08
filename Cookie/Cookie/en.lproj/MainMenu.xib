@@ -567,17 +567,19 @@
 					</array>
 					<array key="NSToolbarIBSelectableItems" id="0"/>
 				</object>
+				<string key="NSWindowContentMaxSize">{600, 800}</string>
 				<string key="NSWindowContentMinSize">{600, 500}</string>
 				<object class="NSView" key="NSWindowView" id="439893737">
 					<reference key="NSNextResponder"/>
-					<int key="NSvFlags">288</int>
+					<int key="NSvFlags">261</int>
 					<string key="NSFrameSize">{600, 500}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
+					<reference key="NSNextKeyView"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1680, 1028}}</string>
 				<string key="NSMinSize">{600, 578}</string>
-				<string key="NSMaxSize">{1e+13, 1e+13}</string>
+				<string key="NSMaxSize">{600, 878}</string>
 			</object>
 			<object class="NSCustomObject" id="976324537">
 				<string key="NSClassName">CKAppDelegate</string>
