@@ -13,6 +13,7 @@
 
 @interface CKAppDelegate : NSObject <NSApplicationDelegate>
 @property (retain) CKRecipes *recipes;
+
 + (void) checkFoldersExistance;
 + (NSString*) getApplicationPath;
 + (NSString*)getMiniaturePath;

@@ -9,12 +9,14 @@
 #import <Cocoa/Cocoa.h>
 #import "CKAppDelegate.h"
 #import "CKWindowController.h"
+#import "CKRecipeEditionViewController.h"
 
 @interface CKRecipeViewController : NSViewController
 {
-        NSArray *ingredientsArray;
-        NSInteger numberOfGuest;
-        NSInteger prevNumberOfGuest;
+    CKRecipe* currentRecipe;
+    NSArray *ingredientsArray;
+    NSInteger numberOfGuest;
+    NSInteger prevNumberOfGuest;
 }
 
 //Properties
@@ -33,12 +35,7 @@
 
 // Methods
 
-- (void) setUpRecipeWithName:(NSString*)name
-                 andCategory:(NSNumber*) categoryNumber
-                 andRate:(NSNumber*) rating
-                  andSummary:(NSData*) summary
-              andIngredients:(NSArray*) ingredients
-                  andPicture:(NSString*) pictureID;
+- (void) setUpRecipeWithRecipe:(CKRecipe*) recipe;
 
 - (void) initItemGuests;
 

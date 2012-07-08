@@ -47,6 +47,21 @@
     [CKRecipesSerializer serialize:dict];
 }
 
+- (void)remove:(NSString*)recipeName
+{
+    int suppresIndex = 0;
+    for (int i = 0; i < [recipeArray count]; i++) {
+        if ([[[recipeArray objectAtIndex:i] name] isEqualToString: recipeName]) {
+            suppresIndex = i;
+        }
+    }
+    if (suppresIndex != 0) {
+        [recipeArray removeObjectAtIndex:suppresIndex];
+    }
+    NSDictionary* dict = [self toDictionnary];
+    [CKRecipesSerializer serialize:dict];
+}
+
 - (NSUInteger) count {
     return recipeArray.count;
 }
@@ -73,8 +88,8 @@
     NSInteger day = [components day];
     NSInteger month = [components month];
     NSInteger year = [components year];
-    int time = year + month + day; 
-    int rand = (time % recipeArray.count);
+    int time = (int)(year + month + day); 
+    int rand = (int)(time % recipeArray.count);
     NSLog(@"rand recipe %d", rand);
     return [recipeArray objectAtIndex:rand];
 }

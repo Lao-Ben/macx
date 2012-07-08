@@ -34,7 +34,9 @@
         nameIsValid = NO;
         descIsValid = NO;
         hasIngredient = NO;
+        isEditing = NO;
         fileEmplacement = nil;
+        oldRecipeName = nil;
     }
     
     return self;
@@ -55,6 +57,45 @@
     [notif addObserver:self selector:@selector(controlTextDidChange:) 
                   name:NSTextDidChangeNotification
                 object:summaryField];
+}
+
+- (void) initViewWithRecipe:(CKRecipe*) recipe
+{
+    oldRecipeName = [[NSString alloc] initWithString:[recipe name]];
+    NSString* summurayData = [[NSString alloc] initWithData:[recipe summary] encoding:NSUTF8StringEncoding];
+    [nameField setStringValue:[recipe name]];
+    switch ([[recipe category] intValue]) {
+        case 0:
+            [categoryField setStringValue:@"Entrée"];
+            break;
+        case 1:
+            [categoryField setStringValue:@"Plat"];
+            break;
+        default:
+            [categoryField setStringValue:@"Dessert"];  
+            break;
+    }
+    [ratingIndicator setIntValue:[[recipe rating] intValue]];
+    [summaryField setString:summurayData];
+    ingredients = [[NSMutableArray alloc] initWithArray:[recipe ingredients]];
+    [ingredientsTable reloadData];
+    NSFileManager* fileMgr = [NSFileManager defaultManager];
+    NSString* pathForPicture = [[CKAppDelegate getPicturesPath] 
+                                stringByAppendingPathComponent:
+                                [NSString stringWithFormat:@"%@.jpeg",[recipe pictureID]]
+                                ];
+    BOOL pictureExists = [fileMgr fileExistsAtPath:pathForPicture];
+    if (pictureExists) {
+        NSImage *image = [[NSImage alloc] initWithContentsOfFile:pathForPicture];
+        [imageView setImage:image];
+        imageHash = [[recipe pictureID] integerValue];
+    }
+    nameIsValid = YES;
+    descIsValid = YES;
+    hasIngredient = YES;
+    [addRecipeButton setTitle:@"Mettre à jour"];
+    [addRecipeButton setEnabled:YES];
+    isEditing = YES;
 }
 
 - (void) textDidChange:(NSNotification *)notification
@@ -264,11 +305,11 @@
                                                 andRating:rating
                                                andSummary:data
                                            andIngredients:ingredients];
-    [recipes add:recipe];
-    if (fileEmplacement != nil)
-    {
-        
+    NSLog(@"%@",uniqueImageId);
+    if (isEditing) {
+        [recipes remove:oldRecipeName];
     }
+    [recipes add:recipe];
     CKWindowController* windowController = [[[self view] window] windowController];
     [windowController pushRecipesView];
 }
