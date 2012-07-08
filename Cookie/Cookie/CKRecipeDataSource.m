@@ -52,6 +52,7 @@
                 NSImage *image = [[[NSImage alloc] initWithContentsOfFile:pathForPicture] retain];
                 [recipeCell setImage:image];
             }
+            [recipeCell setRating: recipe.rating.stringValue];
         }
     }
 }

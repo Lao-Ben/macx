@@ -84,6 +84,19 @@
     if ([aTitle length] > 0) {
         [aTitle drawInRect:titleRect];
     }
+  
+    if (rating) {
+        for (int i = 0, decal = 0; i < rating.intValue; i++, decal += 13) {
+            NSRect ratingRect = [self ratingRectForBounds:cellFrame withDecal:[NSNumber numberWithInt:decal]];
+            NSImage *starImage = [NSImage imageNamed:@"ico-star-grey.png"];
+            [starImage drawInRect:ratingRect 
+                         fromRect:NSZeroRect 
+                        operation:NSCompositeSourceOver
+                         fraction:1.0
+                   respectFlipped:YES 
+                            hints:nil];
+        }
+    }
     
 //    NSRect ratingRect = [self ratingRectForBounds:cellFrame forTitleBounds:titleRect];
 //    NSAttributedString *arating = [self attributedRatingValue];
@@ -106,12 +119,24 @@
     return imageRect;
 }
 
+- (NSRect)ratingRectForBounds:(NSRect)bounds withDecal:(NSNumber *)decal
+{
+    NSRect ratingRect = bounds;
+    
+    ratingRect.origin.x += BORDER_SIZE * 2 + IMAGE_SIZE + decal.doubleValue;
+    ratingRect.origin.y += BORDER_SIZE + IMAGE_SIZE / 2;
+    ratingRect.size.width = 12;
+    ratingRect.size.height = 11;
+    
+    return ratingRect;
+}
+
 - (NSRect)titleRectForBounds:(NSRect)bounds
 {
     NSRect titleRect = bounds;
     
     titleRect.origin.x += IMAGE_SIZE + (BORDER_SIZE * 2);
-    titleRect.origin.y += BORDER_SIZE;
+    titleRect.origin.y += BORDER_SIZE * 2;
     
     NSAttributedString *title = [self attributedStringValue];
     if (title) {

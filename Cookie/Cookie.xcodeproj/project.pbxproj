@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D01E8C415A910C8003744A6 /* ico-star-grey.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D01E8C315A910C8003744A6 /* ico-star-grey.png */; };
 		0D2DA770159CECFA009C4A46 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D2DA76F159CECFA009C4A46 /* Cocoa.framework */; };
 		0D2DA77A159CECFB009C4A46 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D2DA778159CECFB009C4A46 /* InfoPlist.strings */; };
 		0D2DA77C159CECFB009C4A46 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2DA77B159CECFB009C4A46 /* main.m */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D01E8C315A910C8003744A6 /* ico-star-grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico-star-grey.png"; sourceTree = "<group>"; };
 		0D2DA76B159CECFA009C4A46 /* Cookie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cookie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D2DA76F159CECFA009C4A46 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		0D2DA772159CECFA009C4A46 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -213,6 +215,7 @@
 			children = (
 				ADD320C515A0F3A100B7CD8A /* cookie.icns */,
 				ADCA60F515A083AD009BE6F0 /* add.png */,
+				0D01E8C315A910C8003744A6 /* ico-star-grey.png */,
 				ADCA60F615A083AD009BE6F0 /* delete.png */,
 				0D8E36C1159FBBDD00E541EE /* house.png */,
 				0D8E36C2159FBBDD00E541EE /* shoebox.png */,
@@ -295,6 +298,7 @@
 				ADCA60F815A083AD009BE6F0 /* delete.png in Resources */,
 				ADD320C615A0F3A100B7CD8A /* cookie.icns in Resources */,
 				AD3BF7B215A490CD00B15140 /* CKRecipeView.xib in Resources */,
+				0D01E8C415A910C8003744A6 /* ico-star-grey.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
