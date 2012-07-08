@@ -18,6 +18,7 @@
 @synthesize entreesTable;
 @synthesize dessertsTable;
 @synthesize searchField;
+@synthesize suppressButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -131,7 +132,6 @@
                       modalDelegate:self
                      didEndSelector:callback
                         contextInfo:nil];
-         //   NSLog(@"delete");
 }
 
 - (void) didDeletionAlert:(NSAlert*)alert returnCode:(int)button
@@ -139,6 +139,8 @@
     if (button == NSAlertFirstButtonReturn)
     {
         
+        CKAppDelegate *appDelegate = [NSApp delegate];
+        CKRecipes *recipes = [appDelegate recipes];
         NSString *tabSelected = [[tabView selectedTabViewItem] label];
         NSIndexSet* indexSet = nil;
         CKRecipeDataSource* dataSource = nil;
@@ -156,19 +158,19 @@
         }
         else
         {
-                             NSLog(@"dst");
             dataSource = dessertsTable.dataSource;
             indexSet = [dessertsTable selectedRowIndexes];
         }
-//        NSUInteger index = [indexSet firstIndex];
-//        while (index != NSNotFound) {
-//            index = [indexSet indexGreaterThanIndex:index];
-//                    NSLog(@"_>>%i",(int)index);
-//        }
-        NSInteger sr = [entreesTable numberOfRows];
-        int a = (int) sr;
-        NSLog(@"Callback OKAY %d",a);
-        NSLog(@"|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
+        NSUInteger index = [indexSet firstIndex];
+        while (index != NSNotFound) {
+            NSString* recipeName =[[dataSource.items objectAtIndex:index] name];
+            [recipes remove:recipeName];
+            [dataSource.items removeObjectAtIndex:index];
+            index = [indexSet indexGreaterThanIndex:index];
+        }
+        [entreesTable reloadData];
+        [platsTable reloadData];
+        [dessertsTable reloadData];
     }
 }
 
@@ -197,6 +199,39 @@
     NSArray* recipesArray = dataSource.items;
     CKRecipe* selectedRecipe = [recipesArray objectAtIndex:selectedRow];
     [windowController pushRecipeViewWithRecipe:selectedRecipe];
+}
+
+- (void)tableViewSelectionDidChange:(NSNotification *)aNotification
+{
+    NSString *tabSelected = [[tabView selectedTabViewItem] label];
+    CKRecipeDataSource* dataSource = nil;
+    NSInteger selectedRow = -1;
+    
+    if ([tabSelected isEqualToString:@"Entrées"])
+    {
+        NSLog(@"Entrée");
+        dataSource = entreesTable.dataSource;
+        selectedRow = [entreesTable selectedRow];
+    }
+    else if ([tabSelected isEqualToString:@"Plats"])
+    {
+                NSLog(@"Plats");
+        dataSource = platsTable.dataSource;
+        selectedRow = [platsTable selectedRow];
+    }
+    else
+    {
+        NSLog(@"Dessert");
+        dataSource = dessertsTable.dataSource;
+        selectedRow = [dessertsTable selectedRow];
+    }
+    if (selectedRow != -1) {
+        [suppressButton setEnabled:YES];
+    }
+    else
+    {
+        [suppressButton setEnabled:NO];  
+    }
 }
 
 @end
