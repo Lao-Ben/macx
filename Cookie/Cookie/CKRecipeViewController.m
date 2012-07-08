@@ -35,8 +35,7 @@
 }
 
 - (IBAction)ratingChanged:(id)sender {
-    NSLog(@"recipe rating : %f", recipeRate.doubleValue);
-    currentRecipe.rating = [NSNumber numberWithInt:recipeRate.intValue];
+    currentRecipe.rating = [NSNumber numberWithInt:recipeRate.integerValue];
 }
 
 - (void) setUpRecipeWithRecipe:(CKRecipe*) recipe
