@@ -130,6 +130,18 @@
 
 - (IBAction)ratingChanged:(id)sender {
     currentRecipe.rating = [NSNumber numberWithInt:recipeRate.intValue];
+    NSArray *recipes = [[[NSApp delegate] recipes] recipeArray];
+    NSInteger index = 0;
+    for (CKRecipe* recipe in recipes) {
+        if ([[recipe name] isEqualToString:[currentRecipe name]]) {
+            CKRecipe *foundedRecipe = [recipes objectAtIndex:index];
+            [foundedRecipe setRating:[NSNumber numberWithInt:recipeRate.intValue]];
+            [[[NSApp delegate] recipes] remove:[currentRecipe name]];
+            [[[NSApp delegate] recipes] add:currentRecipe];     
+            break;
+        }
+        index++;
+    }
 }
 
 @end
