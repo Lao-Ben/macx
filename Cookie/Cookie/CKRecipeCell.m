@@ -89,8 +89,8 @@
         for (int i = 0, decal = 0; i < rating.intValue; i++, decal += 13) {
             NSRect ratingRect = [self ratingRectForBounds:cellFrame withDecal:[NSNumber numberWithInt:decal]];
             NSImage *starImage = [NSImage imageNamed:@"ico-star-grey.png"];
-            [starImage drawInRect:ratingRect 
-                         fromRect:NSZeroRect 
+            [starImage drawInRect:ratingRect
+                         fromRect:NSZeroRect
                         operation:NSCompositeSourceOver
                          fraction:1.0
                    respectFlipped:YES 

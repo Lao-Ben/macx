@@ -34,6 +34,7 @@
 - (IBAction)editAction:(id)sender;
 
 // Methods
+- (IBAction)ratingChanged:(id)sender;
 
 - (void) setUpRecipeWithRecipe:(CKRecipe*) recipe;
 

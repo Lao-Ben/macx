@@ -34,6 +34,11 @@
     return self;
 }
 
+- (IBAction)ratingChanged:(id)sender {
+    NSLog(@"recipe rating : %f", recipeRate.doubleValue);
+    currentRecipe.rating = [NSNumber numberWithInt:recipeRate.intValue];
+}
+
 - (void) setUpRecipeWithRecipe:(CKRecipe*) recipe
 {
     [self initItemGuests];
@@ -57,7 +62,7 @@
     [ingredientsTable reloadData];
     
     NSFileManager* fileMgr = [NSFileManager defaultManager];
-    NSString* pathForPicture = [[CKAppDelegate getMiniaturePath] 
+    NSString* pathForPicture = [[CKAppDelegate getPicturesPath] 
                                 stringByAppendingPathComponent:
                                 [NSString stringWithFormat:@"%@.jpeg",[recipe pictureID]]
                                 ];
