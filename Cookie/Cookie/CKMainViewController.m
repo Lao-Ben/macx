@@ -56,7 +56,7 @@
         [recipes add:recipe4];
         recipes.recipeArray = [CKRecipes orderByRating:recipes.recipeArray];
     }
-
+    
     appDelegate.recipes = recipes;
     
     CKRecipe *recipe = [appDelegate.recipes recipeOfTheDay];
@@ -87,7 +87,7 @@
         }
     }
     
-[self fillTables];
+    [self fillTables];
 }
 
 - (void)loadView {

@@ -150,6 +150,12 @@
     [tempArray release];
 }
 
+- (void) printRecipeName
+{
+    for (CKRecipe* recipe in recipeArray) {
+        NSLog(@"Recette :%@",[recipe name]);
+    }
+}
 
 + (NSMutableArray*) orderByRating:(NSMutableArray *)recipes {
 

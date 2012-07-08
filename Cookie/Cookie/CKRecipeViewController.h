@@ -37,7 +37,7 @@
 - (IBAction)ratingChanged:(id)sender;
 
 - (void) setUpRecipeWithRecipe:(CKRecipe*) recipe;
-
 - (void) initItemGuests;
+- (void) itemOfMenuDidChange:(NSNotification *)notification;
 
 @end

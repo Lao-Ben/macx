@@ -24,6 +24,7 @@
 - (CKRecipe*) recipeOfTheDay;
 - (NSMutableArray*) recipesInCategory:(NSUInteger)category withIngredients:(NSArray*)ingredients;
 - (NSDictionary*) toDictionnary;
+- (void) printRecipeName;
 
 + (NSMutableArray*) orderByRating:(NSMutableArray*)recipes;
 + (NSMutableArray*) orderById:(NSMutableArray*)recipes;

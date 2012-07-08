@@ -34,8 +34,28 @@
     return self;
 }
 
-- (IBAction)ratingChanged:(id)sender {
-    currentRecipe.rating = [NSNumber numberWithInt:recipeRate.integerValue];
+- (void) awakeFromNib
+{
+    NSNotificationCenter *notif = [NSNotificationCenter defaultCenter];
+    [notif addObserver:self selector:@selector(itemOfMenuDidChange:) 
+                  name:NSMenuDidChangeItemNotification
+                object:[guestSelector menu]];
+}
+
+- (void) itemOfMenuDidChange:(NSNotification *)notification
+{
+    prevNumberOfGuest = numberOfGuest;
+    NSMenuItem *item = [guestSelector itemAtIndex:[guestSelector indexOfSelectedItem]];
+    numberOfGuest = [[item title] integerValue];
+    NSMutableArray *quantities = [ingredientsArray objectAtIndex:1];
+    for (int i = 0; i < [quantities count]; i++) {
+        id quantity = [quantities objectAtIndex:i];
+        float quantityInteger = [quantity floatValue];
+        float newQuantityValue = (quantityInteger * numberOfGuest);
+        newQuantityValue /= prevNumberOfGuest;
+        [quantities replaceObjectAtIndex:i withObject:[NSString stringWithFormat:@"%.2f", newQuantityValue]];
+    }
+    [ingredientsTable reloadData];
 }
 
 - (void) setUpRecipeWithRecipe:(CKRecipe*) recipe
@@ -80,6 +100,7 @@
         NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:key action:nil keyEquivalent:key];
         [[guestSelector menu] addItem:item];
     }
+    [guestSelector setObjectValue:@"1"];
 }
 
 //DataSource (tableview)
@@ -101,27 +122,14 @@
     }
 }
 
-//delegate (NSMenu)
-- (void)menu:(NSMenu *)menu willHighlightItem:(NSMenuItem *)item
-{
-    prevNumberOfGuest = numberOfGuest;
-    numberOfGuest = [[item title] integerValue];
-}
-
-- (void)menuDidClose:(NSMenu *)menu
-{
-    NSMutableArray *quantities = [ingredientsArray objectAtIndex:1];
-    for (int i = 0; i < [quantities count]; i++) {
-        id quantity = [quantities objectAtIndex:i];
-        NSInteger quantityInteger = [quantity integerValue];
-        NSInteger newQuantityValue = (quantityInteger * numberOfGuest) / prevNumberOfGuest;
-        [quantities replaceObjectAtIndex:i withObject:[NSString stringWithFormat:@"%i", newQuantityValue]];
-    }
-    [ingredientsTable reloadData];
-}
 
 - (IBAction)editAction:(id)sender {
     CKWindowController *windowController = [[[self view] window] windowController];
     [windowController pushEditionViewWithRecipe:currentRecipe];
 }
+
+- (IBAction)ratingChanged:(id)sender {
+    currentRecipe.rating = [NSNumber numberWithInt:recipeRate.intValue];
+}
+
 @end

@@ -15,5 +15,5 @@
 @property (assign) IBOutlet NSLevelIndicator *dayRating;
 @property (assign) IBOutlet NSTableView *lastTable;
 @property (assign) IBOutlet NSTableView *bestTable;
-
+- (void)fillTables;
 @end
