@@ -16,4 +16,6 @@
 @property (assign) IBOutlet NSTableView *lastTable;
 @property (assign) IBOutlet NSTableView *bestTable;
 - (void)fillTables;
+- (void)doubleClickLastTable:(id)aTableView;
+- (void)doubleClickBestTable:(id)aTableView;
 @end
