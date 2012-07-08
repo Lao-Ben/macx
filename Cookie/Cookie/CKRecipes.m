@@ -171,7 +171,7 @@
     NSSortDescriptor *nameDescriptor =
     [[[NSSortDescriptor alloc]
       initWithKey:SECOND_SORT_FIELD
-      ascending:NO
+      ascending:YES
       selector:@selector(localizedCaseInsensitiveCompare:)] autorelease];
     
     NSArray * descriptors = [NSArray arrayWithObjects:lastDescriptor, nameDescriptor, nil];
