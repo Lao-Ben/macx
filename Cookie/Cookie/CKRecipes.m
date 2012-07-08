@@ -43,6 +43,7 @@
 
 - (void)add:(CKRecipe*)recipe {
     [recipeArray addObject:recipe];
+    recipeArray = [CKRecipes orderByRating:recipeArray];
     NSDictionary* dict = [self toDictionnary];
     [CKRecipesSerializer serialize:dict];
 }
@@ -71,7 +72,6 @@
     //NSLog(@"inCategory");
     for (CKRecipe *recipe in recipeArray) {
         if (recipe.category.intValue == category) {
-            NSLog(@"added recipe");
             [recipes addObject:recipe];
         }
     }
@@ -102,7 +102,7 @@
     {
         CKRecipe *recipe = [recipes objectAtIndex:i];
         NSArray *ingredientsInRecipe = [recipe ingredients];
-        NSInteger countIngredients = [ingredientsInRecipe count];
+        NSInteger countIngredients = [[ingredientsInRecipe objectAtIndex:0] count];
         
         for (int j = 0; j < [ingredients count]; j++)
         {
@@ -110,14 +110,13 @@
             for(int k = 0; k < countIngredients; k++)
             {
                 //Probleme
-                NSString *ingredientAtIndexK = [[ingredientsInRecipe objectAtIndex:1] objectAtIndex:k];
+                NSString *ingredientAtIndexK = [[ingredientsInRecipe objectAtIndex:0] objectAtIndex:k];
                 ingredientAtIndexK = [ingredientAtIndexK lowercaseString];
                 //CECI NEST PAS UNE STRING
                 NSRange range = [ingredientAtIndexK rangeOfString:[[ingredients objectAtIndex:j] lowercaseString]];
             
                 if (range.location != NSNotFound)
                 {
-                    NSLog(@"Recette Présente");
                     present = YES;
                     break;
                 }
@@ -155,14 +154,22 @@
 + (NSMutableArray*) orderByRating:(NSMutableArray *)recipes {
 
     NSString * SORT_FIELD = @"rating";
+    NSString * SECOND_SORT_FIELD = @"name";
+
     
     NSSortDescriptor *lastDescriptor =
     [[[NSSortDescriptor alloc]
       initWithKey:SORT_FIELD
       ascending:NO
       selector:@selector(compare:)] autorelease];
+
+    NSSortDescriptor *nameDescriptor =
+    [[[NSSortDescriptor alloc]
+      initWithKey:SECOND_SORT_FIELD
+      ascending:NO
+      selector:@selector(localizedCaseInsensitiveCompare:)] autorelease];
     
-    NSArray * descriptors = [NSArray arrayWithObjects:lastDescriptor, nil];
+    NSArray * descriptors = [NSArray arrayWithObjects:lastDescriptor, nameDescriptor, nil];
     NSArray * sortedArray = [recipes sortedArrayUsingDescriptors:descriptors];
     
     return [NSMutableArray arrayWithArray:sortedArray];
