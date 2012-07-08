@@ -209,19 +209,16 @@
     
     if ([tabSelected isEqualToString:@"Entrées"])
     {
-        NSLog(@"Entrée");
         dataSource = entreesTable.dataSource;
         selectedRow = [entreesTable selectedRow];
     }
     else if ([tabSelected isEqualToString:@"Plats"])
     {
-                NSLog(@"Plats");
         dataSource = platsTable.dataSource;
         selectedRow = [platsTable selectedRow];
     }
     else
     {
-        NSLog(@"Dessert");
         dataSource = dessertsTable.dataSource;
         selectedRow = [dessertsTable selectedRow];
     }

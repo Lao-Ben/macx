@@ -88,7 +88,6 @@
     [self viewDidLoad];
 }
 
-
 - (void)fillTables {
     CKAppDelegate *appDelegate = [NSApp delegate];
     
@@ -122,6 +121,17 @@
     CKRecipe* selectedRecipe = [recipesArray objectAtIndex:selectedRow];
     [windowController pushRecipeViewWithRecipe:selectedRecipe];
 }
+
+- (IBAction)mainRecipeClickAction:(id)sender {
+    CKWindowController* windowController = [[[self view] window] windowController];
+    NSArray* recipes = [[[NSApp delegate] recipes] recipeArray];
+    for (CKRecipe* recipe in recipes) {
+        if ([[recipe name] isEqualToString:[dayName stringValue]]) {
+              [windowController pushRecipeViewWithRecipe:recipe];
+        }
+    }
+}
+
 
 - (void)addDefaultRecipes:(CKRecipes *)recipes {
     NSData *data2 = [[NSString stringWithString:@"Mettez l'huile d'olive à chauffer dans une cocotte bien chaude. Ajoutez les rondelles de poireaux et de courgettes dans la cocotte et faites-les revenir 5 minutes.\n\nAjoutez ensuite la tablette de bouillon et le curry. Salez et poivrez. Ajoutez environ un litre d'eau froide dans la cocotte. Laissez cuire la préparation pendant 20 minutes environ.\n\nMixez la préparation. Dégustez bien chaud."] dataUsingEncoding:NSUTF8StringEncoding];
