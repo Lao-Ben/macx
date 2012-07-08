@@ -168,7 +168,6 @@
     [resized addRepresentation: newBitmap];
     
     fullPath =  [[CKAppDelegate getMiniaturePath] stringByAppendingPathComponent:imageName2];
-    NSLog(@"hash : %li path : %@",imageHash2, fullPath);
     representations = [resized representations];
     imageData = [NSBitmapImageRep representationOfImageRepsInArray:representations usingType:NSJPEGFileType properties:nil];
     writeError = nil;
