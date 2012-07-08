@@ -17,6 +17,8 @@
 		0D2FCAD2159CFC0200215551 /* CKRecipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2FCAD1159CFC0200215551 /* CKRecipe.m */; };
 		0D2FCAD5159D039100215551 /* CKRecipesSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2FCAD4159D039100215551 /* CKRecipesSerializer.m */; };
 		0D2FCAD8159D1AF800215551 /* CKRecipes.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2FCAD7159D1AF800215551 /* CKRecipes.m */; };
+		0D5B3EA615A9E74F00306EC0 /* soupe_curry.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D5B3EA515A9E74F00306EC0 /* soupe_curry.png */; };
+		0D5B3EA915A9E79E00306EC0 /* soupe_poireaux.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D5B3EA815A9E79E00306EC0 /* soupe_poireaux.jpg */; };
 		0D8E36AE159FA05500E541EE /* CKRecipesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8E36AC159FA05500E541EE /* CKRecipesViewController.m */; };
 		0D8E36AF159FA05500E541EE /* CKRecipesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D8E36AD159FA05500E541EE /* CKRecipesView.xib */; };
 		0D8E36B5159FA94300E541EE /* CKRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8E36B3159FA94300E541EE /* CKRecipeViewController.m */; };
@@ -58,6 +60,8 @@
 		0D2FCAD4159D039100215551 /* CKRecipesSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKRecipesSerializer.m; sourceTree = "<group>"; };
 		0D2FCAD6159D1AF800215551 /* CKRecipes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKRecipes.h; sourceTree = "<group>"; };
 		0D2FCAD7159D1AF800215551 /* CKRecipes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKRecipes.m; sourceTree = "<group>"; };
+		0D5B3EA515A9E74F00306EC0 /* soupe_curry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soupe_curry.png; sourceTree = "<group>"; };
+		0D5B3EA815A9E79E00306EC0 /* soupe_poireaux.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = soupe_poireaux.jpg; sourceTree = "<group>"; };
 		0D8E36AB159FA05500E541EE /* CKRecipesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKRecipesViewController.h; sourceTree = "<group>"; };
 		0D8E36AC159FA05500E541EE /* CKRecipesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKRecipesViewController.m; sourceTree = "<group>"; };
 		0D8E36AD159FA05500E541EE /* CKRecipesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CKRecipesView.xib; sourceTree = "<group>"; };
@@ -222,6 +226,8 @@
 				ADCA60F515A083AD009BE6F0 /* add.png */,
 				0D01E8C315A910C8003744A6 /* ico-star-grey.png */,
 				ADCA60F615A083AD009BE6F0 /* delete.png */,
+				0D5B3EA815A9E79E00306EC0 /* soupe_poireaux.jpg */,
+				0D5B3EA515A9E74F00306EC0 /* soupe_curry.png */,
 				0D8E36C1159FBBDD00E541EE /* house.png */,
 				0D8E36C2159FBBDD00E541EE /* shoebox.png */,
 				0D8E36CA159FC41900E541EE /* food.png */,
@@ -304,6 +310,8 @@
 				ADD320C615A0F3A100B7CD8A /* cookie.icns in Resources */,
 				AD3BF7B215A490CD00B15140 /* CKRecipeView.xib in Resources */,
 				0D01E8C415A910C8003744A6 /* ico-star-grey.png in Resources */,
+				0D5B3EA615A9E74F00306EC0 /* soupe_curry.png in Resources */,
+				0D5B3EA915A9E79E00306EC0 /* soupe_poireaux.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
