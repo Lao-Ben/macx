@@ -44,13 +44,13 @@
     [self.window setContentView:[recipeViewController view]];
     [self showWindow:self];
 
-    [recipeViewController setUpRecipeWithRecipe:recipe] ;
-//     name]
-//                                  andCategory:[recipe category]
-//                                      andRate:[recipe rating]
-//                                   andSummary:[recipe summary]
-//                               andIngredients:[recipe ingredients]
-//                                   andPicture:[recipe pictureID]];
+    [recipeViewController setUpRecipeWithName:[recipe name]
+                                  andCategory:[recipe category]
+                                      andRate:[recipe rating]
+                                   andSummary:[recipe summary]
+                               andIngredients:[recipe ingredients]
+                                   andPicture:[recipe pictureID]];
+    
     
     
     //Test of the Display Recipe --- To Be Remove ---
