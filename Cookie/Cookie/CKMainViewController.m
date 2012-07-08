@@ -102,7 +102,6 @@
     [self viewDidLoad];
 }
 
-
 - (void)fillTables {
     CKAppDelegate *appDelegate = [NSApp delegate];
     
@@ -136,5 +135,17 @@
     CKRecipe* selectedRecipe = [recipesArray objectAtIndex:selectedRow];
     [windowController pushRecipeViewWithRecipe:selectedRecipe];
 }
+
+
+- (IBAction)mainRecipeClickAction:(id)sender {
+    CKWindowController* windowController = [[[self view] window] windowController];
+    NSArray* recipes = [[[NSApp delegate] recipes] recipeArray];
+    for (CKRecipe* recipe in recipes) {
+        if ([[recipe name] isEqualToString:[dayName stringValue]]) {
+              [windowController pushRecipeViewWithRecipe:recipe];
+        }
+    }
+}
+
 
 @end
