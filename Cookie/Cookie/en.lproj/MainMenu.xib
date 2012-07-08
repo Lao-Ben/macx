@@ -333,7 +333,6 @@
 								<int key="NSvFlags">268</int>
 								<string key="NSFrame">{{0, 14}, {96, 22}}</string>
 								<reference key="NSSuperview"/>
-								<reference key="NSWindow"/>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSSearchFieldCell" key="NSCell" id="614770364">
 									<int key="NSCellFlags">879885888</int>
@@ -423,28 +422,6 @@
 							<object class="NSCustomResource" key="NSToolbarItemImage">
 								<string key="NSClassName">NSImage</string>
 								<string key="NSResourceName">house</string>
-							</object>
-							<nil key="NSToolbarItemTarget"/>
-							<nil key="NSToolbarItemAction"/>
-							<string key="NSToolbarItemMinSize">{0, 0}</string>
-							<string key="NSToolbarItemMaxSize">{0, 0}</string>
-							<bool key="NSToolbarItemEnabled">YES</bool>
-							<bool key="NSToolbarItemAutovalidates">YES</bool>
-							<int key="NSToolbarItemTag">-1</int>
-							<bool key="NSToolbarIsUserRemovable">YES</bool>
-							<int key="NSToolbarItemVisibilityPriority">0</int>
-						</object>
-						<object class="NSToolbarItem" key="E8120AB7-7AA9-47AD-AC98-300A6856493E" id="333650539">
-							<object class="NSMutableString" key="NSToolbarItemIdentifier">
-								<characters key="NS.bytes">E8120AB7-7AA9-47AD-AC98-300A6856493E</characters>
-							</object>
-							<string key="NSToolbarItemLabel">Supprimer</string>
-							<string key="NSToolbarItemPaletteLabel">Supprimer</string>
-							<nil key="NSToolbarItemToolTip"/>
-							<nil key="NSToolbarItemView"/>
-							<object class="NSCustomResource" key="NSToolbarItemImage">
-								<string key="NSClassName">NSImage</string>
-								<string key="NSResourceName">delete</string>
 							</object>
 							<nil key="NSToolbarItemTarget"/>
 							<nil key="NSToolbarItemAction"/>
@@ -581,14 +558,12 @@
 						<reference ref="269550645"/>
 						<reference ref="30184396"/>
 						<reference ref="451146489"/>
-						<reference ref="333650539"/>
 					</array>
-					<array key="NSToolbarIBDefaultItems">
+					<array class="NSMutableArray" key="NSToolbarIBDefaultItems">
 						<reference ref="269550645"/>
 						<reference ref="1033323653"/>
 						<reference ref="199601049"/>
 						<reference ref="451146489"/>
-						<reference ref="333650539"/>
 						<reference ref="269550645"/>
 					</array>
 					<array key="NSToolbarIBSelectableItems" id="0"/>
@@ -613,9 +588,6 @@
 			</object>
 			<object class="NSCustomObject" id="360625591">
 				<string key="NSClassName">CKWindowController</string>
-			</object>
-			<object class="NSCustomObject" id="286735715">
-				<string key="NSClassName">CKRecipesViewController</string>
 			</object>
 		</array>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
@@ -763,14 +735,6 @@
 						<reference key="destination" ref="451146489"/>
 					</object>
 					<int key="connectionID">1193</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">deleteRecipes:</string>
-						<reference key="source" ref="286735715"/>
-						<reference key="destination" ref="333650539"/>
-					</object>
-					<int key="connectionID">1199</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -996,7 +960,6 @@
 							<reference ref="199601049"/>
 							<reference ref="30184396"/>
 							<reference ref="451146489"/>
-							<reference ref="333650539"/>
 						</array>
 						<reference key="parent" ref="972006081"/>
 					</object>
@@ -1066,16 +1029,6 @@
 						<reference key="object" ref="451146489"/>
 						<reference key="parent" ref="183244658"/>
 					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">1190</int>
-						<reference key="object" ref="333650539"/>
-						<reference key="parent" ref="183244658"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">1195</int>
-						<reference key="object" ref="286735715"/>
-						<reference key="parent" ref="0"/>
-					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -1099,8 +1052,6 @@
 				<string key="1177.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1185.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1189.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="1190.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="1195.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="129.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="130.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="131.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -1146,57 +1097,6 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/CKAppDelegate.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">CKRecipesViewController</string>
-					<string key="superclassName">NSViewController</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="deleteRecipes:">id</string>
-						<string key="updateFilter:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="deleteRecipes:">
-							<string key="name">deleteRecipes:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="updateFilter:">
-							<string key="name">updateFilter:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="dessertsTable">NSTableView</string>
-						<string key="entreesTable">NSTableView</string>
-						<string key="platsTable">NSTableView</string>
-						<string key="searchField">NSSearchField</string>
-						<string key="tabView">NSTabView</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="dessertsTable">
-							<string key="name">dessertsTable</string>
-							<string key="candidateClassName">NSTableView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="entreesTable">
-							<string key="name">entreesTable</string>
-							<string key="candidateClassName">NSTableView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="platsTable">
-							<string key="name">platsTable</string>
-							<string key="candidateClassName">NSTableView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="searchField">
-							<string key="name">searchField</string>
-							<string key="candidateClassName">NSSearchField</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="tabView">
-							<string key="name">tabView</string>
-							<string key="candidateClassName">NSTabView</string>
-						</object>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/CKRecipesViewController.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -1284,7 +1184,6 @@
 			<string key="NSToolbarShowColorsItemImage">{32, 32}</string>
 			<string key="NSToolbarShowFontsItemImage">{32, 32}</string>
 			<string key="add">{32, 32}</string>
-			<string key="delete">{32, 32}</string>
 			<string key="house">{22, 22}</string>
 			<string key="shoebox">{24, 22}</string>
 		</dictionary>
