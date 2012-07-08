@@ -44,12 +44,13 @@
     [self.window setContentView:[recipeViewController view]];
     [self showWindow:self];
 
-    [recipeViewController setUpRecipeWithName:[recipe name]
-                                  andCategory:[recipe category]
-                                      andRate:[recipe rating]
-                                   andSummary:[recipe summary]
-                               andIngredients:[recipe ingredients]
-                                   andPicture:[recipe pictureID]];
+    [recipeViewController setUpRecipeWithRecipe:recipe] ;
+//     name]
+//                                  andCategory:[recipe category]
+//                                      andRate:[recipe rating]
+//                                   andSummary:[recipe summary]
+//                               andIngredients:[recipe ingredients]
+//                                   andPicture:[recipe pictureID]];
     
     
     //Test of the Display Recipe --- To Be Remove ---
@@ -71,7 +72,7 @@
 }
 
 - (IBAction)pushEditionView:(id)sender {
-    [self pushEditionView];
+    [self pushAddView];
 }
 
 - (void) pushRecipesView
@@ -81,10 +82,24 @@
     [self showWindow:self];
 }
 
-- (void) pushEditionView
+- (void) pushAddView
 {
     CKRecipeEditionViewController *recipeEditionViewController = [[CKRecipeEditionViewController alloc] initWithNibName:@"CKRecipeEditionView" bundle:nil];    
     [self.window setContentView:[recipeEditionViewController view]];
     [self showWindow:self];
+}
+
+- (void) pushEditionViewWithRecipe:(CKRecipe*)recipe
+{
+    CKRecipeEditionViewController *recipeEditionViewController = [[CKRecipeEditionViewController alloc] initWithNibName:@"CKRecipeEditionView" bundle:nil];    
+    [self.window setContentView:[recipeEditionViewController view]];
+    [self showWindow:self];
+    [recipeEditionViewController initViewWithRecipe:recipe] ;
+//    [recipeEditionViewController initViewWith:[recipe name]
+//                                  andCategory:[recipe category]
+//                                      andRate:[recipe rating]
+//                                   andSummary:[recipe summary]
+//                               andIngredients:[recipe ingredients]
+//                                   andPicture:[recipe pictureID]];
 }
 @end

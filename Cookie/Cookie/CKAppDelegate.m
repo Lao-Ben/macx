@@ -21,6 +21,7 @@
 {
 }
 
+
 + (NSString*) getApplicationPath
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);

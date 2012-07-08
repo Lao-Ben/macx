@@ -34,18 +34,13 @@
     return self;
 }
 
-- (void) setUpRecipeWithName:(NSString*)name
-                 andCategory:(NSNumber*) categoryNumber
-                     andRate:(NSNumber*) rating
-                  andSummary:(NSData*) summary
-              andIngredients:(NSArray*) ingredients
-                  andPicture:(NSString*) pictureID
+- (void) setUpRecipeWithRecipe:(CKRecipe*) recipe
 {
     [self initItemGuests];
-    
-    NSString* summurayData = [[NSString alloc] initWithData:summary encoding:NSUTF8StringEncoding];
-    [recipeTitle setStringValue:name];
-    switch ([categoryNumber intValue]) {
+    currentRecipe = recipe;
+    NSString* summurayData = [[NSString alloc] initWithData:[recipe summary] encoding:NSUTF8StringEncoding];
+    [recipeTitle setStringValue:[recipe name]];
+    switch ([[recipe category] intValue]) {
         case 0:
             [recipeCategory setStringValue:@"Entrée"];
             break;
@@ -56,15 +51,15 @@
             [recipeCategory setStringValue:@"Dessert"];  
             break;
     }
-    [recipeRate setIntValue:[rating intValue]];
+    [recipeRate setIntValue:[[recipe rating] intValue]];
     [instructionsSummary setString:summurayData];
-    [self setIngredientsArray:ingredients];
+    [self setIngredientsArray:[recipe ingredients]];
     [ingredientsTable reloadData];
     
     NSFileManager* fileMgr = [NSFileManager defaultManager];
     NSString* pathForPicture = [[CKAppDelegate getMiniaturePath] 
                                 stringByAppendingPathComponent:
-                                [NSString stringWithFormat:@"%@.jpeg",pictureID]
+                                [NSString stringWithFormat:@"%@.jpeg",[recipe pictureID]]
                                 ];
     BOOL pictureExists = [fileMgr fileExistsAtPath:pathForPicture];
     if (pictureExists) {
@@ -122,7 +117,7 @@
 }
 
 - (IBAction)editAction:(id)sender {
-    CKWindowController *windowController = [[NSApp delegate] windowController];
-    [windowController pushEditionView];
+    CKWindowController *windowController = [[[self view] window] windowController];
+    [windowController pushEditionViewWithRecipe:currentRecipe];
 }
 @end

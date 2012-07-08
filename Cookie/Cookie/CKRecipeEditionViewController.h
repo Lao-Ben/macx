@@ -19,7 +19,9 @@
     BOOL nameIsValid;
     BOOL descIsValid;
     BOOL hasIngredient;
+    BOOL isEditing;
     NSURL *fileEmplacement;
+    NSString *oldRecipeName;
 
 }
 
@@ -50,4 +52,5 @@
 - (void) deleteIngredientAtIndex:(NSInteger)row;
 - (void) saveOriginalImage:(NSImage*) image;
 - (void) saveMiniatureImage:(NSImage*) image;
+- (void) initViewWithRecipe:(CKRecipe*) recipe;
 @end

@@ -18,6 +18,7 @@
 
 - (id)initWithDictionnary:(NSDictionary*)recipes;
 - (void)add:(CKRecipe*)recipe;
+- (void)remove:(NSString*)recipeName;
 - (NSUInteger) count;
 - (NSMutableArray*) recipesInCategory:(NSUInteger)category;
 - (CKRecipe*) recipeOfTheDay;
