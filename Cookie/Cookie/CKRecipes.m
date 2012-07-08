@@ -44,7 +44,6 @@
 - (void)add:(CKRecipe*)recipe {
     [recipeArray addObject:recipe];
     // FIXME : f****** bug
-    //recipeArray = [CKRecipes orderByRating:recipeArray];
     NSDictionary* dict = [self toDictionnary];
     [CKRecipesSerializer serialize:dict];
 }

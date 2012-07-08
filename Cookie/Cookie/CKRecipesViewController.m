@@ -53,15 +53,15 @@
     CKAppDelegate *appDelegate = [NSApp delegate];
   
     CKRecipeDataSource *dataSource = [[CKRecipeDataSource alloc] init];
-    dataSource.items = [appDelegate.recipes recipesInCategory:0];
+    dataSource.items = [CKRecipes orderByRating:[appDelegate.recipes recipesInCategory:0]];
     [entreesTable setDataSource:dataSource];  
     
     CKRecipeDataSource *dataSource2 = [[CKRecipeDataSource alloc] init];
-    dataSource2.items = [appDelegate.recipes recipesInCategory:1];
+    dataSource2.items = [CKRecipes orderByRating:[appDelegate.recipes recipesInCategory:1]];;
     [platsTable setDataSource:dataSource2];
 
     CKRecipeDataSource *dataSource3 = [[CKRecipeDataSource alloc] init];
-    dataSource3.items = [appDelegate.recipes recipesInCategory:2];
+    dataSource3.items = [CKRecipes orderByRating:[appDelegate.recipes recipesInCategory:2]];
     [dessertsTable setDataSource:dataSource3];
 
     [entreesTable reloadData];    
