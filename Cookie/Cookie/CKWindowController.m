@@ -66,8 +66,18 @@
     //                   andPicture:@"193757280"];
 }
 
+- (void) pushAddView
+{	  	
+    CKRecipeEditionViewController *recipeEditionViewController = [[CKRecipeEditionViewController alloc] initWithNibName:@"CKRecipeEditionView" bundle:nil];    
+	  	
+    [self.window setContentView:[recipeEditionViewController view]];
+	  	
+    [self showWindow:self];
+	  	
+}
+
 - (IBAction)pushEditionView:(id)sender {
-    [self pushEditionView];
+    [self pushAddView];
 }
 
 - (void) pushRecipesView
@@ -77,10 +87,11 @@
     [self showWindow:self];
 }
 
-- (void) pushEditionView
+- (void) pushEditionViewWithRecipe:(CKRecipe*)recipe
 {
     CKRecipeEditionViewController *recipeEditionViewController = [[CKRecipeEditionViewController alloc] initWithNibName:@"CKRecipeEditionView" bundle:nil];    
     [self.window setContentView:[recipeEditionViewController view]];
     [self showWindow:self];
+    [recipeEditionViewController initViewWithRecipe:recipe] ;
 }
 @end
