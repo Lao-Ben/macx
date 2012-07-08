@@ -35,6 +35,12 @@
 }
 
 - (void)viewDidLoad {    
+    //double Click target
+    [[self lastTable] setTarget:self];
+    [[self bestTable] setTarget:self];
+    [[self lastTable] setDoubleAction:@selector(doubleClickLastTable:)];
+    [[self bestTable] setDoubleAction:@selector(doubleClickBestTable:)];
+    
     [CKAppDelegate checkFoldersExistance];
     CKAppDelegate *appDelegate = [NSApp delegate];
     CKRecipes *recipes = [[CKRecipes alloc] initWithDictionnary:[CKRecipesSerializer deserialize]];
@@ -110,6 +116,25 @@
     
     [lastTable reloadData];    
     [bestTable reloadData];
+}
+- (void)doubleClickLastTable:(id)aTableView
+{
+    CKWindowController* windowController = [[[self view] window] windowController];
+    CKRecipeDataSource* dataSource = lastTable.dataSource;
+    NSInteger selectedRow = lastTable.selectedRow;
+    NSArray* recipesArray = dataSource.items;
+    CKRecipe* selectedRecipe = [recipesArray objectAtIndex:selectedRow];
+    [windowController pushRecipeViewWithRecipe:selectedRecipe];
+}
+
+- (void)doubleClickBestTable:(id)aTableView
+{
+    CKWindowController* windowController = [[[self view] window] windowController];
+    CKRecipeDataSource* dataSource = bestTable.dataSource;
+    NSInteger selectedRow = bestTable.selectedRow;
+    NSArray* recipesArray = dataSource.items;
+    CKRecipe* selectedRecipe = [recipesArray objectAtIndex:selectedRow];
+    [windowController pushRecipeViewWithRecipe:selectedRecipe];
 }
 
 @end
