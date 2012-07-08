@@ -138,6 +138,31 @@
     }
 }
 
+- (BOOL) checkForRecipeNameBeforeAdd:(NSString*) name
+{
+    
+    NSArray* recipes = [[[NSApp delegate] recipes] recipeArray];
+    for (CKRecipe* recipe in recipes) {
+        if ([[recipe name] isEqualToString:name]) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
+- (void) alertExistingRecipeName
+{
+    NSAlert *alert = [[[NSAlert alloc] init] autorelease]; 
+    [alert addButtonWithTitle:@"OK"];
+    [alert setMessageText:@"Un tel nom de recette existe déjà."];
+    [alert setInformativeText:@"Merci de choisir autre chose."];
+    [alert setAlertStyle:NSWarningAlertStyle];
+    [alert beginSheetModalForWindow:[[self view] window]
+                      modalDelegate:self
+                     didEndSelector:nil
+                        contextInfo:nil];
+}
+
 //Delegate Protocol
 - (void)tableViewSelectionIsChanging:(NSNotification *)aNotification
 {
@@ -307,6 +332,15 @@
                                            andIngredients:ingredients];
     if (isEditing) {
         [recipes remove:oldRecipeName];
+    }
+    else
+    {
+        if ([self checkForRecipeNameBeforeAdd:nameField.stringValue]) {
+            [self alertExistingRecipeName];
+            [recipe release];
+            return;
+        }
+
     }
     [recipes add:recipe];
     CKWindowController* windowController = [[[self view] window] windowController];

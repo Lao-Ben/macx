@@ -53,4 +53,6 @@
 - (void) saveOriginalImage:(NSImage*) image;
 - (void) saveMiniatureImage:(NSImage*) image;
 - (void) initViewWithRecipe:(CKRecipe*) recipe;
+- (BOOL) checkForRecipeNameBeforeAdd:(NSString*) name;
+- (void) alertExistingRecipeName;
 @end
