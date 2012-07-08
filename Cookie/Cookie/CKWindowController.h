@@ -19,7 +19,6 @@
 - (IBAction)pushRecipesView:(id)sender;
 - (IBAction)pushEditionView:(id)sender;
 - (void) pushRecipesView;
-- (void) pushEditionView;
 - (void) pushAddView;
 - (void) pushRecipeViewWithRecipe:(CKRecipe*)recipe;
 - (void) pushEditionViewWithRecipe:(CKRecipe*)recipe;
